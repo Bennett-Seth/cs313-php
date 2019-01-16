@@ -1,0 +1,85 @@
+/* Basic Formatting */
+
+* {
+    margin-left: 1em;
+    margin-right: 1em;
+} 
+
+body{
+    padding-top: 1em;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+}    
+    
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Arial', sans-serif;
+    font-size: 3em;
+} 
+
+p {
+    font-family: 'Times New Roman', serif;
+}
+
+.divs:hover {
+    font-weight: bold;
+}
+
+#set_1 {
+    height: 100 px;
+    background-color: greenyellow;
+    font-size: 1em;
+}
+
+#set_2 {
+    height: 100 px;
+    background-color: orange;
+    font-size: 1.5em;
+}
+
+#set_3 {
+    height: 100 px;
+    background-color: skyblue;
+    font-size: 2em;
+}
+
+button {
+    background-color: darkgreen;
+    color: antiquewhite;
+    width: 100px;
+}
+
+input {
+    width: 200px;
+}
+
+/* Bootstrap Experimentation */
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+@include media-breakpoint-up(sm) { 
+    body{
+    background-color: navajowhite;
+    }
+}
+@include media-breakpoint-up(md) { 
+    body{
+    background-color: aliceblue;
+    }
+}
+@include media-breakpoint-up(lg) {
+
+    body{
+    background-color: antiquewhite;
+    }
+    
+}
+@include media-breakpoint-up(xl) { 
+
+    body{
+    background-color: azure;
+    }
+}
