@@ -1,0 +1,179 @@
+
+/*
+Color Scheme:
+Cream-White: #FBFBF3
+Cornflower Sky: #758698
+Alcest Blue: #396884
+Navigator: #1D2D47
+Civil Shadow: #0D0E23
+
+*/
+
+/* Main Body CSS */
+html {
+    margin:0;
+    box-sizing:border-box;
+}
+
+body {
+    background-color: #FBFBF3;
+}
+
+header {
+    margin-left: 2em;
+}
+
+main {
+    margin-left: 2em;
+}
+
+h1 {
+    
+}
+
+h2 {
+    
+}
+
+p {
+    
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+
+/* Navigation */
+nav {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    height: 3em;
+    background-color: #0D0E23;
+    
+}
+
+nav ul {
+    padding-top: 1em;
+}
+
+nav li {
+    
+    display: inline;
+    text-align: center;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+nav a:link{
+    color: #758698;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0em;
+    font-size: 1em;
+}
+
+nav a:visited{
+    color: darkgray;
+}
+
+nav a:hover{
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+nav li.active a{
+    color:white;
+}
+
+/* Bio */
+
+#profile_pic {
+	float:left;
+    padding-right: 1em
+}
+
+.clear {
+    clear: left;
+}
+
+.bio_text {
+    
+}
+
+.gallery_i {
+    float:left;
+    padding-right: 1em;
+}
+
+.gallery_p {
+    width: 250px;
+}
+
+.gallery_p a:hover{
+    color: darkblue;
+}
+
+.galleryPics {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.gallery_figs{
+    padding: 1em;
+}
+
+
+/* Footer */
+
+footer {
+    height: 3em;
+    background-color: #0D0E23;
+    
+}
+
+footer ul {
+    padding-top: 1em;
+}
+
+footer li {
+    
+    display: inline;
+    text-align: center;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+footer a:link{
+    color: #758698;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0em;
+    font-size: 1em;
+}
+
+footer a:visited{
+    color: darkgray;
+}
+
+footer a:hover{
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+footer li.active a{
+           color:white;
+}
