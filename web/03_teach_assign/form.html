@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML>
+	<html lang="en-us">
+		<head>
+			<meta charset="utf-8">
+			<title>PHP Form Activity</title>
+
+		</head>
+		<body> 
+            <h1> Form Activity</h1>
+            <form method="post" action="userInfo.php">
+                
+                <p>User Name</p>
+                <input type="text" name="userName"><br>
+                
+                <p>User Email</p>
+                <input type="email" name="userEmail"><br>
+                
+                <p>User Major</p>
+                    <input type="radio" name="major" value="Computer Science" checked>Computer Science<br>
+                    <input type="radio" name="major" value="Web Design and Development" checked>Web Design and Development <br>
+                    <input type="radio" name="major" value="Computer Information Technology" checked>Computer Information Technology <br>
+                    <input type="radio" name="major" value="Computer Engineering" checked>Computer Engineering <br>
+                
+                <p>User Comments</p>
+                <textarea name="userComments" rows="10" cols="30">Insert your comments here.</textarea>
+                
+                <p>User Continents</p>
+<!-- Would this make an array? How to package and unpackage that in PHP? -->             
+                <p>Hold down the Ctrl key to make multiple selections. </p>
+                <select name="userCont[]" size="7" multiple>
+                    <option value="northAmerica">North America</option>
+                    <option value="southAmerica">South America</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="australia">Australia</option>
+                    <option value="africa">Africa</option>
+                    <option value="antartica">Antartica</option>
+                </select>
+                 <input type="submit" value="Submit">
+            </form>
+            
+		</body>	
+	</html>
