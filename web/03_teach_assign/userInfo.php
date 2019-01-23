@@ -5,7 +5,7 @@
    $userMajor = $_POST['userMajor'];
    $userComments = htmlspecialchars($_POST['userComments']);
    $userCont = $_POST['userCont'];
-    $userContArr = array($userCont);
+   // $userContArr = array($userCont);
         // How to use as an array?
 ?>
 
@@ -33,7 +33,7 @@
                 
                     //foreach ($userContArr as $value){
                     //    echo "<h2> I have been too: $value </h2><br>";
-                    }
+                    //    }
                 ?> 
             
             </h2>
