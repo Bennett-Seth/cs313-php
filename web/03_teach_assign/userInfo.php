@@ -22,8 +22,9 @@
             <h2>Comments: <?php echo $userComments; ?>  </h2>
             <h2>Your Continents: 
                 <?php 
-                    foreach ($userCont as $value)
+                    foreach ($userCont as $value){
                         echo "<h2> I have been too: $value </h2><br>";
+                    }
                 ?> 
             
             </h2>
