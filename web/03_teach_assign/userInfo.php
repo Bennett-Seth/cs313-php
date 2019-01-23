@@ -4,7 +4,8 @@
         // Is this email being input correctly?
    $userMajor = $_POST['userMajor'];
    $userComments = htmlspecialchars($_POST['userComments']);
-   $userCont = array($_POST['userCont']);
+   $userCont = $_POST['userCont'];
+    $userContArr = array($userCont);
         // How to use as an array?
 ?>
 
@@ -22,7 +23,7 @@
             <h2>Comments: <?php echo $userComments; ?>  </h2>
             <h2>Your Continents: 
                 <?php 
-                    foreach ($userCont as $value){
+                    foreach ($userContArr as $value){
                         echo "<h2> I have been too: $value </h2><br>";
                     }
                 ?> 
