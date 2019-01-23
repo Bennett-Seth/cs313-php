@@ -24,12 +24,12 @@
             <h2>Your Continents: 
                 <?php 
                     echo $userCont
-                    <br>
-                    echo $userContArr
-                    <br>
-                    echo $userContArr[0]
-                    <br>
-                    echo $userContArr[1];
+             //       <br>
+             //       echo $userContArr
+             //       <br>
+             //       echo $userContArr[0]
+             //       <br>
+             //       echo $userContArr[1];
                 
                     //foreach ($userContArr as $value){
                     //    echo "<h2> I have been too: $value </h2><br>";
