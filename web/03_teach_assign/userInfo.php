@@ -6,7 +6,6 @@
    $userComments = htmlspecialchars($_POST['userComments']);
    $userCont = array($_POST['userCont']);
         // How to use as an array?
-    $arrLength = count($cars);
 ?>
 
 <!DOCTYPE HTML>
@@ -23,15 +22,8 @@
             <h2>Comments: <?php echo $userComments; ?>  </h2>
             <h2>Your Continents: 
                 <?php 
-                    for($x = 0; $x < arrLength; $x++){
-                        echo $userCont[$x];
-                        echo <br>;
-                        
-                    }
-                
-                //foreach ($userCont as $value){
-                //        echo "<h2> I have been too:           $value </h2><br>";
-                //}
+                    foreach ($userCont as $value)
+                        echo "<h2> I have been too: $value </h2><br>";
                 ?> 
             
             </h2>
