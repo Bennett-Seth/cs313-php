@@ -1,0 +1,180 @@
+/*
+Color Scheme:
+Cream-White: #FBFBF3
+Cornflower Sky: #758698
+Alcest Blue: #396884
+Navigator: #1D2D47
+Civil Shadow: #0D0E23
+
+*/
+
+/* Core Code */
+
+* {
+    
+} 
+
+body{
+
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    text-align: left;
+    background-color: skyblue;
+}
+
+header{
+    background-color: darkblue;
+    color:orange;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Lithos Pro Regular', sans-serif;
+    text-align: left;
+}   
+  
+body h1 {
+     margin-left: 2em;
+}
+
+h2 {
+     margin-left: 2em;
+}
+
+h3 {
+
+}  
+
+p {
+    
+}
+
+img {
+    
+}
+
+/* Navigation */
+nav {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    height: 3em;
+    background-color: #0D0E23;
+    
+}
+
+nav ul {
+    padding-top: 1em;
+}
+
+nav li {
+    
+    display: inline;
+    text-align: center;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+nav a:link{
+    color: #758698;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0em;
+    font-size: 1em;
+}
+
+nav a:visited{
+    color: darkgray;
+}
+
+nav a:hover{
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+nav li.active a{
+    color:white;
+}
+
+/* Browse Items */
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+}
+
+figure {
+    border-radius: 20px;
+    background-color: darkblue;
+    padding: 1em;
+}
+
+.gallery_img{
+    padding-left: 2em;
+}
+
+figcaption {
+    background-color: orange;
+    padding: 0.5em;
+    text-align: center;
+    width: 150px;
+    color:black;
+}
+
+.viewButton{
+    background-color: green;
+    color: aliceblue;
+    width: 200px;
+    margin-left: 2em;
+    height: 2em;
+}
+
+.viewButton:hover{
+    background-color:chartreuse;
+    color: black;
+}
+
+.viewButton a{
+    text-decoration: none;
+    background-color: green;
+    color: aliceblue;
+}
+
+.viewButton a:hover{
+    background-color:chartreuse;
+    color: black;
+}
+
+
+.buyButton {
+    background-color: green;
+    color: aliceblue;
+}
+
+.buyButton:hover{
+    background-color:chartreuse;
+    color: black;
+}
+
+/* View Cart */
+
+/* Checkout */
+
+.indent{
+    margin-left: 2em;
+}
+
+/* Confirmation Page */
+
+/* Footer */
+
+footer {
+    
+}
+        
