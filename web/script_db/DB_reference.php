@@ -25,8 +25,8 @@
           die();
         }
     
-    $refBook = htmlspecialchars($_POST['book']); 
-
+    $refBook = htmlspecialchars($_POST['book']);
+		
     function getRef($refBook){
         $db = Scriptures();
         $sql = 'SELECT book, chapter, verse, content FROM scriptures WHERE book = :book';
@@ -36,8 +36,8 @@
         $stmt->closeCursor();
         return $ref;
         }
- 
-
+	
+	$ref = getRef($refBook);
     $result_1 = $ref[book].$ref[chapter].$ref[verse];
     $result_2 = "\" $ref[content] \"";
     $result = $result_1 +  $result_2;
