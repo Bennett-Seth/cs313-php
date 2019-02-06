@@ -1,9 +1,14 @@
 <?php
-    session_start();
-    // Get the database connection file
+	// Get the database connection file
     require 'connect.php';
-
-    $refBook = htmlspecialchars($_POST['book']);
+	
+	$id = $_GET['id'];
+	$result = ($db->query("SELECT * FROM scriptures WHERE scripture_id = '$id';"); 
+	$book = null;
+	$chapter = null;
+	$content = null;
+	$verse = null;
+	$scriptRef = null;
 
 ?>
 
@@ -28,7 +33,18 @@
                 
                 <?php 
                     
-                	foreach ($db->query("SELECT * FROM scriptures WHERE book = '$refBook';") as $row)
+                	foreach ($result as $row){
+						$book = $row['book'];
+						$chapter = $row['chapter'];
+						$content = $row['content'];
+						$verse = $row['verse'];
+						$scriptRef = "$book $chapter:$verse";
+						
+						echo "<b>$book</b> $chapter:$verse - $content<br>";
+					}
+					
+					
+					foreach ($db->query("SELECT * FROM scriptures WHERE book = '$refBook';") as $row)
 						{
 							$book = $row['book'];
 							$chapter = $row['chapter'];
