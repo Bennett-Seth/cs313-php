@@ -50,14 +50,14 @@
                 
                 <?php 
                     
-                	foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
+                	foreach ($db->query("SELECT book, chapter, verse, content FROM scriptures WHERE book = '$refBook'") as $row)
 						{
 							$book = $row['book'];
 							$chapter = $row['chapter'];
 							$verse = $row['verse'];
 							$content = $row['content'];
 							
-							echo "<b>$book<b> $chapter:$verse - \"$content\" <br>";
+							echo "<b>$book</b> $chapter:$verse - \"$content\" <br>";
 						}
                 
                 ?>
