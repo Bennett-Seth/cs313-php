@@ -4,7 +4,7 @@
     require 'connect.php';
 	
 	$id = $_GET['id'];
-	$result = ($db->query("SELECT * FROM scriptures WHERE scripture_id = '$id';"); 
+	$result = ($db->query("SELECT * FROM scriptures WHERE scriptures_id = '$id';"); 
 	$book = null;
 	$chapter = null;
 	$content = null;
@@ -50,7 +50,7 @@
 							$book = $row['book'];
 							$chapter = $row['chapter'];
 							$verse = $row['verse'];
-							$id = $row['scripture_id'];
+							$id = $row['scriptures_id'];
 							
 							echo "<b>$book</b> $chapter:$verse - <a href='content.php?id=$id'>Read it here</a><br>";
 						}

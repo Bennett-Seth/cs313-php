@@ -33,7 +33,7 @@
 							$book = $row['book'];
 							$chapter = $row['chapter'];
 							$verse = $row['verse'];
-							$id = $row['scripture_id'];
+							$id = $row['scriptures_id'];
 							
 							echo "<b>$book</b> $chapter:$verse - <a href='content.php?id=$id'>Read it here</a><br>";
 						}
