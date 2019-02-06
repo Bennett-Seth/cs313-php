@@ -26,21 +26,15 @@
         }
     
     $refBook = htmlspecialchars($_POST['book']);
-		
-    function getRef($refBook){
-        $db = Scriptures();
-        $sql = 'SELECT book, chapter, verse, content FROM scriptures WHERE book = :book';
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $ref = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
-        return $ref;
-        }
 	
-	$ref = getRef($refBook);
-    $result_1 = $ref[book].$ref[chapter].$ref[verse];
-    $result_2 = "\" $ref[content] \"";
-    $result = $result_1 +  $result_2;
+	foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
+		{
+		  echo $row['book'];
+		  echo $row['chapter'];
+		  echo $row['verse'];
+		  echo $row['content'];
+		  echo '<br/>';
+		}
 
 ?>
 
