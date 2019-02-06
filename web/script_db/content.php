@@ -3,7 +3,7 @@
     require 'connect.php';
 	
 	$id = $_GET['id'];
-	$result = ($db->query("SELECT * FROM scriptures WHERE scriptures_id = '$id';"); 
+	$result = ($db->query("SELECT * FROM scriptures WHERE scriptures_id = '$id';") 
 	$book = null;
 	$chapter = null;
 	$content = null;
@@ -16,7 +16,7 @@
 	<html lang="en-us">
 		<head>
 			<meta charset="utf-8">
-			<title>Scripture Reference Response</title>
+			<title>Scripture Details</title>
 
             <meta name="viewport" content="width=device-width, initial-scale=1">
             
