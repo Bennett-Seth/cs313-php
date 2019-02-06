@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	// Get the database connection file
     require 'connect.php';
 	
@@ -41,19 +40,8 @@
 						$verse = $row['verse'];
 						$scriptRef = "$book $chapter:$verse";
 						
-						echo "<b>$book</b> $chapter:$verse - $content<br>";
+						echo "$scriptRef - $content<br>";
 					}
-					
-					
-					foreach ($db->query("SELECT * FROM scriptures WHERE book = '$refBook';") as $row)
-						{
-							$book = $row['book'];
-							$chapter = $row['chapter'];
-							$verse = $row['verse'];
-							$id = $row['scriptures_id'];
-							
-							echo "<b>$book</b> $chapter:$verse - <a href='content.php?id=$id'>Read it here</a><br>";
-						}
                 
                 ?>
                 
