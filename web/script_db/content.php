@@ -3,7 +3,7 @@
     require 'connect.php';
 	
 	$id = $_GET['id'];
-	$result = ($db->query("SELECT * FROM scriptures WHERE scriptures_id = '$id';") 
+	$result = $db->query("SELECT * FROM scriptures WHERE scriptures_id = '$id';"); 
 	$book = null;
 	$chapter = null;
 	$content = null;
