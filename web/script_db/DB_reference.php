@@ -3,6 +3,8 @@
     // Get the database connection file
     //require_once 'connections.php';
 
+		  echo 'Can you hear me now?';
+
     try
         {
           $dbUrl = getenv('DATABASE_URL');
