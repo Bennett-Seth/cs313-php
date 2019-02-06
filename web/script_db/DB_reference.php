@@ -26,15 +26,6 @@
         }
     
     $refBook = htmlspecialchars($_POST['book']);
-	
-	foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
-		{
-		  echo $row['book'];
-		  echo $row['chapter'];
-		  echo $row['verse'];
-		  echo $row['content'];
-		  echo '<br/>';
-		}
 
 ?>
 
@@ -59,15 +50,21 @@
                 
                 <?php 
                     
-                echo $result;
+                	foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
+						{
+							$book = $row['book'];
+							$chapter = $row['chapter'];
+							$verse = $row['verse'];
+							$content = $row['content'];
+							
+							echo "<b>$book<b> $chapter:$verse - \"$content\" <br>";
+						}
                 
                 ?>
                 
             </main>
             
             <footer>
-
-                <p> &copy; 2017 - Golden Bullet Publishing - Location: Washington State </p>
     
             </footer>
             
