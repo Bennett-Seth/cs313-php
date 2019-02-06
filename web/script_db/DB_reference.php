@@ -18,7 +18,6 @@
           $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		   echo 'Can you hear me now?';
         }
         catch (PDOException $ex)
         {
@@ -29,19 +28,18 @@
     $refBook = htmlspecialchars($_POST['book']); 
 
     function getRef($refBook){
-        $ref = "";
         $db = Scriptures();
         $sql = 'SELECT book, chapter, verse, content FROM scriptures WHERE book = :book';
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $ref = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $ref;
         }
  
 
     $result_1 = $ref[book].$ref[chapter].$ref[verse];
-    $result_2 = "$ref[content]";
+    $result_2 = "\" $ref[content] \"";
     $result = $result_1 +  $result_2;
 
 ?>
