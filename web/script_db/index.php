@@ -25,9 +25,9 @@
                 <form action="DB_reference.php" method="post">
                     
                     <select name="book">
-                        <option id="john" value="john"> John </option>
-                        <option id="d&c" value="d&c"> Doctrine and Covenants </option>
-                        <option id="mosiah" value="mosiah"> Mosiah </option>
+                        <option id="John" value="John"> John </option>
+                        <option id="Doctrine and Covenants" value="Doctrine and Covenants"> Doctrine and Covenants </option>
+                        <option id="Mosiah" value="Mosiah"> Mosiah </option>
                     </select>
                     <input type="submit" value="Submit">
                     
