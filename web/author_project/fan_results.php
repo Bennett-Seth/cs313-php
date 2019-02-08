@@ -46,8 +46,9 @@
             </nav>
             
             <main>
+                
                 <?php 
-						 
+/*						 
                     $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fansId';");
         
                     if (isset($lockCheck) != NULL)
@@ -118,6 +119,7 @@
                                 
 						      } 
                     }
+*/                    
                 ?>
                 
                 
