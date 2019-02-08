@@ -48,9 +48,12 @@
             <main>
                 
                 <?php 
-/*						 
+						 
                     $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fansId';");
-        
+                
+                    echo $lockCheck['lockout_reason'];
+                
+ /*       
                     if (isset($lockCheck) != NULL)
     
 							$fanLocked = $_SESSION['superFan']['first_name'];
