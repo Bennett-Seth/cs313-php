@@ -48,14 +48,24 @@
             <main>
                 
                 <?php 
-					
-                    echo $fanFirstName;
-                    
-                    $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';");
+
+                        foreach ($db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';") as $row){
+                                
+                            $lockId = $row['lockout_id'];
+                            $lock_fan_id = $row['fans_id'];
+                            $lock_reason = $row['lockout_reason'];
+                            $lock_date = $row['lockout_date'];
+                            
+                            echo "Lock: $lockId, Fan: $lock_fan_id, Cause:$lock_reason, Date:$lock_date";  
+                        
+                            }
+/*                      
+                
+                        $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';");
                 
                     echo $lockCheck['lockout_reason'];
                 
- /*       
+       
                     if (isset($lockCheck) != NULL)
     
 							$fanLocked = $_SESSION['superFan']['first_name'];
