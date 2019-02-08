@@ -8,12 +8,12 @@
 
     if (isset($_SESSION['superFan']) == null){
         $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE first_name = '$myFan';");
-        
+
     } else {
-        
+        echo "Superfan session already set.";
     }
     
-    foreach ($_SESSION['superFan']) as $row){
+    foreach (($_SESSION['superFan']) as $row){
 		$fanId = $row['fans_id'];
 		$fanFirstName = $row['first_name'];
 		$fanLastName = $row['last_name'];
