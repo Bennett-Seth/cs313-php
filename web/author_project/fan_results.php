@@ -49,7 +49,7 @@
                 
                 <?php 
 					
-                    echo $_SESSION['superFan']['first_name'];
+                    echo $fanFirstName;
                     
                     $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fansId';");
                 
