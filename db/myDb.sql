@@ -67,6 +67,8 @@ CREATE TABLE first_readers
 ,CONSTRAINT fk_stories_id FOREIGN KEY (stories_id) REFERENCES stories (stories_id)
 );
 
+/* WARNING: The above table's deadline has been changed to a simple promos_id refrence. */
+
 CREATE TABLE arc_readers
 (arc_readers_id SERIAL              NOT NULL
 ,fans_id                            INTEGER
