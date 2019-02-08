@@ -148,4 +148,4 @@ CREATE TABLE arc_addresses
 ,arc_address_country                 VARCHAR(255)
 ,CONSTRAINT pk_arc_addresses_id PRIMARY KEY(arc_addresses_id)
 ,CONSTRAINT fk_arc_readers_id  FOREIGN KEY (arc_readers_id ) REFERENCES arc_readers (arc_readers_id )
-)
+);

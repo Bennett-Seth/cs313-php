@@ -7,7 +7,7 @@
     $myFan = htmlspecialchars($_POST['fan']);
 
     if (isset($_SESSION['superFan']) == null){
-        $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE first_name = '$myFan';"
+        $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE first_name = '$myFan';");
         
     } else {
         
