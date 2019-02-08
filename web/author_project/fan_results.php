@@ -2,7 +2,7 @@
     session_start();
     
     // Get the database connection file
-    require 'connect_Heroku.php';
+    require 'connect.php';
     
     $myFan = htmlspecialchars($_POST['fan']);
 
