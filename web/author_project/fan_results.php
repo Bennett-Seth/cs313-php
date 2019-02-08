@@ -51,7 +51,7 @@
 					
                     echo $fanFirstName;
                     
-                    $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fansId';");
+                    $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';");
                 
                     echo $lockCheck['lockout_reason'];
                 
