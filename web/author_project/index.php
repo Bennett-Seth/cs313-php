@@ -37,11 +37,11 @@
                     <form action="fan_results.php" method="post">
                         <select name="fan">
                             <?php 
-//                                foreach ($db->query("SELECT first_name FROM fans;") as $row)
-//                                    {
-//                                        $fan = $row['first_name'];
-//                                        echo "<option id="$fan" value="$fan"> $fan </option><br>";
-//                                    }
+                                foreach ($db->query("SELECT first_name FROM fans;") as $row)
+                                    {
+                                        $fan = $row['first_name'];
+                                        echo "<option id=$fan value=$fan> $fan </option><br>";
+                                    }
                             ?>
                         </select>
                         <input type="submit" value="Submit">
