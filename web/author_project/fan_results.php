@@ -48,7 +48,7 @@
             <main>
                 
                 <?php 
-
+                    
                         foreach ($db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';") as $row){
                                 
                             $lockId = $row['lockout_id'];
@@ -63,20 +63,8 @@
             
                         echo "<h2>Welcome $fanFullName!<br></h2>";
                         echo "You are involved in the following promotions:";
-   /*                         
-                        $firstRead = $db->query("SELECT * FROM first_readers WHERE fans_id = '$fansId';");
-                        
-                        echo $firstRead['promos_id'];
-       
-                        $arcRead = $db->query("SELECT * FROM arc_readers WHERE fans_id = '$fansId';");
-                
-                        echo $arcRead['promos_id'];
-        
-                        $contestWin = $db->query("SELECT * FROM contest_winner WHERE fans_id = '$fansId';");
-                
-                        echo $contestWin['promos_id'];
-   */             
-                        foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fansId';") as $row){
+           
+                        foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
