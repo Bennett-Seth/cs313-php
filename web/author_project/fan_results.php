@@ -102,33 +102,33 @@
                                      
                             }
                 
-                        echo "Here are our current promotions:";
+                        echo "Here are our current promotions:<br>";
                             
                         foreach ($db->query("SELECT promos_title FROM promos;") as $row){
                                  
                             $promoTitle = $row['promos_title'];
                                      
-                            echo "$promoTitle<br>";
+                            echo "$promoTitle<br><hr>";
                             
                             }
                             
-                        echo "Here's the feedback on our current projects:";
+                        echo "Here's the feedback on our current projects:<br>";
                             
                         foreach ($db->query("SELECT feedback_details FROM feedback;") as $row){
                                  
                             $feedbackDet = $row['feedback_details'];
                                      
-                            echo "$feedbackDet<br>";
+                            echo "$feedbackDet<br><hr>";
                         
                             }
                             
-                        echo "Here's the feedback on our current projects:";
+                        echo "Here's the feedback on our current projects:<br>";
                             
                         foreach ($db->query("SELECT reviews_details FROM reviews;") as $row){
                                  
                             $reviewsDet = $row['reviews_details'];
                                      
-                            echo "$reviewsDet<br>";
+                            echo "$reviewsDet<br><hr>";
       
                             }
                 
