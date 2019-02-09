@@ -56,13 +56,13 @@
                             $lock_reason = $row['lockout_reason'];
                             $lock_date = $row['lockout_date'];
                             
-                            echo "Lock: $lockId, Fan: $lock_fan_id, Cause:$lock_reason, Date:$lock_date";  
+                            echo "Lock: $lockId, Fan: $lock_fan_id, Cause:$lock_reason, Date:$lock_date<br>";  
                         
                             }
                      
             
                         echo "<h2>Welcome $fanFullName!<br></h2>";
-                        echo "You are involved in the following promotions:";
+                        echo "You are involved in the following promotions:<br>";
            
                         foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
@@ -73,39 +73,21 @@
                             echo "You are a first reader for $storyTitle <br>."; 
                             }
 
-                            echo "We look forward to hearing your feedback!";
+                            echo "We look forward to hearing your feedback!<br>";
                             
-   /*               
-                             if ($firstRead == NULL){
-                                  echo "You are not participating as a first reader right now.<br>";
-                                
-                                } else {
-                                 
-                                     foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fansId';") as $row){
-
-                                        $storyTitle = $row['stories_title'];   
-
-                                        echo "You are a first reader for $storyTitle <br>."; 
-                                        }
-
-                                    echo "We look forward to hearing your future comments!";
-                                  
-                                }
-                            
-                            if ($arcRead == NULL){
-                                  echo "You are not participating as a ARC reader right now.<br>";
-                                
-                                } else {
-                                 
-                                 foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fansId';") as $row){
+                        foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
-                                    $arcTitle =  $row['stories_title'];   
+                            $arcTitle =  $row['stories_title'];   
                                         
-                                    echo "You are a ARC reader for $arcTitle <br>";  
+                            echo "You are a ARC reader for $arcTitle <br>";  
                                       
-                                 }
+                            }
                                   
-                                echo "Please have your reviews ready to post by the time $arcTitle goes live!";
+                            echo "Please have your reviews ready to post by the time $arcTitle goes live!<br>";
+                                
+         /*             
+                                 
+                                 
 						      }  
                             
                             if ($contestWin == NULL){
