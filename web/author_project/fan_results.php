@@ -79,7 +79,7 @@
                         foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fansId';") as $row){
 
                             $thisFanId = $row['fans_id'];
-                            $storyId = $row['stories_id']
+                            $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
                             echo "You are a first reader for $storyTitle <br>."; 
