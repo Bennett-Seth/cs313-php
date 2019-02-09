@@ -71,23 +71,29 @@
                             $storyTitle = $row['stories_title'];   
 
                             echo "You are a first reader for $storyTitle <br>."; 
-                            }
-
-                            echo "We look forward to hearing your feedback!<br>";
                             
+                            echo "We look forward to hearing your feedback!<br><hr>";
+                            
+                        }
+
+    
                         foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
+                            $thisFanId = $row['fans_id'];
+                            $storyId = $row['stories_id'];
+                            $storyTitle = $row['stories_title'];   
+                            
                             $arcTitle =  $row['stories_title'];   
                                         
                             echo "You are a ARC reader for $arcTitle <br>";  
-                                      
+                            
+                            echo "Please have your reviews ready to post by the time $arcTitle goes live!<br><hr>";
+                            
                             }
                                   
-                            echo "Please have your reviews ready to post by the time $arcTitle goes live!<br>";
-                                
-         /*             
-                                 
-                                 
+        
+         
+                /*                    
 						      }  
                             
                             if ($contestWin == NULL){
