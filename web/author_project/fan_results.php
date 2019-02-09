@@ -61,9 +61,9 @@
                             }
                      
             
-                        echo "Welcome $fanFullName!<br>";
-                        echo "<h2> You are involved in the following promotions: </h2>";
-                            
+                        echo "<h2>Welcome $fanFullName!<br></h2>";
+                        echo "You are involved in the following promotions:";
+   /*                         
                         $firstRead = $db->query("SELECT * FROM first_readers WHERE fans_id = '$fansId';");
                         
                         echo $firstRead['promos_id'];
@@ -75,6 +75,15 @@
                         $contestWin = $db->query("SELECT * FROM contest_winner WHERE fans_id = '$fansId';");
                 
                         echo $contestWin['promos_id'];
+   */             
+                        foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fansId';") as $row){
+
+                            $storyTitle = $row['stories_title'];   
+
+                            echo "You are a first reader for $storyTitle <br>."; 
+                            }
+
+                            echo "We look forward to hearing your future comments!";
                             
    /*               
                              if ($firstRead == NULL){
