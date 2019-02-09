@@ -70,19 +70,17 @@
                             $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
-                            echo "You are a first reader for $storyTitle <br>."; 
+                            echo "You are a first reader for $storyTitle. <br>"; 
                             
                             echo "We look forward to hearing your feedback!<br><hr>";
                             
-                        }
+                            }
 
     
                         foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
-                            $storyTitle = $row['stories_title'];   
-                            
                             $arcTitle =  $row['stories_title'];   
                                         
                             echo "You are a ARC reader for $arcTitle <br>";  
@@ -90,30 +88,20 @@
                             echo "Please have your reviews ready to post by the time $arcTitle goes live!<br><hr>";
                             
                             }
-                                  
-        
-         
-                /*                    
-						      }  
+ 
+                                 
+                        foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
+                                 
+                            $thisFanId = $row['fans_id'];
+                            $storyId = $row['stories_id'];
+                            $contestReward =  $row['stories_title']; 
+                                     
+                            echo "You have won an exclusive copy of $contestReward. Congratulations!<br>";
                             
-                            if ($contestWin == NULL){
-                                  echo "You have not won any contests yet. Keep trying!<br>";
-                                
-                                } else {
-                                 
-                                 foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fansId';") as $row){
-                                 
-                                    $contestReward =  $row['stories_title']; 
+                            echo "Please stay tuned for additional contests and giveaways!"; 
                                      
-                                    echo "You have won an exclusive copy of $contestReward. Congratulations!<br>"; 
-                                     
-                                 }
-                                     
-                                echo "Please stay tuned for additional contests and giveaways!"; 
-                                
-						      } 
-                    }
-*/                    
+                            }
+                  
                 ?>
                 
                 
