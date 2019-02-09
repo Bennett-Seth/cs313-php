@@ -59,32 +59,24 @@
                             echo "Lock: $lockId, Fan: $lock_fan_id, Cause:$lock_reason, Date:$lock_date";  
                         
                             }
-/*                      
-                
-                        $lockCheck = $db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';");
-                
-                    echo $lockCheck['lockout_reason'];
-                
+                     
+            
+                        echo "Welcome $fanFullName!<br>";
+                        echo "<h2> You are involved in the following promotions: </h2>";
+                            
+                        $firstRead = $db->query("SELECT * FROM first_readers WHERE fans_id = '$fansId';");
+                        
+                        echo $firstRead['promos_id'];
        
-                    if (isset($lockCheck) != NULL)
-    
-							$fanLocked = $_SESSION['superFan']['first_name'];
-							
-							echo "I'm sorry, $fanLocked. You have been locked out and cannout participate in any more promotions. <br>";
-						
-                        } else {
-                            
-                            
-                            echo "Welcome $fanFullName!<br>";
-                            echo "<h2> You are involved in the following promotions: </h2>";
-                            
-                            $firstRead = $db->query("SELECT * FROM first_readers WHERE fans_id = '$fansId';");
-        
-                            $arcRead = $db->query("SELECT * FROM arc_readers WHERE fans_id = '$fansId';");
-        
-                            $contestWin = $db->query("SELECT * FROM contest_winner WHERE fans_id = '$fansId';");
-                            
+                        $arcRead = $db->query("SELECT * FROM arc_readers WHERE fans_id = '$fansId';");
                 
+                        echo $arcRead['promos_id'];
+        
+                        $contestWin = $db->query("SELECT * FROM contest_winner WHERE fans_id = '$fansId';");
+                
+                        echo $contestWin['promos_id'];
+                            
+   /*               
                              if ($firstRead == NULL){
                                   echo "You are not participating as a first reader right now.<br>";
                                 
