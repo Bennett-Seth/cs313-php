@@ -62,7 +62,7 @@
                      
             
                         echo "<h2>Welcome $fanFullName!<br></h2>";
-                        echo "You are involved in the following promotions:<br>";
+                        echo "<h2>You are involved in the following promotions:<br></h2>";
            
                         foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
@@ -98,10 +98,40 @@
                                      
                             echo "You have won an exclusive copy of $contestReward. Congratulations!<br>";
                             
-                            echo "Please stay tuned for additional contests and giveaways!"; 
+                            echo "Please stay tuned for additional contests and giveaways!<br><hr>"; 
                                      
                             }
-                  
+                
+                        echo "Here are our current promotions:";
+                            
+                        foreach ($db->query("SELECT promos_title FROM promos;") as $row){
+                                 
+                            $promoTitle = $row['promos_title'];
+                                     
+                            echo "$promoTitle<br>";
+                            
+                            }
+                            
+                        echo "Here's the feedback on our current projects:";
+                            
+                        foreach ($db->query("SELECT feedback_details FROM feedback;") as $row){
+                                 
+                            $feedbackDet = $row['feedback_details'];
+                                     
+                            echo "$feedbackDet<br>";
+                        
+                            }
+                            
+                        echo "Here's the feedback on our current projects:";
+                            
+                        foreach ($db->query("SELECT reviews_details FROM reviews;") as $row){
+                                 
+                            $reviewsDet = $row['reviews_details'];
+                                     
+                            echo "$reviewsDet<br>";
+      
+                            }
+                
                 ?>
                 
                 
