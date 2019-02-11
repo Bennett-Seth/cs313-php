@@ -8,18 +8,16 @@
     $addChapter = htmlspecialchars($_POST['chapter']);
     $addVerse = htmlspecialchars($_POST['verse']);
     $addContent = htmlspecialchars($_POST['content']);
-    $addTopic = htmlspecialchars($_POST['topics']);
+    $addTopic = $_POST['topics'];
 
     echo $addBook;
     echo $addChapter;
     echo $addVerse;
     echo $addContent;
 
-
-
     foreach ($addTopic as $row)
         {
-            $topic = $row['name'];              
+            $topic = $row;              
             echo $topic;
 
         }
