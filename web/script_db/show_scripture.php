@@ -10,6 +10,20 @@
     $addContent = htmlspecialchars($_POST['content']);
     $addTopic = htmlspecialchars($_POST['topics']);
 
+    echo $addBook;
+    echo $addChapter;
+    echo $addVerse;
+    echo $addContent;
+
+    foreach ($addTopic) as $row)
+        {
+            $topic = $row['name'];              
+            echo $topic;
+
+        }
+    
+    
+/*
     $db->query("INSERT INTO scriptures VALUES ($addBook
     ,$addChapter
     ,$addVerse
@@ -20,6 +34,7 @@
     ,$addChapter
     ,$addTopic
     ) ;"
+*/
 
 ?>
 
@@ -41,8 +56,14 @@
             </header>
             
             <main>
+               
+                
+                
                 <?php
-                    foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
+                
+               /*
+               
+                foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
 
                                 $thisFanId = $row['fans_id'];
                                 $storyId = $row['stories_id'];
@@ -53,6 +74,9 @@
                                 echo "Please stay tuned for additional contests and giveaways!<br><hr>"; 
 
                                 }
+               
+                */
+                
                 ?>
             </main>
             
