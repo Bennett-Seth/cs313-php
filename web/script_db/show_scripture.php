@@ -15,7 +15,9 @@
     echo $addVerse;
     echo $addContent;
 
-    foreach ($addTopic) as $row)
+
+
+    foreach ($addTopic as $row)
         {
             $topic = $row['name'];              
             echo $topic;
