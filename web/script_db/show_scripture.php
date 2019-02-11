@@ -56,26 +56,22 @@
             </header>
             
             <main>
-               
-                
                 
                 <?php
                 
-               /*
+                echo "Our database holds the following scriptures:";
                
-                foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
+                foreach ($db->query("SELECT scriptures.book, scriptures.chapter, scriptures.verse, topics.name FROM scriptures LEFT JOIN scriptures_by_topics ON scriptures_by_topics.scriptures_id = scriptures.scriptures_id LEFT JOIN  topics ON scriptures_by_topics.topics_id = topics.topics_id;") as $row){
 
-                                $thisFanId = $row['fans_id'];
-                                $storyId = $row['stories_id'];
-                                $contestReward =  $row['stories_title']; 
+                    $showBook = $row['book'];
+                    $showChapter = $row['chapter'];
+                    $showVerse = $row['verse'];
+                    $showTopic = $row['name'];
 
-                                echo "You have won an exclusive copy of $contestReward. Congratulations!<br>";
-
-                                echo "Please stay tuned for additional contests and giveaways!<br><hr>"; 
+                    echo "<b>$showBook $showChapter:$showVerse </b>: Which is about $showTopic ";
 
                                 }
-               
-                */
+            
                 
                 ?>
             </main>
