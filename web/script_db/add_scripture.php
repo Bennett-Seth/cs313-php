@@ -36,17 +36,17 @@
                     <p> What is the scripture's content?</p>
                     <textarea name="content" rows="10" cols="30"> </textarea><br>
                     <p> Which topics does the scripture apply to? </p>
-                    <?php 
+                        <?php 
                     
-                    foreach ($db->query("SELECT name FROM topics;") as $row)
-						{
-                            $topic = $row['name'];
-							
-							echo "<input type='checkbox' name='topics' value='$topic'> $topic <br>";
+                        foreach ($db->query("SELECT name FROM topics;") as $row)
+                            {
+                                $topic = $row['name'];
+                                echo $topic;
+                                echo "<input type='checkbox' name='topics' value='$topic'> $topic <br>";
 
-						}
+                            }
                 
-                ?>
+                        ?>
                     
                     <input type="submit" value="Submit">    
                 
