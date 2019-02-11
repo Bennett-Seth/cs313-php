@@ -24,16 +24,18 @@
             
             <main>
                 
-                <form action="show_scripture.php" method="post">
-                    
-                    <input name="book" type="text">
+                <h2> Add a new scripture to our database:</h2>
                 
-                    <input name="chapter" type="text">
-                    
-                    <input name="verse" type="text">
-                    
-                    <textarea name="content" rows="10" cols="30"> </textarea>
-                    
+                <form action="show_scripture.php" method="post">
+                    <p> What book? </p>
+                    <input name="book" type="text"><br>
+                    <p> Which chapter? </p>
+                    <input name="chapter" type="text"><br>
+                    <p> Which verse? </p>
+                    <input name="verse" type="text"><br>
+                    <p> What is the scripture's content?</p>
+                    <textarea name="content" rows="10" cols="30"> </textarea><br>
+                    <p> Which topics does the scripture apply to? </p>
                     <?php 
                     
                     foreach ($db->query("SELECT name FROM topics;") as $row)
