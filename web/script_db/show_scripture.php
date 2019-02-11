@@ -59,7 +59,7 @@
                 
                 <?php
                 
-                echo "Our database holds the following scriptures:";
+                echo "Our database holds the following scriptures:<br>";
                
                 foreach ($db->query("SELECT scriptures.book, scriptures.chapter, scriptures.verse, topics.name FROM scriptures LEFT JOIN scriptures_by_topics ON scriptures_by_topics.scriptures_id = scriptures.scriptures_id LEFT JOIN  topics ON scriptures_by_topics.topics_id = topics.topics_id;") as $row){
 
@@ -68,7 +68,7 @@
                     $showVerse = $row['verse'];
                     $showTopic = $row['name'];
 
-                    echo "<b>$showBook $showChapter:$showVerse </b>: Which is about $showTopic ";
+                    echo "<b>$showBook $showChapter:$showVerse </b>: Which is about $showTopic <br>";
 
                                 }
             
