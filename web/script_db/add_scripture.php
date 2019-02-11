@@ -1,7 +1,8 @@
 <?php
     session_start();
 
-    
+    // Get the database connection file
+    require 'connect.php';
 
 ?>
 
@@ -42,6 +43,7 @@
                             {
                                 $topic = $row['name'];
                                 echo $topic;
+                                
                                 echo "<input type='checkbox' name='topics' value='$topic'> $topic <br>";
 
                             }

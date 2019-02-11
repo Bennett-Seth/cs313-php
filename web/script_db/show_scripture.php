@@ -1,6 +1,9 @@
 <?php
     session_start();
 
+    // Get the database connection file
+    require 'connect.php';
+
     $addBook = htmlspecialchars($_POST['book']);
     $addChapter = htmlspecialchars($_POST['chapter']);
     $addVerse = htmlspecialchars($_POST['verse']);
