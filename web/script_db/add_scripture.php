@@ -51,7 +51,8 @@
 
                         ?>
                     
-                    <input type='checkbox' name='newCheck' value='newCheck'> <input name='newTopic' type='text'>  <br>
+                    <input type='checkbox' name='newCheck' value='newCheck'> 
+                    <input name='newTopic' type='text'>  <br>
                     
                     <input type="submit" value="Submit">    
                 

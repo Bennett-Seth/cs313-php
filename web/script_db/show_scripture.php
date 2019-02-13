@@ -22,7 +22,7 @@
     foreach ($addTopic as $row){
         echo "$row <br>";
         }
-/*
+
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
 
@@ -38,14 +38,11 @@
 	echo "SQL Scripture update complete. <br>";	
     
     $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
-*/
     
-/*
-    if (isset ($_POST['newCheck'])){
-            $newTopic = $_POST['newTopic'];
-            echo $newTopic;	 
+    if (isset($_POST['newCheck'])){
+            $newTopic = $_POST['newTopic']; 
         
-            $query = 'INSERT INTO topics VALUES (:name)';
+            $query = 'INSERT INTO topics (name) VALUES (:name)';
 
                 $statement = $db->prepare($query);
 
@@ -53,7 +50,7 @@
 
                 $statement->execute();
              
-                $newTopicID = $db->lastInsertId('topics_topics_id_seq');
+                $newTopicID = $db->lastInsertId();
 
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
                     VALUES ( :scripturesID, :topicsId)';
@@ -65,17 +62,16 @@
 
                 $statement->execute();
 
+            echo "SQL New Topic update complete. <br>";	
+        
             }
-  
-    
+   
     foreach ($addTopic as $row)
         {
             $topicId = $row;
         
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
-				VALUES ( :scripturesID
-				, :topicsId
-				)';
+				VALUES ( :scripturesID, :topicsId)';
         
             $statement = $db->prepare($query);
             
@@ -83,7 +79,8 @@
 		    $statement->bindValue(':topicsId', $topicId);
             
             $statement->execute();
-
+            
+            echo "SQL Old Topic update complete. <br>";	
         }
 */
 
