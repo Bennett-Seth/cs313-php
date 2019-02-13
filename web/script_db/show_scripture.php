@@ -14,6 +14,11 @@
     echo "$addChapter <br>";
     echo "$addVerse <br>";
     echo "$addContent <br>";
+
+    foreach ($addTopic as $row) {
+        $topicName = $row['name']; 
+        echo "$topicName <br>";
+    }
     
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
@@ -32,8 +37,8 @@
 	foreach ($addTopic as $row)
         {
             $topicName = $row['name']; 
-			
-            $statement = $db->prepare('INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
+        
+            $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
 				VALUES ( 
 				(SELECT scriptures_id FROM scriptures 
 					WHERE book = :book
@@ -42,7 +47,9 @@
 				, (SELECT topics_id FROM topics
                     WHERE
                     name = :name)
-				);');
+				);';
+        
+            $statement = $db->prepare($query);
             
             $statement->bindValue(':book', $addBook);
 	        $statement->bindValue(':chapter', $addChapter);
