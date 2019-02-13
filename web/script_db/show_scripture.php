@@ -18,8 +18,6 @@
     echo "$addChapter <br>";
     echo "$addVerse <br>";
     echo "$addContent <br>";
-    echo "$newTopic <br>";
-    echo "$newCheck <br>";
 
     foreach ($addTopic as $row){
         echo "$row <br>";
@@ -62,9 +60,15 @@
             echo "SQL Old Topic update complete. <br>";	
         }
 /*
+    echo "$newTopic <br>";
+    echo "$newCheck <br>";
+    
     //Insert NEW Topic and NEW Scriptures by Topic Link
     if (isset($_POST['newCheck'])){
+            
             $newTopic = $_POST['newTopic']; 
+            
+            
         
             $query = 'INSERT INTO topics (name) VALUES (:name)';
 
