@@ -20,8 +20,6 @@
         $topicName = $row['name'];
         echo "$topicId <br>";
     }
-
-/*
     
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
@@ -35,8 +33,7 @@
 
     $statement->execute();
 
-	echo "SQL Scripture update complete. <br>";
-*/	
+	echo "SQL Scripture update complete. <br>";	
 	
     $scripturesID = $db -> lastInsertId('scriptures_scriptures_id_seq');
 
