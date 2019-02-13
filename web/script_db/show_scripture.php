@@ -16,8 +16,7 @@
     echo "$addContent <br>";
 
     foreach ($addTopic as $row) {
-        $topicId = $row['topics_id'];
-        $topicName = $row['name'];
+        $topicId = $row;
         echo "$topicId <br>";
     }
     
@@ -35,12 +34,11 @@
 
 	echo "SQL Scripture update complete. <br>";	
 	
-    $scripturesID = $db -> lastInsertId('scriptures_scriptures_id_seq');
+    $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
 
     foreach ($addTopic as $row)
         {
-            $topicId = $row['topics_id'];
-            $topicName = $row['name'];
+            $topicId = $row;
         
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
 				VALUES ( :scripturesID
@@ -48,9 +46,9 @@
 				);';
         
             $statement = $db->prepare($query);
-
+            
+            $statement->bindValue(':scripturesID',  $scripturesID);
 		    $statement->bindValue(':topicsId', $topicId);
-            $statement->bindValue(':scripturesID',  $scriptureID);
             
             $statement->execute();
        
