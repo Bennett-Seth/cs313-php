@@ -19,6 +19,8 @@
         $topicName = $row['name']; 
         echo "$topicName <br>";
     }
+
+/*
     
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
@@ -33,7 +35,7 @@
     $statement->execute();
 
 	echo "SQL Scripture update complete. <br>";
-	
+*/	
 	foreach ($addTopic as $row)
         {
             $topicName = $row['name']; 
