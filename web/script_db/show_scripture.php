@@ -36,7 +36,7 @@
 	
     $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
 
-    if (isset $_POST['newTopic']){
+    if (isset ($_POST['newTopic'])){
             $newTopic = $_POST['newTopic'];
              
             $query = 'INSERT INTO topics VALUES (:name)';
@@ -50,8 +50,7 @@
                 $newTopicID = $db->lastInsertId('topics_topics_id_seq');
 
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
-                    VALUES ( :scripturesID, :topicsId
-                    )';
+                    VALUES ( :scripturesID, :topicsId)';
 
                 $statement = $db->prepare($query);
 
@@ -70,7 +69,7 @@
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
 				VALUES ( :scripturesID
 				, :topicsId
-				);';
+				)';
         
             $statement = $db->prepare($query);
             
