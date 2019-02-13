@@ -52,14 +52,14 @@
         
             $statement = $db->prepare($query);
             
-            $statement->bindValue(':scripturesID',  $scripturesID);
+            $statement->bindValue(':scripturesID', $scripturesID);
 		    $statement->bindValue(':topicsId', $topicId);
             
             $statement->execute();
             
             echo "SQL Old Topic update complete. <br>";	
         }
-/*
+
     echo "$newTopic <br>";
     echo "$newCheck <br>";
     
@@ -95,7 +95,7 @@
             echo "SQL New Topic update complete. <br>";	
         
             }
-*/
+
 ?>
 
 <!DOCTYPE HTML>
