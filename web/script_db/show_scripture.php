@@ -39,7 +39,7 @@
 	echo "SQL Scripture update complete. <br>";	
 
     //Insert new Scripture By Topic Link
-    $scripturesID = $db->lastInsertId("scriptures_id_seq");
+    $scripturesID = $db->lastInsertId("scriptures_scriptures_id_seq");
 
     echo "Scriptures - Last Insert ID: $scripturesID <br>";	
    
@@ -78,7 +78,7 @@
 
                 $statement->execute();
              
-                $newTopicID = $db->lastInsertId("topics_id_seq");
+                $newTopicID = $db->lastInsertId("topics_topics_id_seq");
         
                 echo "Topics - Last Insert ID: $newTopicID <br>";
 
