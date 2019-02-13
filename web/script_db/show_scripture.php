@@ -15,30 +15,41 @@
     echo $addVerse;
     echo $addContent;
     
-    $db->query("INSERT INTO scriptures (book, chapter, verse, content) 
-    VALUES ($addBook
-    ,$addChapter
-    ,$addVerse
-    ,$addContent
-    );"
-    );
-	
+    $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
+    VALUES (:book, :chapter, :verse, :content)';
+
+    $statement = $db->prepare($query);
+
+    $statement->bindValue(':book', $addBook);
+	$statement->bindValue(':chapter', $addChapter);
+	$statement->bindValue(':verse', $addVerse);
+	$statement->bindValue(':content', $addContent);
+
+    $statement->execute();
+
 	echo "SQL Scripture update complete.";
 	
 	foreach ($addTopic as $row)
         {
-			$topic = $row; 
+            $topicName = $row['name']; 
 			
-			$db->query("INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
+            $statement = $db->prepare('INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
 				VALUES ( 
 				(SELECT scriptures_id FROM scriptures 
-					WHERE book = '$$addBook'
-					AND chapter = '$addChapter'
-					AND verse = '$addVerse')
-				, 03
-				);"
-                );
-                         
+					WHERE book = :book
+					AND chapter = :chapter
+					AND verse = :verse)
+				, (SELECT topics_id FROM topics
+                    WHERE
+                    name = :name)
+				);');
+            
+            $statement->bindValue(':book', $addBook);
+	        $statement->bindValue(':chapter', $addChapter);
+	        $statement->bindValue(':verse', $addVerse);
+		    $statement->bindValue(':name', $topicName);
+            $statement->execute();
+       
             echo "$topic successfully added to the scripture";
 
         }
