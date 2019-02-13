@@ -36,10 +36,11 @@
     $statement->execute();
 
 	echo "SQL Scripture update complete. <br>";
-	
+*/	
 	foreach ($addTopic as $row)
         {
-            $topicName = $row['name']; 
+            $topicId = $row['topics_id'];
+            $topicName = $row['name'];
         
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
 				VALUES ( 
@@ -65,7 +66,7 @@
 
         }
 
-*/
+
 ?>
 
 <!DOCTYPE HTML>
