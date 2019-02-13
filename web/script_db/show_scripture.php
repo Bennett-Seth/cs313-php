@@ -4,6 +4,7 @@
     // Get the database connection file
     require 'connect.php';
 
+    //Import all data
     $addBook = htmlspecialchars($_POST['book']);
     $addChapter = htmlspecialchars($_POST['chapter']);
     $addVerse = htmlspecialchars($_POST['verse']);
@@ -12,6 +13,7 @@
     $newTopic = $_POST['newTopic'];
     $newCheck = $_POST['newCheck'];
     
+    //Echo all data
     echo "$addBook <br>";
     echo "$addChapter <br>";
     echo "$addVerse <br>";
@@ -23,6 +25,7 @@
         echo "$row <br>";
         }
 
+    //Insert new scripture
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
 
@@ -36,35 +39,11 @@
     $statement->execute();
 
 	echo "SQL Scripture update complete. <br>";	
-    
-    $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
-    
-    if (isset($_POST['newCheck'])){
-            $newTopic = $_POST['newTopic']; 
-        
-            $query = 'INSERT INTO topics (name) VALUES (:name)';
 
-                $statement = $db->prepare($query);
+    //Insert new Scripture By Topic Link
+    $scripturesID = $db->lastInsertId("scriptures_id_seq");
 
-                $statement->bindValue(':name', $newTopic);
-
-                $statement->execute();
-             
-                $newTopicID = $db->lastInsertId();
-
-            $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
-                    VALUES ( :scripturesID, :topicsId)';
-
-                $statement = $db->prepare($query);
-
-                $statement->bindValue(':scripturesID',  $scripturesID);
-                $statement->bindValue(':topicsId', $newTopicID);
-
-                $statement->execute();
-
-            echo "SQL New Topic update complete. <br>";	
-        
-            }
+    echo "Scriptures - Last Insert ID: $scripturesID <br>";	
    
     foreach ($addTopic as $row)
         {
@@ -82,8 +61,37 @@
             
             echo "SQL Old Topic update complete. <br>";	
         }
-*/
+/*
+    //Insert NEW Topic and NEW Scriptures by Topic Link
+    if (isset($_POST['newCheck'])){
+            $newTopic = $_POST['newTopic']; 
+        
+            $query = 'INSERT INTO topics (name) VALUES (:name)';
 
+                $statement = $db->prepare($query);
+
+                $statement->bindValue(':name', $newTopic);
+
+                $statement->execute();
+             
+                $newTopicID = $db->lastInsertId("topics_id_seq");
+        
+                echo "Topics - Last Insert ID: $newTopicID <br>";
+
+            $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
+                    VALUES ( :scripturesID, :topicsId)';
+
+                $statement = $db->prepare($query);
+
+                $statement->bindValue(':scripturesID',  $scripturesID);
+                $statement->bindValue(':topicsId', $newTopicID);
+
+                $statement->execute();
+
+            echo "SQL New Topic update complete. <br>";	
+        
+            }
+*/
 ?>
 
 <!DOCTYPE HTML>
