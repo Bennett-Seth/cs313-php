@@ -10,10 +10,10 @@
     $addContent = htmlspecialchars($_POST['content']);
     $addTopic = $_POST['topics'];
 
-    echo $addBook;
-    echo $addChapter;
-    echo $addVerse;
-    echo $addContent;
+    echo "$addBook <br>";
+    echo "$addChapter <br>";
+    echo "$addVerse <br>";
+    echo "$addContent <br>";
     
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
@@ -27,7 +27,7 @@
 
     $statement->execute();
 
-	echo "SQL Scripture update complete.";
+	echo "SQL Scripture update complete. <br>";
 	
 	foreach ($addTopic as $row)
         {
@@ -48,9 +48,10 @@
 	        $statement->bindValue(':chapter', $addChapter);
 	        $statement->bindValue(':verse', $addVerse);
 		    $statement->bindValue(':name', $topicName);
+            
             $statement->execute();
        
-            echo "$topic successfully added to the scripture";
+            echo "The topic: $topicName, was successfully added to the scripture. <br>";
 
         }
 
@@ -79,8 +80,7 @@
                 
                 echo "Our database holds the following scriptures:<br>";
                
-                foreach ($db->query("SELECT scriptures.book, scriptures.chapter, scriptures.verse, 
-				topics.name 
+                foreach ($db->query("SELECT scriptures.book, scriptures.chapter, scriptures.verse, topics.name 
 				FROM scriptures 
 				LEFT JOIN scriptures_by_topics 
 				ON scriptures_by_topics.scriptures_id = scriptures.scriptures_id 
@@ -94,7 +94,7 @@
 
                     echo "<b>$showBook $showChapter:$showVerse </b>: Which is about $showTopic <br>";
 
-                                }
+                }
             
                 
                 ?>
