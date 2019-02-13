@@ -39,11 +39,13 @@
                     <p> Which topics does the scripture apply to? </p>
                         <?php 
                     
-                        foreach ($db->query("SELECT name FROM topics;") as $row)
+                        foreach ($db->query("SELECT topics_id, name FROM topics;") as $row)
                             {
-                                $topic = $row;
                                 
-                                echo "<input type='checkbox' name='topics[]' value='$topic'>$topic<br>";
+                                $topicId = $row['topics_id'];
+                                $topicName = $row['name'];
+                                
+                                echo "<input type='checkbox' name='topics[]' value=$topicId>$topicName<br>";
 
                             }
                 

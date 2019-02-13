@@ -16,8 +16,8 @@
     echo "$addContent <br>";
 
     foreach ($addTopic as $row) {
-        $topicName = $row; 
-        echo "$topicName <br>";
+        $topicId = $row; 
+        echo "$topicId <br>";
     }
 
 /*
@@ -48,7 +48,7 @@
 					AND verse = :verse)
 				, (SELECT topics_id FROM topics
                     WHERE
-                    name = :name)
+                    topics_id = :topicsId)
 				);';
         
             $statement = $db->prepare($query);
@@ -56,7 +56,7 @@
             $statement->bindValue(':book', $addBook);
 	        $statement->bindValue(':chapter', $addChapter);
 	        $statement->bindValue(':verse', $addVerse);
-		    $statement->bindValue(':name', $topicName);
+		    $statement->bindValue(':topicsId', $topicId);
             
             $statement->execute();
        
