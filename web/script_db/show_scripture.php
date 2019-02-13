@@ -16,7 +16,7 @@
     echo "$addContent <br>";
 
     foreach ($addTopic as $row) {
-        $topicName = $row['name']; 
+        $topicName = $row; 
         echo "$topicName <br>";
     }
 
