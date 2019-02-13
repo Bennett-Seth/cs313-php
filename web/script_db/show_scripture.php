@@ -36,6 +36,33 @@
 	
     $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
 
+         if (isset $_POST['newTopic']){
+            $newTopic = $_POST['newTopic'];
+             
+            $query = 'INSERT INTO topics VALUES (:name)';
+
+                $statement = $db->prepare($query);
+
+                $statement->bindValue(':name', $newTopic);
+
+                $statement->execute();
+             
+                $newTopicID = $db->lastInsertId('topics_topics_id_seq');
+
+            $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
+                    VALUES ( :scripturesID, :topicsId
+                    );';
+
+                $statement = $db->prepare($query);
+
+                $statement->bindValue(':scripturesID',  $scripturesID);
+                $statement->bindValue(':topicsId', $newTopicID);
+
+                $statement->execute();
+
+            }
+
+
     foreach ($addTopic as $row)
         {
             $topicId = $row;
@@ -51,8 +78,6 @@
 		    $statement->bindValue(':topicsId', $topicId);
             
             $statement->execute();
-       
-            echo "The topic: $topicName, was successfully added to the scripture. <br>";
 
         }
 
