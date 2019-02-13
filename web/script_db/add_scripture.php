@@ -39,7 +39,7 @@
                     <p> Which topics does the scripture apply to? </p>
                         <?php 
                     
-                        foreach ($db->query("SELECT topics_id, name FROM topics;") as $row)
+                        foreach ($db->query("SELECT * FROM topics;") as $row)
                             {
                                 
                                 $topicId = $row['topics_id'];

@@ -16,7 +16,8 @@
     echo "$addContent <br>";
 
     foreach ($addTopic as $row) {
-        $topicId = $row; 
+        $topicId = $row['topics_id'];
+        $topicName = $row['name'];
         echo "$topicId <br>";
     }
 
@@ -35,7 +36,7 @@
     $statement->execute();
 
 	echo "SQL Scripture update complete. <br>";
-*/	
+	
 	foreach ($addTopic as $row)
         {
             $topicName = $row['name']; 
@@ -64,6 +65,7 @@
 
         }
 
+*/
 ?>
 
 <!DOCTYPE HTML>
