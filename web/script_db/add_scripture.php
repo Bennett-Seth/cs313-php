@@ -41,7 +41,7 @@
                     
                         foreach ($db->query("SELECT name FROM topics;") as $row)
                             {
-                                $topic = $row['name'];
+                                $topic = $row;
                                 
                                 echo "<input type='checkbox' name='topics[]' value='$topic'>$topic<br>";
 
