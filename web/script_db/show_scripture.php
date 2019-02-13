@@ -9,17 +9,14 @@
     $addVerse = htmlspecialchars($_POST['verse']);
     $addContent = htmlspecialchars($_POST['content']);
     $addTopic = $_POST['topics'];
-
+ 
+/*   
     echo "$addBook <br>";
     echo "$addChapter <br>";
     echo "$addVerse <br>";
     echo "$addContent <br>";
 
-    foreach ($addTopic as $row) {
-        $topicId = $row;
-        echo "$topicId <br>";
-    }
- /*   
+
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
 
@@ -36,7 +33,7 @@
 */
     $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
 
-    if (isset ($_POST['newTopic'])){
+    if (isset ($_POST['newCheck'])){
             $newTopic = $_POST['newTopic'];
             echo $newTopic;	 
         
