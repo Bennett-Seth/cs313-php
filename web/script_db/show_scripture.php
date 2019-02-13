@@ -9,14 +9,16 @@
     $addVerse = htmlspecialchars($_POST['verse']);
     $addContent = htmlspecialchars($_POST['content']);
     $addTopic = $_POST['topics'];
- 
-/*   
+    $newTopic = $_POST['newTopic'];
+    $newCheck = $_POST['newCheck'];
+    
     echo "$addBook <br>";
     echo "$addChapter <br>";
     echo "$addVerse <br>";
     echo "$addContent <br>";
-
-
+    echo "$newTopic <br>";
+    echo "$newCheck <br>";
+/*
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
 
@@ -30,8 +32,10 @@
     $statement->execute();
 
 	echo "SQL Scripture update complete. <br>";	
-*/
+    
     $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
+*/
+    
 /*
     if (isset ($_POST['newCheck'])){
             $newTopic = $_POST['newTopic'];
@@ -58,7 +62,7 @@
                 $statement->execute();
 
             }
-*/  
+  
     
     foreach ($addTopic as $row)
         {
@@ -77,7 +81,7 @@
             $statement->execute();
 
         }
-
+*/
 
 ?>
 
