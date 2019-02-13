@@ -37,28 +37,23 @@
 
 	echo "SQL Scripture update complete. <br>";
 */	
-	foreach ($addTopic as $row)
+	
+    $scripturesID = $db -> lastInsertId('scriptures_scriptures_id_seq');
+
+    foreach ($addTopic as $row)
         {
             $topicId = $row['topics_id'];
             $topicName = $row['name'];
         
             $query = 'INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
-				VALUES ( 
-				(SELECT scriptures_id FROM scriptures 
-					WHERE book = :book
-					AND chapter = :chapter
-					AND verse = :verse)
-				, (SELECT topics_id FROM topics
-                    WHERE
-                    topics_id = :topicsId)
+				VALUES ( :scripturesID
+				, :topicsId
 				);';
         
             $statement = $db->prepare($query);
-            
-            $statement->bindValue(':book', $addBook);
-	        $statement->bindValue(':chapter', $addChapter);
-	        $statement->bindValue(':verse', $addVerse);
+
 		    $statement->bindValue(':topicsId', $topicId);
+            $statement->bindValue(':scripturesID',  $scriptureID);
             
             $statement->execute();
        
