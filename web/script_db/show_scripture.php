@@ -19,9 +19,9 @@
     echo "$newTopic <br>";
     echo "$newCheck <br>";
 
-    foreach ($addTopic as row){
+    foreach ($addTopic as $row){
         echo "$row <br>";
-    }
+        }
 /*
     $query = 'INSERT INTO scriptures (book, chapter, verse, content) 
     VALUES (:book, :chapter, :verse, :content)';
