@@ -14,27 +14,48 @@
     echo $addChapter;
     echo $addVerse;
     echo $addContent;
-
-    foreach ($addTopic as $row)
+    
+    $db->query("INSERT INTO scriptures (book, chapter, verse, content) 
+    VALUES ($addBook
+    ,$addChapter
+    ,$addVerse
+    ,$addContent
+    );"
+	
+	foreach ($addTopic as $row)
         {
-            $topic = $row;              
+			$topic = $row; 
+			
+			$db->query("INSERT INTO scriptures_by_topics (scriptures_id, topics_id) 
+				VALUES ( 
+				(SELECT scriptures_id FROM scriptures 
+					WHERE book = '$$addBook'
+					AND chapter = '$addChapter'
+					AND verse = '$addVerse')
+				, 03
+				);
+				")
+                         
             echo $topic;
 
         }
     
     
-/*
-    $db->query("INSERT INTO scriptures VALUES ($addBook
-    ,$addChapter
-    ,$addVerse
-    ,$addContent
-    );"
-    
-    $db->query("INSERT INTO scriptures_by_topics VALUES ($addBook
-    ,$addChapter
-    ,$addTopic
-    ) ;"
 */
+
+INSERT INTO sales.addresses (street, city, state, zip_code) 
+SELECT
+    street,
+    city,
+    state,
+    zip_code
+FROM
+    sales.customers
+ORDER BY
+    first_name,
+    last_name; 
+
+
 
 ?>
 
@@ -61,7 +82,13 @@
                 
                 echo "Our database holds the following scriptures:<br>";
                
-                foreach ($db->query("SELECT scriptures.book, scriptures.chapter, scriptures.verse, topics.name FROM scriptures LEFT JOIN scriptures_by_topics ON scriptures_by_topics.scriptures_id = scriptures.scriptures_id LEFT JOIN  topics ON scriptures_by_topics.topics_id = topics.topics_id;") as $row){
+                foreach ($db->query("SELECT scriptures.book, scriptures.chapter, scriptures.verse, 
+				topics.name 
+				FROM scriptures 
+				LEFT JOIN scriptures_by_topics 
+				ON scriptures_by_topics.scriptures_id = scriptures.scriptures_id 
+				LEFT JOIN  topics 
+				ON scriptures_by_topics.topics_id = topics.topics_id;") as $row){
 
                     $showBook = $row['book'];
                     $showChapter = $row['chapter'];
