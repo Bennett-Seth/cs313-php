@@ -32,7 +32,7 @@
 	echo "SQL Scripture update complete. <br>";	
 */
     $scripturesID = $db->lastInsertId('scriptures_scriptures_id_seq');
-
+/*
     if (isset ($_POST['newCheck'])){
             $newTopic = $_POST['newTopic'];
             echo $newTopic;	 
@@ -58,7 +58,8 @@
                 $statement->execute();
 
             }
-
+*/  
+    
     foreach ($addTopic as $row)
         {
             $topicId = $row;
