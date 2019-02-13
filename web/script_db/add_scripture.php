@@ -43,7 +43,7 @@
                             {
                                 $topic = $row['name'];
                                 
-                                echo "<input type='checkbox' name='topics[]' value='$topic'><br>";
+                                echo "<input type='checkbox' name='topics[]' value='$topic'>$topic<br>";
 
                             }
                 
