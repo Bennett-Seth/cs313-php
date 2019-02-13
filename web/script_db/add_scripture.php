@@ -48,10 +48,10 @@
                                 echo "<input type='checkbox' name='topics[]' value=$topicId>$topicName<br>";
 
                             }
-                   
-                    <input type='checkbox' name='newCheck'> <input name='newTopic' type='text'>  <br>
-                    
+
                         ?>
+                    
+                    <input type='checkbox' name='newCheck'> <input name='newTopic' type='text'>  <br>
                     
                     <input type="submit" value="Submit">    
                 
