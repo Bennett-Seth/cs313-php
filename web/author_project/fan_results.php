@@ -67,19 +67,22 @@
                         
                         echo "<h3>You are involved in the following promotions:<br></h3>";
            
-                        foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
+                        foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
+                            $thisFirstReadId = $row['fans_id'];
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>"; 
                             
-                            echo "<p> We look forward to hearing your feedback!</p><hr>";
+                            $feedback = ($db->querry("SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId';"));
                             
+                            echo "You have provided the following feedback: $feedback";
+       
                             }
 
-    
+/*    
                         foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
                             $thisFanId = $row['fans_id'];
@@ -99,7 +102,7 @@
                             $storyId = $row['stories_id'];
                             $contestReward =  $row['stories_title']; 
                                      
-                            echo "<p>You have won an exclusive copy of: $contestReward. Congratulations!</p>";
+                            echo "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p>";
                             
                             echo "<p>Please stay tuned for additional contests and giveaways!</p><hr>"; 
                                      
@@ -134,7 +137,7 @@
                             echo "$reviewsDet<br>";
       
                             }
-                
+    */            
                 ?>
                 
                 
