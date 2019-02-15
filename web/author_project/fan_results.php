@@ -69,20 +69,25 @@
            
                         foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
-                            $thisFirstReadId = $row['first_readers_id'];
+                            $thisFirstReadId = $row['fans_id'];
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>"; 
+                           
+                            $query = "SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId'";
                             
-                            $feedback = ($db->query("SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId'")); 
-       
+                            $statement = $db->prepare($query);
+                            $statement = execute();
+                            $feedback = $statement->fetchAll();
+                            
+                            
+                            $feedback = $db->querry("SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId'");
+                        
                             echo "<p>You have provided the following feedback: $feedback</p>";
-    
-
        
-                            
+                            }
 
 /*    
                         foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
