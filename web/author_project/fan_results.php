@@ -20,8 +20,6 @@
             echo "$fanFirstName <br>";
 		$fanLastName = $row['last_name'];
             echo "$fanLastName <br>";
-        $fanFullName = $firstName $lastName;
-            echo "$fanFullName <br>";
         }                                       
 
 ?>
@@ -65,7 +63,7 @@
                             }
                      
             
-                        echo "<h2>Welcome $fanFullName!<br></h2>";
+                        echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
                         echo "<h2>You are involved in the following promotions:<br></h2>";
            
                         foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
@@ -74,9 +72,9 @@
                             $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
-                            echo "You are a first reader for $storyTitle. <br>"; 
+                            echo "<p> You are a first reader for $storyTitle. </p><br>"; 
                             
-                            echo "We look forward to hearing your feedback!<br><hr>";
+                            echo "<p> We look forward to hearing your feedback!</p><br><hr>";
                             
                             }
 
