@@ -76,9 +76,9 @@
 
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>"; 
                             
-                            $feedback = ($db->querry("SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId';"));
+                            $feedback = $db->querry("SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId';");
                             
-                            echo "You have provided the following feedback: $feedback";
+                            echo "<p>You have provided the following feedback: $feedback</p>";
        
                             }
 
