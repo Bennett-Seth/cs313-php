@@ -20,7 +20,7 @@
             echo "$fanFirstName <br>";
 		$fanLastName = $row['last_name'];
             echo "$fanLastName <br>";
-        $fanFullName = "$firstName $lastName";
+        $fanFullName = $firstName $lastName;
             echo "$fanFullName <br>";
         }                                       
 
