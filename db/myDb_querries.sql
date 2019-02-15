@@ -33,6 +33,10 @@
            ,'$promosId'
            );
 
+/* CHALLENGE: Select the promos a user is NOT a part of... */
+
+
+
 /* Updates */
 
     /* Fan Info Update */

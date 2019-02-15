@@ -64,7 +64,8 @@
                      
             
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
-                        echo "<h2>You are involved in the following promotions:<br></h2>";
+                        
+                        echo "<h3>You are involved in the following promotions:<br></h3>";
            
                         foreach ($db->query("SELECT first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
@@ -72,9 +73,9 @@
                             $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
-                            echo "<p> You are a first reader for $storyTitle. </p><br>"; 
+                            echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>"; 
                             
-                            echo "<p> We look forward to hearing your feedback!</p><br><hr>";
+                            echo "<p> We look forward to hearing your feedback!</p><hr>";
                             
                             }
 
@@ -85,9 +86,9 @@
                             $storyId = $row['stories_id'];
                             $arcTitle =  $row['stories_title'];   
                                         
-                            echo "You are a ARC reader for $arcTitle <br>";  
+                            echo "<p>You are a ARC reader for:<b> $arcTitle</b></p>";  
                             
-                            echo "Please have your reviews ready to post by the time $arcTitle goes live!<br><hr>";
+                            echo "<p> Please have your reviews ready to post by the time $arcTitle goes live!</p><hr>";
                             
                             }
  
@@ -98,9 +99,9 @@
                             $storyId = $row['stories_id'];
                             $contestReward =  $row['stories_title']; 
                                      
-                            echo "You have won an exclusive copy of $contestReward. Congratulations!<br>";
+                            echo "<p>You have won an exclusive copy of: $contestReward. Congratulations!</p>";
                             
-                            echo "Please stay tuned for additional contests and giveaways!<br><hr>"; 
+                            echo "<p>Please stay tuned for additional contests and giveaways!</p><hr>"; 
                                      
                             }
                 
