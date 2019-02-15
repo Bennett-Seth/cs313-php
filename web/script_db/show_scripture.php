@@ -68,8 +68,6 @@
             
             $newTopic = $_POST['newTopic']; 
             
-            
-        
             $query = 'INSERT INTO topics (name) VALUES (:name)';
 
                 $statement = $db->prepare($query);

@@ -4,10 +4,10 @@
     // Get the database connection file
     require 'connect.php';
     
-    $myFan = htmlspecialchars($_POST['fan']);
+    $myFan = htmlspecialchars($_POST['fanId']);
 
     if (isset($_SESSION['superFan']) == null){
-        $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE first_name = '$myFan';");
+        $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE fans_id = '$myFan';");
 
     } else {
         echo "Superfan session already set.";
@@ -15,9 +15,13 @@
     
     foreach (($_SESSION['superFan']) as $row){
 		$fanId = $row['fans_id'];
+            echo "$fanId <br>";
 		$fanFirstName = $row['first_name'];
+            echo "$fanFirstName <br>";
 		$fanLastName = $row['last_name'];
+            echo "$fanLastName <br>";
         $fanFullName = "$firstName $lastName";
+            echo "$fanFullName <br>";
         }                                       
 
 ?>

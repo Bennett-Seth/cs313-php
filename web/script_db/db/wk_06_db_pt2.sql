@@ -74,18 +74,25 @@ CREATE TABLE scriptures_by_topics
 
 /* Populate scriptures_by_topics TABLE */
 
-INSERT INTO scriptures_by_topics (topics_id  ) 
+INSERT INTO scriptures_by_topics (scriptures_id ,topics_id  ) 
 VALUES (01
+, 01
 );
 
-INSERT INTO scriptures_by_topics (topics_id  ) 
+INSERT INTO scriptures_by_topics (scriptures_id ,topics_id  ) 
 VALUES (02
+, 02
 );
 
-INSERT INTO scriptures_by_topics (topics_id  ) 
+INSERT INTO scriptures_by_topics (scriptures_id ,topics_id  ) 
 VALUES (03
+, 03
 );
 
-INSERT INTO scriptures_by_topics (topics_id  ) 
-VALUES (03
+INSERT INTO scriptures_by_topics (scriptures_id ,topics_id  ) 
+VALUES (04
+, 03
 );
+
+
+

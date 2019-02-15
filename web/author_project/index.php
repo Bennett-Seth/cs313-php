@@ -35,12 +35,14 @@
                 
                 <h2> Which fan are you? </h2>
                     <form action="fan_results.php" method="post">
-                        <select name="fan">
+                        <select name="fanId">
                             <?php 
-                                foreach ($db->query("SELECT first_name FROM fans;") as $row)
+                                foreach ($db->query("SELECT fans_id, first_name, last_name FROM fans;") as $row)
                                     {
-                                        $fan = $row['first_name'];
-                                        echo "<option id=$fan value=$fan> $fan </option><br>";
+                                        $fanId = $row['fans_id'];
+                                        $fanFirst = $row['first_name'];
+                                        $fanLast = $row['last_name'];
+                                        echo "<option id='$fanId' value='$fanId'> $fanFirst $fanLast</option><br>";
                                     }
                             ?>
                         </select>
