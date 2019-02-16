@@ -59,13 +59,14 @@
                 
                 <?php
 
-                    $query = "UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fanId';"
+                    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id'
 
                     $statement = $db->prepare($query);
 
                     $statement->bindValue(':first_name', $newFirst);
                     $statement->bindValue(':last_name', $newLast);
                     $statement->bindValue(':email', $newEmail);
+                    $statement->bindValue(':fans_id', $fanId);
 
                     $statement->execute();
                 
