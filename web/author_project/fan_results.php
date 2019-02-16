@@ -80,13 +80,13 @@
                             $storyTitle = $row['stories_title'];
 
                             echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
-      /*                        
+                            
                             echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
                              
                             $_SESSION['firstReadId'] = $thisFirstReadId;
 
                             }
-                
+   /*               
                 echo "Test: $_SESSION['firstReadId']";
    
     
