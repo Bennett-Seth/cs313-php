@@ -75,7 +75,9 @@
                     <input name="last_name" type="text"><br>
                     <p> Change my email to: </p>
                     <input name="email" type="text"><br>
-                    <input type='hidden' name='fanId' value='$fanId'>
+                <?php
+                   echo "<input type='hidden' name='fanId' value='$fanId'>"
+                ?>    
                     <input type="submit" value="Submit">
                     
                     </form>
