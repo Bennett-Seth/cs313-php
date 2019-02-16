@@ -69,7 +69,7 @@
                 
                         
                         echo "<h3>You are involved in the following promotions:<br></h3>";
-    /*       
+         
                         foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
                             $thisFirstReadId = $row['first_readers_id'];
@@ -80,7 +80,7 @@
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
                             
                             echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
-                            
+      /*                        
                             $_SESSION['firstReadId'] = $thisFirstReadId;
 
                             }
