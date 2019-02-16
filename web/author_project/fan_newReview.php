@@ -10,7 +10,7 @@
         echo "Review Details are: $reviewsDetails<br>";
     $reviewsVendor = htmlspecialchars($_POST['reviews_vendor']);
         echo "Review Vendor is: $reviewsVendor<br>";
-    $newDate = date("m/d/Y");
+    $reviewsDate = date("m/d/Y");
         echo "Today's Date is: $newDate";
 
 ?>
@@ -40,6 +40,8 @@
             
             <main>
                 
+                <h1>Your new review is:</h1>
+                
                 <?php 
                                  
                     $query = 'UPDATE reviews SET reviews_vendor = :reviews_vendor reviews_details = :reviews_details, reviews_date = :reviews_date
@@ -49,7 +51,7 @@
 
                     $statement->bindValue(':reviews_vendor', $reviewsVendor);
                     $statement->bindValue(':reviews_details', $reviewsDetails);
-                    $statement->bindValue(':reviews_date', $newDate);
+                    $statement->bindValue(':reviews_date', $reviewsDate);
                     $statement->bindValue(':reviews_id', $reviewsId);
 
                     $statement->execute();
