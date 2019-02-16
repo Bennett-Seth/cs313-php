@@ -48,6 +48,7 @@
                                 echo "Story Title: $storyTitle";
 
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
+                    }
        /* 
                             foreach ($db->query("SELECT * FROM feedback WHERE first_readers_id = '$thisFirstReadId';") as $row){
                                
