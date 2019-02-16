@@ -59,7 +59,7 @@
                 
                 <?php
 
-                    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fanId';';
+                    $query = "UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fanId';"
 
                     $statement = $db->prepare($query);
 
