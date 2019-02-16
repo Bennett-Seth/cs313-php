@@ -41,7 +41,7 @@
                 <h2>Your new contact information is: </h2>
                
                 <?php
-
+/*
                     $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id'
 
                     $statement = $db->prepare($query);
@@ -54,7 +54,7 @@
                     $statement->execute();
                 
                     echo "update successful";
-/*
+
                     $newContact = db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';');
 
                     foreach ($newContact as row){
