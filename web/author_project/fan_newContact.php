@@ -5,12 +5,13 @@
     require 'connect.php';
 
     $fanId = $_POST['fanId'];
+        echo "$fanId<br>";
     $newFirst = htmlspecialchars($_POST['first_name']);
-        echo $newFirst;
+        echo "$newFirst<br>";
     $newLast = htmlspecialchars($_POST['last_name']);
-        echo $newLast;
+        echo "$newLast<br>";
     $newEmail = htmlspecialchars($_POST['email']);
-        echo $newEmail;
+        echo "$newEmail<br>";
 ?>
 
 <!DOCTYPE HTML>
@@ -57,15 +58,15 @@
                 
                     foreach ($db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = $fanId;') as $row){
 
-                    $newFirst = $row['first_name'];
-                            echo "New First Name: $newFirst <br>";
-                    $newLast = $row['last_name'];
-                            echo "New Last Name: $newLast <br>";
-                    $newEmail = $row['email'];
-                            echo "New Email: $newEmail <br>";
+                        $newFirst = $row['first_name'];
+                                echo "New First Name: $newFirst <br>";
+                        $newLast = $row['last_name'];
+                                echo "New Last Name: $newLast <br>";
+                        $newEmail = $row['email'];
+                                echo "New Email: $newEmail <br>";
 
 
-                    }
+                        }
       
                     
                 ?>
