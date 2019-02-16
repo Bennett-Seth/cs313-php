@@ -11,7 +11,7 @@
     $reviewsVendor = htmlspecialchars($_POST['reviews_vendor']);
         echo "Review Vendor is: $reviewsVendor<br>";
     $reviewsDate = date("m/d/Y");
-        echo "Today's Date is: $newDate";
+        echo "Today's Date is: $reviewsDate";
 
 ?>
 
@@ -44,7 +44,7 @@
                 
                 <?php 
                                  
-                    $query = 'UPDATE reviews SET reviews_vendor = :reviews_vendor reviews_details = :reviews_details, reviews_date = :reviews_date
+                    $query = 'UPDATE reviews SET reviews_vendor = :reviews_vendor, reviews_details = :reviews_details, reviews_date = :reviews_date
                     WHERE reviews_id = :reviews_id';
 
                     $statement = $db->prepare($query);
