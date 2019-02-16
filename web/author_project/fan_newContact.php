@@ -5,6 +5,9 @@
     require 'connect.php';
 
     $myFan = htmlspecialchars($_POST['fanId']);
+    $newFirst = htmlspecialchars($_POST['first_name']);
+    $newLast = htmlspecialchars($_POST['last_name']);
+    $newEmail = htmlspecialchars($_POST['email']);
 
     if (isset($_SESSION['superFan']) == null){
         $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE fans_id = '$myFan';");
@@ -49,37 +52,34 @@
             
             <main>
                 
-                <?php 
+                <h2>Your new contact information is: </h2>
                 
-                foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
+                <?php
 
-                            $firstName = $row['first_name'];
-                                echo $firstName;
-                            $lastName = $row['last_name'];
-                                echo $lastName;
-                            $email = $row['email'];
-                                echo $email;
+                    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fanId';';
 
-                            echo "<p>You are: '$firstName' '$lastName' </p>";
-                            echo "<p>Your email address is: '$email' </p>";
-                    }
-                
-                echo "<p> Do you wish to change your contact info? Do so below.</p>"
-                    
+                    $statement = $db->prepare($query);
+
+                    $statement->bindValue(':first_name', $newFirst);
+                    $statement->bindValue(':last_name', $newLast);
+                    $statement->bindValue(':email', $newEmail);
+
+                    $statement->execute();
+
+                    $newContact = db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';');
+
+                    foreach ($newContact as row){
+                        $newFirst = $row['first_name'];
+                            echo "New First Name: $newFirst <br>";
+                        $newLast = $row['last_name'];
+                            echo "New Last Name: $newLast <br>";
+                        $newEmail = $row['email'];
+                            echo "New Email: $newEmail <br>";
+
+                        }
+        
+                       
                 ?>
-                
-                <form action="fan_newContact.php" method='post'>
-                    <p> Change my first name to: </p>
-                    <input name="first_name" type="text"><br>
-                    <p> Change my last name to: </p>
-                    <input name="last_name" type="text"><br>
-                    <p> Change my email to: </p>
-                    <input name="email" type="text"><br>
-                    <input type='hidden' name='fanId' value='$fanId'>
-                    <input type="submit" value="Submit">
-                    
-                    </form>
-                
                 
             </main>
             
