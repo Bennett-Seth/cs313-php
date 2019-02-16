@@ -54,18 +54,18 @@
                     $statement->execute();
                 
                     echo "update successful";
+                
+                    foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = $fanId;") as $row){
 
-                    $newContact = db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = $fanId');
-
-                    foreach ($newContact as row){
-                        $newFirst = $row['first_name'];
+                    $newFirst = $row['first_name'];
                             echo "New First Name: $newFirst <br>";
-                        $newLast = $row['last_name'];
+                    $newLast = $row['last_name'];
                             echo "New Last Name: $newLast <br>";
-                        $newEmail = $row['email'];
+                    $newEmail = $row['email'];
                             echo "New Email: $newEmail <br>";
 
-                        }
+
+                }
       
                     
                 ?>
