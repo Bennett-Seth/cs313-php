@@ -59,7 +59,6 @@
                         
                             }
                      
-          
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
                 
                         echo "<p>Do you want to view or change your contact information? Do so 

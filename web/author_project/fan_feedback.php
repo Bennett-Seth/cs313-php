@@ -4,11 +4,9 @@
     // Get the database connection file
     require 'connect.php';
   
-    $firstReadId = htmlspecialchars($_POST['firstReadId']);
+    $firstReadId = $_POST['firstReadId'];
 
-    if (isset($newFeedback = htmlspecialchars($_POST['newFeedback']))){
-        
-    }  
+    //if (isset($newFeedback = htmlspecialchars($_POST['newFeedback']))){}  
 
 ?>
 
@@ -38,7 +36,7 @@
             <main>
                 
                 <?php 
-                    
+     /*                
                     foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.first_readers_id = '$firstReadId';") as $row){
 
                             $thisFirstReadId = $row['first_readers_id'];
@@ -51,7 +49,7 @@
                                 echo "Story Title: $storyTitle";
 
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
-        /*
+       
                             foreach ($db->query("SELECT * FROM feedback WHERE first_readers_id = '$thisFirstReadId';") as $row){
                                
                                 $feedbackId = $row['feedback_id'];
