@@ -9,6 +9,9 @@
     $FeedbackId = $_POST['feedback_id'];
         echo "$FeedbackId<br>";
 
+    $newDate = date("m/d/Y");
+        echo "Today's Date is: $newDate";
+
 ?>
 
 <!DOCTYPE HTML>
@@ -39,15 +42,16 @@
                 <h2>Your new contact information is: </h2>
                
                 <?php
-/* WILL NEED TO FEEDBACK SWITCH THE FOLLOWING CODE
-                    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id';
+                
+/* 
+                    $query = 'UPDATE feedback SET feedback_details = :feedback_details, feedback_date = :feedback_date
+                    WHERE feedback_id = :feedback_id;
 
                     $statement = $db->prepare($query);
 
-                    $statement->bindValue(':first_name', $newFirst);
-                    $statement->bindValue(':last_name', $newLast);
-                    $statement->bindValue(':email', $newEmail);
-                    $statement->bindValue(':fans_id', $fanId);
+                    $statement->bindValue(':feedback_details', $newFeedback);
+                    $statement->bindValue(':feedback_date', $newDate);
+                    $statement->bindValue(':feedback_id', $FeedbackId);
 
                     $statement->execute();
                 
