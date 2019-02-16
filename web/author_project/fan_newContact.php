@@ -71,7 +71,7 @@
                     $statement->execute();
                 
                     echo "update successful";
-
+/*
                     $newContact = db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';');
 
                     foreach ($newContact as row){
@@ -83,7 +83,7 @@
                             echo "New Email: $newEmail <br>";
 
                         }
-        
+   */     
                     
                 ?>
                 
