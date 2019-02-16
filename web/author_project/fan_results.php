@@ -82,7 +82,7 @@
 
                             }
                  
-  /*
+  
                             foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
                             $thisArdReadId = $row['arc_readers_id'];
@@ -99,11 +99,8 @@
                             
                             echo "<p>Do you want to update your mailing address? Do so <a href='fan_address.php'>Here</a> </p>"; 
                             
-                            $_SESSION['arcReadId'] = $thisArdReadId
-                            
                             }
-  
-                echo "Test: $_SESSION['arcReadId']";   
+  /*  
                 
                         foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
                                  
