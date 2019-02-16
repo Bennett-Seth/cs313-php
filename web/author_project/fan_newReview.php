@@ -5,12 +5,11 @@
     require 'connect.php';
     
     $reviewsId = $_POST['reviews_id'];
-        echo "Review Id is: $reviewsId";
+        echo "Review Id is: $reviewsId<br>";
     $reviewsDetails = htmlspecialchars($_POST['reviews_details']);
-        echo "Review Details are: $reviewsDetails";
+        echo "Review Details are: $reviewsDetails<br>";
     $reviewsVendor = htmlspecialchars($_POST['reviews_vendor']);
-        echo "Review Vendor is: $reviewsVendor";
-
+        echo "Review Vendor is: $reviewsVendor<br>";
     $newDate = date("m/d/Y");
         echo "Today's Date is: $newDate";
 
