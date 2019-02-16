@@ -50,20 +50,18 @@
             <main>
                 
                 <?php 
-                    
-                echo "Test: $fanId"; 
                 
                 foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
 
                             $firstName = $row['first_name'];
-                                echo "$firstName ";
+                                echo $firstName;
                             $lastName = $row['last_name'];
-                                echo "$lastName ";
+                                echo $lastName;
                             $email = $row['email'];
-                                echo "$email ";
+                                echo $email;
 
-                            echo "<p>You are: $firstName $lastName </p>";
-                            echo "<p>Your email address is: $email </p>";
+                            echo "<p>You are: '$firstName' '$lastName' </p>";
+                            echo "<p>Your email address is: '$email' </p>";
                 
                 ?>
                 
