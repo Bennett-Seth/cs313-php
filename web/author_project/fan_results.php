@@ -79,12 +79,9 @@
                             echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
                             
                             echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
-                             
-                            $_SESSION['firstReadId'] = $thisFirstReadId;
 
                             }
                  
-                echo "Test: $_SESSION['firstReadId']";
   /*
                             foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
