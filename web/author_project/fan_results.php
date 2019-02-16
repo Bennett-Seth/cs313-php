@@ -62,7 +62,7 @@
                         
                             }
                      
-  /*          
+          
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
                 
                         echo "<p>Do you want to view or change your contact information? Do so <a href='fan_contact.php'>Here</a> </p>"; 
@@ -87,7 +87,9 @@
                 
                 echo "Test: $_SESSION['firstReadId']";
    
-                        foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
+   /* 
+   
+                            foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
                             $thisArdReadId = $row['arc_readers_id'];
                             $thisFanId = $row['fans_id'];
