@@ -3,24 +3,11 @@
     
     // Get the database connection file
     require 'connect.php';
-
-    echo "Test: $_SESSION['firstReadId']";
   
+    $firstReadId = htmlspecialchars($_POST['firstReadId']);
+
     if (isset($newFeedback = htmlspecialchars($_POST['newFeedback']))){
         
-        /* TEST CODE:
-        
-        echo "Test: $_SESSION['firstReadId']";
-        
-        SELECT first_readers.first_readers_id, first_readers.fans_id, 
-feedback.stories_id, feedback.feedback_details
-FROM first_readers 
-RIGHT JOIN feedback
-ON first_readers.stories_id = feedback.stories_id 
-WHERE first_readers.fans_id = '$_SESSION['firstReadId']';
-
-*/
-    
     }  
 
 ?>
@@ -52,15 +39,19 @@ WHERE first_readers.fans_id = '$_SESSION['firstReadId']';
                 
                 <?php 
                     
-                    foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
+                    foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.first_readers_id = '$firstReadId';") as $row){
 
                             $thisFirstReadId = $row['first_readers_id'];
+                                echo "Reader Id: $thisFirstReadId";
                             $thisFanId = $row['fans_id'];
+                                echo "Fan Id: $thisFanId";
                             $storyId = $row['stories_id'];
-                            $storyTitle = $row['stories_title'];   
+                                echo "Story Id: $storyId";
+                            $storyTitle = $row['stories_title'];
+                                echo "Story Title: $storyTitle";
 
                             echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
-                        
+        /*
                             foreach ($db->query("SELECT * FROM feedback WHERE first_readers_id = '$thisFirstReadId';") as $row){
                                
                                 $feedbackId = $row['feedback_id'];
@@ -81,7 +72,7 @@ WHERE first_readers.fans_id = '$_SESSION['firstReadId']';
                         }
                         
                         
-                
+        */        
                 ?>
                 
                 

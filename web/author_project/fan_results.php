@@ -79,7 +79,11 @@
 
                             echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
                             
-                            echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
+                            echo "<p>Do you want to view or change your feedback? Do so 
+                            <form action='fan_contact.php' method='post'>
+                            <input type='hidden' name='firstReadId' value='$thisFirstReadId'>
+                            <input type='submit' value='Here'>
+                            </form></p>"; 
 
                             }
   
