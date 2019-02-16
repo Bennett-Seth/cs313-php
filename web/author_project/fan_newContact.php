@@ -55,7 +55,7 @@
                 
                     echo "update successful";
 
-                    $newContact = db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId'");
+                    $newContact = db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = $fanId');
 
                     foreach ($newContact as row){
                         $newFirst = $row['first_name'];
