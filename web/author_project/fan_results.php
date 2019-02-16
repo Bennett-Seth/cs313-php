@@ -85,17 +85,18 @@
                             }
                  
                 echo "Test: $_SESSION['firstReadId']";
-  
+  /*
                             foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
                             $thisArdReadId = $row['arc_readers_id'];
+                                echo "$thisArdReadId <br>";
                             $thisFanId = $row['fans_id'];
+                                echo "$thisFanId <br>";
                             $storyId = $row['stories_id'];
+                                echo "$storyId <br>";
                             $arcTitle =  $row['stories_title'];   
                                         
                             echo "<p>You are a ARC reader for:<b> $arcTitle</b></p>";  
-                            
-                            echo "<p> Please have your reviews ready to post by the time $arcTitle goes live!</p><hr>";
                             
                             echo "<p>Do you want to change your review: Do so <a href='fan_review.php'>Here</a> </p>"; 
                             
@@ -104,7 +105,7 @@
                             $_SESSION['arcReadId'] = $thisArdReadId
                             
                             }
-  /*
+  
                 echo "Test: $_SESSION['arcReadId']";   
                 
                         foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
