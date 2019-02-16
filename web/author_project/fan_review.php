@@ -35,7 +35,7 @@
             <main>
                 
                 <?php 
-                    
+   /*                 
                     foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.arc_readers_id = '$arcReadId';") as $row){
                                      
                         $thisArcReadId = $row['arc_readers_id'];
@@ -63,7 +63,7 @@
                             <input type='submit' value='Submit'>
                             </form>";
                         }
-                        
+   */                     
                 ?>
                 
                 
