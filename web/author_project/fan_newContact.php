@@ -4,7 +4,7 @@
     // Get the database connection file
     require 'connect.php';
 
-    $myFan = htmlspecialchars($_POST['fanId']);
+    $fanId = htmlspecialchars($_POST['fanId']);
     $newFirst = htmlspecialchars($_POST['first_name']);
         echo $newFirst;
     $newLast = htmlspecialchars($_POST['last_name']);
