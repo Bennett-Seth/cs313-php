@@ -3,6 +3,15 @@
     
     // Get the database connection file
     require 'connect.php';
+
+    foreach (($_SESSION['superFan']) as $row){
+		$fanId = $row['fans_id'];
+            echo "$fanId <br>";
+		$fanFirstName = $row['first_name'];
+            echo "$fanFirstName <br>";
+		$fanLastName = $row['last_name'];
+            echo "$fanLastName <br>";
+        }
     
 ?>
 
