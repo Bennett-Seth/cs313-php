@@ -6,8 +6,11 @@
 
     $myFan = htmlspecialchars($_POST['fanId']);
     $newFirst = htmlspecialchars($_POST['first_name']);
+        echo $newFirst;
     $newLast = htmlspecialchars($_POST['last_name']);
+        echo $newLast;
     $newEmail = htmlspecialchars($_POST['email']);
+        echo $newEmail;
 
     if (isset($_SESSION['superFan']) == null){
         $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE fans_id = '$myFan';");
@@ -55,7 +58,7 @@
                 <h2>Your new contact information is: </h2>
                 
                 <?php
-
+/*
                     $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fanId';';
 
                     $statement = $db->prepare($query);
@@ -78,7 +81,7 @@
 
                         }
         
-                       
+   */                    
                 ?>
                 
             </main>
