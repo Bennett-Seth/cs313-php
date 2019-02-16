@@ -62,7 +62,7 @@
 
                             echo "<p>You are: '$firstName' '$lastName' </p>";
                             echo "<p>Your email address is: '$email' </p>";
-                
+                }
                 ?>
                 
                 
