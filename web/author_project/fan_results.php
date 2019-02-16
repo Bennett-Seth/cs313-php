@@ -64,34 +64,32 @@
                      
             
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
+                
+                        echo "<p>Do you want to view or change your contact information? Do so <a href='fan_contact.php'>Here</a> </p>"; 
+                
                         
                         echo "<h3>You are involved in the following promotions:<br></h3>";
            
                         foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fanId';") as $row){
 
-                            $thisFirstReadId = $row['fans_id'];
+                            $thisFirstReadId = $row['first_readers_id'];
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
                             $storyTitle = $row['stories_title'];   
 
-                            echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>"; 
-                           
-                            $query = "SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId'";
+                            echo "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
                             
-                            $statement = $db->prepare($query);
-                            $statement = execute();
-                            $feedback = $statement->fetchAll();
+                            echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
                             
-                            
-                            $feedback = $db->querry("SELECT feedback_details FROM feedback WHERE first_readers_id = '$thisFirstReadId'");
-                        
-                            echo "<p>You have provided the following feedback: $feedback</p>";
-       
-                            }
+                            $_SESSION['firstReadId'] = $thisFirstReadId;
 
-/*    
-                        foreach ($db->query("SELECT arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
+                            }
+                
+                echo "Test: $_SESSION['firstReadId']";
+   
+                        foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
+                            $thisArdReadId = $row['arc_readers_id'];
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
                             $arcTitle =  $row['stories_title'];   
@@ -100,9 +98,16 @@
                             
                             echo "<p> Please have your reviews ready to post by the time $arcTitle goes live!</p><hr>";
                             
+                            echo "<p>Do you want to change your review: Do so <a href='fan_review.php'>Here</a> </p>"; 
+                            
+                            echo "<p>Do you want to update your mailing address? Do so <a href='fan_address.php'>Here</a> </p>"; 
+                            
+                            $_SESSION['arcReadId'] = $thisArdReadId
+                            
                             }
  
-                                 
+                echo "Test: $_SESSION['arcReadId']";   
+                
                         foreach ($db->query("SELECT contest_winner.fans_id, stories.stories_id, stories.stories_title FROM contest_winner RIGHT JOIN stories ON contest_winner.stories_id = stories.stories_id WHERE contest_winner.fans_id = '$fanId';") as $row){
                                  
                             $thisFanId = $row['fans_id'];
@@ -124,27 +129,7 @@
                             echo "$promoTitle<br>";
                             
                             }
-                            
-                        echo "<h2>Here's the feedback on our current projects:<br></h2>";
-                            
-                        foreach ($db->query("SELECT feedback_details FROM feedback;") as $row){
-                                 
-                            $feedbackDet = $row['feedback_details'];
                                      
-                            echo "$feedbackDet<br>";
-                        
-                            }
-                            
-                        echo "<h2>Here's the feedback on our current projects:<br></h2>";
-                            
-                        foreach ($db->query("SELECT reviews_details FROM reviews;") as $row){
-                                 
-                            $reviewsDet = $row['reviews_details'];
-                                     
-                            echo "$reviewsDet<br>";
-      
-                            }
-    */            
                 ?>
                 
                 
