@@ -5,9 +5,7 @@
     require 'connect.php';
   
     $firstReadId = $_POST['firstReadId'];
-        echo "This is the Reader Id: $firstReadId ";
-
-    
+        echo "This is the Reader Id: $firstReadId ";   
 
 ?>
 

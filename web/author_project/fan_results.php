@@ -88,14 +88,18 @@
   
                             foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fanId';") as $row){
                                      
-                            $thisArdReadId = $row['arc_readers_id'];
+                            $thisArcReadId = $row['arc_readers_id'];
                             $thisFanId = $row['fans_id'];
                             $storyId = $row['stories_id'];
                             $arcTitle =  $row['stories_title'];   
                                         
                             echo "<p>You are a ARC reader for:<b> $arcTitle</b></p>";  
                             
-                            echo "<p>Do you want to change your review: Do so <a href='fan_review.php'>Here</a> </p>"; 
+                            echo "<p>Do you want to change your review? Do so 
+                            <form action='fan_review.php' method='post'>
+                            <input type='hidden' name='arcReadId' value='$thisArcReadId'>
+                            <input type='submit' value='Here'>
+                            </form></p>"; 
                             
                             echo "<p>Do you want to update your mailing address? Do so <a href='fan_address.php'>Here</a> </p>"; 
                             

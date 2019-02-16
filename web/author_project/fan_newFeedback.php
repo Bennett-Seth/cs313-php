@@ -4,10 +4,12 @@
     // Get the database connection file
     require 'connect.php';
 
-    $newFeedback = htmlspecialchars($_POST['newFeedback']);
-        echo "New Feedback: $newFeedback<br>";
-    $feedbackId = $_POST['feedback_id'];
-        echo "$FeedbackId<br>";
+    $newReview = htmlspecialchars($_POST['newReview']);
+        echo "New Review: $newReview<br>";
+    $newVendor = htmlspecialchars($_POST['reviews_vendor']);
+        echo "New Vendor: $newVendor<br>";
+    $reviewId = htmlspecialchars($_POST['reviews_id']);
+        echo "Review Id: $reviewId<br>";
 
     $newDate = date("m/d/Y");
         echo "Today's Date is: $newDate";
@@ -42,7 +44,7 @@
                 <h2>Your new contact information is: </h2>
                
                 <?php
-                
+ /*               
                     $query = 'UPDATE feedback SET feedback_details = :feedback_details, feedback_date = :feedback_date
                     WHERE feedback_id = :feedback_id';
 
@@ -62,7 +64,7 @@
                                 echo "New Feedback: $printFeedback<br>";
                     
                         }
-                         
+*/                         
                 ?>
                 
             </main>
