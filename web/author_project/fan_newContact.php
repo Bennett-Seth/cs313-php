@@ -56,7 +56,7 @@
                 
                     echo "update successful";
                 
-                    foreach ($db->query('SELECT first_name, last_name, email FROM fans WHERE fans_id = $fanId;') as $row){
+                    foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
 
                         $newFirst = $row['first_name'];
                                 echo "New First Name: $newFirst <br>";
