@@ -78,7 +78,7 @@
 
                             echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
                             
-                            echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
+                            echo "<p>Do you want to view or change your feedback: Do so <a name='fanId' id='$fanId ' value=$fanId href='fan_feedback.php'>Here</a> </p>"; 
 
                             }
   
