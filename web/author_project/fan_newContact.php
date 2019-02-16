@@ -54,7 +54,7 @@
 
                     $statement->execute();
                 
-                    echo "update successful";
+                    echo "update successful<br>";
                 
                     foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
 

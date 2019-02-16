@@ -64,7 +64,7 @@
                 
                         echo "<p>Do you want to view or change your contact information? Do so 
                         <form action='fan_contact.php' method='post'>
-                        <input type='text' name='fanId' value='$fanId'>
+                        <input type='hidden' name='fanId' value='$fanId'>
                         <input type='submit' value='Here'>
                         </form></p>"; 
                         
