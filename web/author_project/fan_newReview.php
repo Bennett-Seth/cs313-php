@@ -4,9 +4,12 @@
     // Get the database connection file
     require 'connect.php';
     
-      
-    $arcReadId = $_POST['arcReadId'];
-        echo "This is the Arc Reader Id: $arcReadId ";   
+    $reviewsId = $_POST['reviews_id'];
+    $reviewsDetails = htmlspecialchars($_POST['reviews_details']);
+    $reviewsVendor = htmlspecialchars($_POST['reviews_vendor']);
+
+    $newDate = date("m/d/Y");
+        echo "Today's Date is: $newDate";
 
 ?>
 

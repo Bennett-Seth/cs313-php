@@ -45,7 +45,7 @@
                                         
                         echo "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
                     }
-      /*          
+                
                     foreach ($db->query("SELECT reviews_id, reviews_vendor, reviews_details FROM reviews WHERE arc_readers_id = '$arcReadId';") as $row){
                                
                             $reviewsId = $row['reviews_id'];
@@ -58,13 +58,13 @@
                             echo "Would you like to amend your review? Insert your new review below:";
                         
                             echo "<form action='fan_newReview.php' method='post'>
-                            <textarea name='newReview' rows='20' cols='50'></textarea><br>
+                            <textarea name='reviews_details' rows='20' cols='50'></textarea><br>
                             <input type='text' name='reviews_vendor' value='$reviewsVendor'>
                             <input type='hidden' name='reviews_id' value='$reviewsId'>
                             <input type='submit' value='Submit'>
                             </form>";
                         }
-   */                     
+                       
                 ?>
                 
                 
