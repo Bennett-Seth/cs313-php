@@ -11,23 +11,6 @@
         echo $newLast;
     $newEmail = htmlspecialchars($_POST['email']);
         echo $newEmail;
-
-    if (isset($_SESSION['superFan']) == null){
-        $_SESSION['superFan'] = $db->query("SELECT fans_id, first_name, last_name FROM fans WHERE fans_id = '$myFan';");
-
-        } else {
-            echo "Superfan session already set.";
-        }
-
-    foreach (($_SESSION['superFan']) as $row){
-		$fanId = $row['fans_id'];
-            echo "$fanId <br>";
-		$fanFirstName = $row['first_name'];
-            echo "$fanFirstName <br>";
-		$fanLastName = $row['last_name'];
-            echo "$fanLastName <br>";
-        }
-
 ?>
 
 <!DOCTYPE HTML>
