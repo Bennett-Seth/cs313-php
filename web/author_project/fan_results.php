@@ -65,7 +65,11 @@
           
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
                 
-                        echo "<p>Do you want to view or change your contact information? Do so <a href='fan_contact.php' name='fanId' id='$fanId' value='$fanId'> Here</a> </p>"; 
+                        echo "<p>Do you want to view or change your contact information? Do so 
+                        <form action='fan_contact.php' method='post'>
+                        <input type='text' name='fanId' value='$fanId'>
+                        <input type='submit' value='Here'>
+                        </form></p>"; 
                         
                         echo "<h3>You are involved in the following promotions:<br></h3>";
          
