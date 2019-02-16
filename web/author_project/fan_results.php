@@ -62,7 +62,7 @@
                         
                             }
                      
-            
+  /*          
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
                 
                         echo "<p>Do you want to view or change your contact information? Do so <a href='fan_contact.php'>Here</a> </p>"; 
@@ -129,7 +129,7 @@
                             echo "$promoTitle<br>";
                             
                             }
-                                     
+  */                                   
                 ?>
                 
                 
