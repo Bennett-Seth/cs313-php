@@ -35,7 +35,7 @@
             <main>
                 
                 <?php 
-   /*                 
+                    
                     foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.arc_readers_id = '$arcReadId';") as $row){
                                      
                         $thisArcReadId = $row['arc_readers_id'];
@@ -44,7 +44,7 @@
                         $arcTitle =  $row['stories_title'];   
                                         
                         echo "<p>You are a ARC reader for:<b> $arcTitle</b></p>";    
-                
+      /*          
                     foreach ($db->query("SELECT reviews_id, reviews_vendor, reviews_details FROM reviews WHERE arc_readers_id = '$arcReadId';") as $row){
                                
                             $reviewsId = $row['reviews_id'];
