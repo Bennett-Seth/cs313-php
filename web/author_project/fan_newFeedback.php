@@ -4,13 +4,10 @@
     // Get the database connection file
     require 'connect.php';
 
-    $newReview = htmlspecialchars($_POST['newReview']);
-        echo "New Review: $newReview<br>";
-    $newVendor = htmlspecialchars($_POST['reviews_vendor']);
-        echo "New Vendor: $newVendor<br>";
-    $reviewId = htmlspecialchars($_POST['reviews_id']);
-        echo "Review Id: $reviewId<br>";
-
+    $newFeedback = htmlspecialchars($_POST['newFeedback']);
+        echo "New Feedback: $newFeedback<br>";
+    $feedbackId = htmlspecialchars($_POST['feedback_id']);
+        echo "Feedback Id: $feedbackId<br>";
     $newDate = date("m/d/Y");
         echo "Today's Date is: $newDate";
 
