@@ -41,8 +41,8 @@
                 <h2>Your new contact information is: </h2>
                
                 <?php
-/*
-                    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id'
+
+                    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id';
 
                     $statement = $db->prepare($query);
 
@@ -66,7 +66,7 @@
                             echo "New Email: $newEmail <br>";
 
                         }
-   */     
+        
                     
                 ?>
                 
