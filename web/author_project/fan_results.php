@@ -65,7 +65,7 @@
           
                         echo "<h2>Welcome $fanFirstName $fanLastName!<br></h2>";
                 
-                        echo "<p>Do you want to view or change your contact information? Do so <a href='fan_contact.php'>Here</a> </p>"; 
+                        echo "<p>Do you want to view or change your contact information? Do so <a href='fan_contact.php' name='fanId' id='$fanId' value='$fanId'> Here</a> </p>"; 
                         
                         echo "<h3>You are involved in the following promotions:<br></h3>";
          
@@ -78,7 +78,7 @@
 
                             echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
                             
-                            echo "<p>Do you want to view or change your feedback: Do so <a name='fanId' id='$fanId ' value=$fanId href='fan_feedback.php'>Here</a> </p>"; 
+                            echo "<p>Do you want to view or change your feedback: Do so <a href='fan_feedback.php'>Here</a> </p>"; 
 
                             }
   
