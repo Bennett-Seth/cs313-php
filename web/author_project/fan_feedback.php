@@ -64,7 +64,7 @@
                                 
                             echo "Would you like to amend your feedback? Insert your new comments below:";
                         
-                            echo "<form action='fan_NewFeedback.php' method='post'>
+                            echo "<form action='fan_newFeedback.php' method='post'>
                             <textarea name='newFeedback' rows='20' cols='50'></textarea><br>
                             <input type='hidden' name='feedback_id' value='$feedbackId'>
                             <input type='submit' value='Submit'>
