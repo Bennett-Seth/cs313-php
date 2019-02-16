@@ -7,8 +7,6 @@
     $firstReadId = $_POST['firstReadId'];
         echo "This is the Reader Id: $firstReadId ";
 
-    //if (isset($newFeedback = htmlspecialchars($_POST['newFeedback']))){}  
-
 ?>
 
 <!DOCTYPE HTML>
