@@ -44,7 +44,7 @@
                 <h2>Your new contact information is: </h2>
                
                 <?php
- /*               
+                
                     $query = 'UPDATE feedback SET feedback_details = :feedback_details, feedback_date = :feedback_date
                     WHERE feedback_id = :feedback_id';
 
@@ -63,8 +63,7 @@
                         $printFeedback = $row['feedback_details'];
                                 echo "New Feedback: $printFeedback<br>";
                     
-                        }
-*/                         
+                        }                         
                 ?>
                 
             </main>

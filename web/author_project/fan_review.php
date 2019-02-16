@@ -52,8 +52,8 @@
                             $reviewsVendor = $row['reviews_vendor'];
                             $reviewsDetails = $row['reviews_details'];
 
-                            echo "<p> You provided the following review:<br> $reviewsDetails <br> 
-                            For the following vendor: $reviewsVendor<br></p>";
+                            echo "<p> You provided the following review: $reviewsDetails</p> 
+                            <p>For the following vendor: $reviewsVendor<br></p>";
                                 
                             echo "Would you like to amend your review? Insert your new review below:";
                         
