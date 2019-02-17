@@ -21,7 +21,7 @@
             
             <header>
            
-                <h1> First Reader Resources </h1>    
+                <h1> Arc Reader Address </h1>    
     
             </header>
             
@@ -36,7 +36,7 @@
                 <?php 
                     
                     foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country 
-                    FROM arc_address 
+                    FROM arc_addresses 
                     WHERE arc_readers_id = '$arcReadId';") as $row){
                                      
                         $street = $row['arc_address_street'];
