@@ -53,23 +53,27 @@
                     arc_address_city = :arc_address_city, 
                     arc_address_state = :arc_address_state, 
                     arc_address_zip = :arc_address_zip,
-                    arc_address_country = :arc_address_country, 
+                    arc_address_country = :arc_address_country 
                     WHERE arc_readers_id = :arc_readers_id';
 
                     $statement = $db->prepare($query);
 
                     $statement->bindValue(':arc_address_street', $arcStreet);
                     $statement->bindValue(':arc_address_city', $arcCity);
-                    $statement->bindValue('arc_address_state', $arcState);
-                    $statement->bindValue('arc_address_zip', $arcZip);
-                    $statement->bindValue('arc_address_country', $arcCountry);
-                    $statement->bindValue('arc_addresses_id', $arcId);
+                    $statement->bindValue(':arc_address_state', $arcState);
+                    $statement->bindValue(':arc_address_zip', $arcZip);
+                    $statement->bindValue(':arc_address_country', $arcCountry);
+                    $statement->bindValue(':arc_readers_id', $arcId);
 
                     $statement->execute();
                 
                     echo "update successful<br>";
                 
-                    foreach ($db->query("SELECT arc_address_street, FROM reviews WHERE reviews_id = '$reviewsId';") as $row){
+                    foreach ($db->query("SELECT arc_address_street, 
+                    arc_address_city, arc_address_state, arc_address_zip,
+                    arc_address_country
+                    FROM arc_addresses 
+                    WHERE arc_addresses_id = '$arcId';") as $row){
 
                         $newStreet = $row['arc_address_street'];
                             echo "New Street: $newStreet <br>";
