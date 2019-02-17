@@ -4,22 +4,8 @@
     // Get the database connection file
     require 'connect.php';
 
-    if (isset($_SESSION['superFan']) == null){
-        $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE fans_id = '$myFan';");
-
-    } else {
-        echo "Superfan session already set.";
-    }
-    
-    foreach (($_SESSION['superFan']) as $row){
-		$fanId = $row['fans_id'];
-            echo "$fanId <br>";
-		$fanFirstName = $row['first_name'];
-            echo "$fanFirstName <br>";
-		$fanLastName = $row['last_name'];
-            echo "$fanLastName <br>";
-        } 
-
+    $arcReadId = $_POST['arcReadId'];
+        echo "My Arc Reader Id Is: $arcReadId";  
 ?>
 
 <!DOCTYPE HTML>
@@ -49,10 +35,36 @@
                 
                 <?php 
                     
-                   
+                    foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country 
+                    FROM arc_address 
+                    WHERE arc_readers_id = '$arcReadId';") as $row){
+                                     
+                        $street = $row['arc_address_street'];
+                        $city = $row['arc_address_city'];
+                        $state = $row['arc_address_state'];
+                        $zip = $row['arc_address_zip'];
+                        $country = $row['arc_address_country'];
+                            
+                        echo "<p>Your address is:<br></p>";
+                        echo "Street: $street<br>";
+                        echo "City: $city<br>";
+                        echo "State: $state<br>";
+                        echo "Zip: $zip<br>";
+                        echo "Country: $country<br>";
                         
-                
+                    echo "Update your address below:<br>";
+                    echo "<form action='fan_newAddress.php' method='post'>
+                        <input type='text' name='street'>
+                        <input type='text' name='city'>
+                        <input type='text' name='state'>
+                        <input type='text' name='zip'>
+                        <input type='text' name='country'>
+                        <input type='hidden' name='arc_readers_id' value='$arcReadId'>
+                        <input type='submit' value='Submit'>
+                        </form>";
+                    }
                 ?>
+                
                 
                 
             </main>
