@@ -101,7 +101,10 @@
                             <input type='submit' value='Here'>
                             </form></p>"; 
                             
-                            echo "<p>Do you want to update your mailing address? Do so <a href='fan_address.php'>Here</a> </p>"; 
+                            echo "<p>Do you want to update your mailing address? Do so <form action='fan_address.php' method='post'>
+                            <input type='hidden' name='arcReadId' value='$thisArcReadId'>
+                            <input type='submit' value='Here'>
+                            </form></p>";
                             
                             }
   
