@@ -54,10 +54,15 @@
                         
                     echo "Update your address below:<br>";
                     echo "<form action='fan_newAddress.php' method='post'>
+                        <p>Street: </p>
                         <input type='text' name='street'>
+                        <p>City: </p>
                         <input type='text' name='city'>
+                        <p>State: </p>
                         <input type='text' name='state'>
+                        <p>Zipcode: </p>
                         <input type='text' name='zip'>
+                        <p>Country: </p>
                         <input type='text' name='country'>
                         <input type='hidden' name='arc_readers_id' value='$arcReadId'>
                         <input type='submit' value='Submit'>

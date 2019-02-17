@@ -47,7 +47,7 @@
                 <h1>Your new review is:</h1>
                 
                 <?php 
-  /*                               
+                              
                     $query = 'UPDATE arc_addresses 
                     SET arc_address_street = :arc_address_street, 
                     arc_address_city = :arc_address_city, 
@@ -87,7 +87,7 @@
                             echo "New Country: $newCountry <br>";
                     
                         }  
-  */                             
+                          
                 ?>
                 
                 
