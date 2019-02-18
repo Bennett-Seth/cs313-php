@@ -121,10 +121,10 @@ switch ($action){
         exit;
         
     break;
-*/    
+    
     default:
          
         include 'sign_up.php';        
 
-        
+*/       
 }
