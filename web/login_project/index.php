@@ -16,6 +16,7 @@
             setcookie('username', '', time() - 3600, '/'); // empty value and old timestamp
         }
 */
+
 switch ($action){
     case 'home':
         include 'sign_up.php';    
@@ -126,5 +127,3 @@ switch ($action){
 */
         
 }
-
-?>
