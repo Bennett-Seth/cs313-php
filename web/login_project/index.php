@@ -31,10 +31,7 @@ switch ($action){
         // Filter and store the data
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        
-        echo $username;
-        echo $password;
- /*       
+       
         // Make sure this username isn't already included in the Database
         $username = checkUsername($username);
             if ($username){
@@ -42,7 +39,8 @@ switch ($action){
                 include 'sign_in.php';
                 exit;   
                 }
-        
+  
+    /*       
         // Double check the validation of the email input
         $username = valUsername($username);
             
