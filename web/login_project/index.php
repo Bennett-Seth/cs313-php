@@ -6,7 +6,13 @@
     // Get php functions file
     require 'functions.php';
     
-    $action = 'home';
+    $action = filter_input(INPUT_POST, 'action');
+        if ($action == NULL){
+         $action = filter_input(INPUT_GET, 'action');
+         if ($action == NULL) {
+             $action = 'home';
+            }
+        }
 
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){

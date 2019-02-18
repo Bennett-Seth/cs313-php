@@ -32,7 +32,7 @@
             <main>
                 
                 <h2> Sign-Up Below for experimental gama radiation treatments. </h2>
-                <h2> Become an Avenger (or a pile of ooze) today!. </h2>
+                <h2> Become an Avenger (or a pile of ooze) today! </h2>
                 
                 <form action='index.php' method='post'>
                     <p>Chose your username:</p>
