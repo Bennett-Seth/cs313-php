@@ -19,7 +19,7 @@ function checkPassword($password){
 function signUpUser($username, $hashedPassword){
 // The SQL statement
     
-    $result = $db->query("INSERT INTO users (username, password) VALUES (:username, :password)");  
+    $result = $db->query("INSERT INTO users (username, password) VALUES ($username, $hashedPassword)");  
 
     /*
     $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
