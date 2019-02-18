@@ -6,9 +6,8 @@
     // Get php functions file
     require 'functions.php';
     
-    if ($action == NULL){
-        $action = 'home';
-        }
+    $action = 'home';
+
 /*
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
