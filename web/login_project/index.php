@@ -27,7 +27,7 @@ switch ($action){
         include 'sign_up.php';    
     
     break;
-        
+ /*       
     case 'sign_up':
         // Filter and store the data
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -131,5 +131,5 @@ switch ($action){
         include 'sign_in.php';        
 
 }
-
+*/
 ?>
