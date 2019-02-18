@@ -46,6 +46,9 @@ switch ($action){
        
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+         
+        echo $username;
+        echo $hashedPassword;
         
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword);
