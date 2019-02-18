@@ -32,6 +32,9 @@ switch ($action){
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         
+        echo $username;
+        echo $password;
+ /*       
         // Make sure this username isn't already included in the Database
         $username = checkUsername($username);
             if ($username){
@@ -70,7 +73,7 @@ switch ($action){
                 include 'sign_up.php';
                 exit;
             }
-        
+*/    
     break;
 /*
     case 'sign_in':
