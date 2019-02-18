@@ -5,16 +5,11 @@
     require 'connect.php';
     // Get php functions file
     require 'functions.php';
- /* 
-    //filter $action variable for switch cases below.
-    $action = filter_input(INPUT_POST, 'action');
-        if ($action == NULL){
-         $action = filter_input(INPUT_GET, 'action');
-         if ($action == NULL) {
-             $action = 'home';
-            }
+    
+    if ($action == NULL){
+        $action = 'home';
         }
-*/
+
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
             $cookieUsername = filter_input(INPUT_COOKIE, 'username', FILTER_SANITIZE_STRING);
