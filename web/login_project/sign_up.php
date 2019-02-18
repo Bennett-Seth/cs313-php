@@ -43,14 +43,7 @@
                     <input type="hidden" name="action" value="sign_up">
                     <input type='submit' value='Submit'>
                 </form>
-                
-                <?php 
-                                 
-                    
-                               
-                ?>
-                
-                
+                       
             </main>
             
             <footer>
