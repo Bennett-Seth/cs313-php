@@ -120,10 +120,10 @@ switch ($action){
         exit;
         
     break;
-    
+*/    
     default:
          
-        include 'sign_in.php';        
-*/
+        include 'sign_up.php';        
+
         
 }
