@@ -54,7 +54,7 @@ switch ($action){
         $signUpOutcome = signUpUser($username, $hashedPassword);
         
         echo "We've made it this far...";
-/*        
+        
         // Check and report the result
         if($signUpOutcome === 1){
             // Check and report the result
@@ -67,7 +67,7 @@ switch ($action){
                 include 'sign_up.php';
                 exit;
             }
-    */
+        
     break;
 /*
     case 'sign_in':
