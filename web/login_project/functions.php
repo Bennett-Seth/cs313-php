@@ -18,21 +18,16 @@ function checkPassword($password){
 
 function signUpUser($username, $hashedPassword){
 // The SQL statement
-
-$query = 'INSERT INTO users (username, password) VALUES (:username, :password)';
-echo "Query: $query";
+$query = "INSERT INTO users (username, password) VALUES (:username, :password)";
     
 // Create the prepared statement using the acme connection
 $statement = $db->prepare($query);
-echo "Statement: $statement";
     
 // The next four lines replace the placeholders in the SQL
 // statement with the actual values in the variables
 // and tells the database the type of data it is
 $statement->bindValue(':username', $username);
-    echo "Username: $username";
 $statement->bindValue(':password', $hashedPassword);
-    echo "hashedPassword: $hashedPassword";
 // Insert the data
 $statement->execute();    
 
