@@ -23,7 +23,6 @@ $stmt->closeCursor();
 return $rowsChanged;
 }
 
-
 // Check for an existing username
 function checkUsername($username) {
   $sql = 'SELECT username FROM users WHERE username = :username';
@@ -82,41 +81,5 @@ function getClient($clientEmail){
   $stmt->closeCursor();
   return $clientData;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
