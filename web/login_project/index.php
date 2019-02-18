@@ -31,16 +31,8 @@ switch ($action){
         // Filter and store the data
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-       
-        // Make sure this username isn't already included in the Database
-        $username = checkUsername($username);
-            if ($username){
-                $message = "<p> That username already exists. Do you wish to sign-in instead?</p>";
-                include 'sign_in.php';
-                exit;   
-                }
-  
-    /*       
+
+      
         // Double check the validation of the email input
         $username = valUsername($username);
             
@@ -52,7 +44,7 @@ switch ($action){
                 $message = "<p>Please provide information for all empty form fields.</p>";
                 include 'sign_up.php';
             exit; }
-        
+/*        
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             
