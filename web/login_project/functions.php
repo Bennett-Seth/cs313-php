@@ -28,12 +28,14 @@ $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
 // Insert the data
 $stmt->execute();
+/*    
 // Ask how many rows changed as a result of our insert
 $rowsChanged = $stmt->rowCount();
 // Close the database interaction
 $stmt->closeCursor();
 // Return the indication of success (rows changed)
 return $rowsChanged;
+*/    
 }
 
 // Get client data based on an username
