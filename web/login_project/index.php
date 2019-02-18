@@ -1,12 +1,11 @@
 <?php
     session_start();
     // Get the database connection file
-    require 'connect.php';
-/*    
+    require 'connect.php';   
    
     // Get php functions file
     require 'functions.php';
-*/    
+    
     $action = 'home';
 
     //check to see if the user is already logged in
