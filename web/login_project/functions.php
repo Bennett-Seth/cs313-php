@@ -3,29 +3,14 @@
 // Get the database connection file
 require 'connect.php';
 
-// Check for an existing username
-function checkUsername($username) {
-  $sql = 'SELECT username FROM users WHERE username = :username';
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-  $stmt->execute();
-  $matchUser = $stmt->fetch(PDO::FETCH_NUM);
-  $stmt->closeCursor();
-  if(empty($matchUser)){
-    return 0;
-  } else {
-    return 1;
-  }
-}
-
 function valUsername($username){
     $valUsername = filter_var($username, FILTER_SANITIZE_STRING);
   return $valUsername;
 }
 
 // Check the password for a minimum of 8 characters,
-// at least one 1 capital letter, at least 1 number and
-// at least 1 special character
+// at least one 1 capital letter, at least 1 number and at least 1 special character
+
 function checkPassword($password){
     $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])[[:print:]]{8,}$/';
   return preg_match($pattern, $password);

@@ -32,7 +32,6 @@ switch ($action){
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-      
         // Double check the validation of the email input
         $username = valUsername($username);
             
@@ -47,11 +46,15 @@ switch ($action){
        
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        echo "$hashedPassword";
-            
+         
+        echo $username;
+        echo $hashedPassword;
+        
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword);
         
+        echo "We've made it this far...";
+/*        
         // Check and report the result
         if($signUpOutcome === 1){
             // Check and report the result
@@ -64,7 +67,7 @@ switch ($action){
                 include 'sign_up.php';
                 exit;
             }
-    
+    */
     break;
 /*
     case 'sign_in':
