@@ -44,10 +44,11 @@ switch ($action){
                 $message = "<p>Please provide information for all empty form fields.</p>";
                 include 'sign_up.php';
             exit; }
-/*        
+       
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            
+        echo "$hashedPassword";
+ /*            
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword);
         
