@@ -29,7 +29,7 @@ $statement = $db->prepare($query);
 $statement->bindValue(':username', $username);
 $statement->bindValue(':password', $hashedPassword);
 // Insert the data
-$statement->execute();    
+$statement->execute();
 
 // Ask how many rows changed as a result of our insert
 $rowsChanged = $statement->rowCount();
