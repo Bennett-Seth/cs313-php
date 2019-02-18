@@ -18,25 +18,32 @@ function checkPassword($password){
 
 function signUpUser($username, $hashedPassword){
 // The SQL statement
-echo "We made it this far?";
-/*
+
 $query = 'INSERT INTO users (username, password) VALUES (:username, :password)';
+echo "Query: $query";
+    
 // Create the prepared statement using the acme connection
 $statement = $db->prepare($query);
+echo "Statement: $statement";
+    
 // The next four lines replace the placeholders in the SQL
 // statement with the actual values in the variables
 // and tells the database the type of data it is
 $statement->bindValue(':username', $username);
+    echo "Username: $username";
 $statement->bindValue(':password', $hashedPassword);
+    echo "hashedPassword: $hashedPassword";
 // Insert the data
 $statement->execute();    
+
 // Ask how many rows changed as a result of our insert
 $rowsChanged = $statement->rowCount();
+
 // Close the database interaction
 $statement->closeCursor();
+
 // Return the indication of success (rows changed)
 return $rowsChanged;
-*/
 }
 
 // Get client data based on an username
