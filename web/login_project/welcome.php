@@ -3,6 +3,7 @@
     
     // Get the database connection file
     require 'connect.php';
+	$db = get_db();
     
     // A valid user exists, log them in
     if ($_SESSION['loggedin'] == TRUE){

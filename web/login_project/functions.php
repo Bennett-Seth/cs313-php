@@ -2,6 +2,7 @@
 
 // Get the database connection file
 require 'connect.php';
+$db = get_db();
 
 function valUsername($username){
     $valUsername = filter_var($username, FILTER_SANITIZE_STRING);
