@@ -26,8 +26,8 @@ $statement = $db->prepare($query);
 // The next four lines replace the placeholders in the SQL
 // statement with the actual values in the variables
 // and tells the database the type of data it is
-$statement->bindValue(':username', $username);
-$statement->bindValue(':password', $hashedPassword);
+$statement->bindValue(':username', $username, PDO::PARAM_STR);
+$statement->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
 // Insert the data
 $statement->execute();
 
