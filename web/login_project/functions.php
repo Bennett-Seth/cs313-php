@@ -2,6 +2,7 @@
 
 // Get the database connection file
 require 'connect.php';
+$db = get_db();
 
 function valUsername($username){
     $valUsername = filter_var($username, FILTER_SANITIZE_STRING);
@@ -23,7 +24,8 @@ function signUpUser($username, $hashedPassword){
     
     echo "Your username is: $username <br>";
     echo "Your password is: $hashedPassword <br>";
-
+    
+    $db = get_db();
     // Create the prepared statement using the acme connection
     $statement = $db->prepare($query);
 

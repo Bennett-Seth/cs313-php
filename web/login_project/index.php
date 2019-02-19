@@ -2,6 +2,7 @@
     session_start();
     // Get the database connection file
     require 'connect.php';
+    $db = get_db();
    
     // Get php functions file
     require 'functions.php';
