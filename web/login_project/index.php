@@ -46,7 +46,11 @@ switch ($action){
        
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+ 
+        echo "Your username is: $username <br>";
+        echo "Your password is: $hashedPassword <br>";
         
+        /*       
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword);
         
@@ -62,7 +66,7 @@ switch ($action){
                 include 'sign_up.php';
                 exit;
             }
-        
+*/        
     break;
 /*
     case 'sign_in':
