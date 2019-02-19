@@ -1,7 +1,5 @@
 <?php
-function get_db() {
-	$db = NULL;
-	
+
 	try
 		{
 			$dbUrl = getenv('DATABASE_URL');
@@ -24,5 +22,5 @@ function get_db() {
 			  echo "Error connecting to DB. Details: $ex";
 			  die();
 			}
-	return $db;
+
   ?>
