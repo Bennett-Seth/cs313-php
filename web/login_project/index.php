@@ -49,14 +49,14 @@ switch ($action){
  
         echo "Your username is: $username <br>";
         echo "Your password is: $hashedPassword <br>";
-        
+/*         
       
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword);
  
         echo "Insert Successful, we hope.<br>"; 
         
-/*        
+       
         // Check and report the result
         if($signUpOutcome === 1){
             // Check and report the result
