@@ -3,7 +3,7 @@
     
     // Get the database connection file
     require 'connect.php';
-    $db = get_db();
+
 ?>
 
 <!DOCTYPE HTML>
