@@ -17,8 +17,12 @@ function checkPassword($password){
     }
 
 function signUpUser($username, $hashedPassword){
+    
     // The SQL statement
     $query = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    
+    echo "Your username is: $username <br>";
+    echo "Your password is: $hashedPassword <br>";
 
     // Create the prepared statement using the acme connection
     $statement = $db->prepare($query);
