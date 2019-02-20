@@ -1,6 +1,6 @@
 <?php
     session_start();
-    //De-Bugging? "Heroku tail --logs"
+    //De-Bugging? "heroku logs"
 
     // Get the database connection file
     require 'connect.php';
@@ -55,8 +55,7 @@ switch ($action){
          
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword);
- 
-        echo "Insert Successful, we hope.<br>";         
+    
 /*       
         // Check and report the result
         if($signUpOutcome === 1){

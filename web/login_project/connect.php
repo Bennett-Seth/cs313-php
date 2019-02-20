@@ -1,5 +1,5 @@
 <?php
-
+    $db=NULL;
 try
         {
           $dbUrl = getenv('DATABASE_URL');
@@ -21,6 +21,3 @@ try
           echo 'Error!: ' . $ex->getMessage();
           die();
         }
-
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-  ?>
