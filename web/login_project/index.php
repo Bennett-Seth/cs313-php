@@ -1,5 +1,7 @@
 <?php
     session_start();
+    //De-Bugging? "Heroku tail --logs"
+
     // Get the database connection file
     require 'connect.php';
    

@@ -22,8 +22,7 @@ function signUpUser($username, $hashedPassword){
     // The SQL statement
     $query = 'INSERT INTO users (username, password) VALUES (:username, :password)';
     
-    echo "Your username is: $username <br>";
-    echo "Your password is: $hashedPassword <br>";
+    echo "This is my query statement: $query";
     
     // Create the prepared statement using the db connection
     $statement = $db->prepare($query);
