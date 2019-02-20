@@ -4,6 +4,7 @@
 
     // Get the database connection file
     require 'connect.php';
+    print_r($db);
    
     // Get php functions file
     require 'functions.php';
@@ -26,11 +27,13 @@
 
 switch ($action){
     case 'home':
+        print_r($db);
         include 'sign_up.php';    
     
     break;
         
     case 'sign_up':
+        print_r($db);
         // Filter and store the data
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
@@ -54,7 +57,7 @@ switch ($action){
         echo "Your password is: $hashedPassword <br>";
          
         // Send the data to the model
-        $signUpOutcome = signUpUser($username, $hashedPassword);
+        $signUpOutcome = signUpUser($username, $hashedPassword,$db);
     
 /*       
         // Check and report the result

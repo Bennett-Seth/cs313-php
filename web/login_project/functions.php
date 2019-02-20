@@ -14,7 +14,7 @@ function checkPassword($password){
     return preg_match($pattern, $password);
     }
 
-function signUpUser($username, $hashedPassword){
+function signUpUser($username, $hashedPassword, $db){
     
     // The SQL statement
     $query = 'INSERT INTO users (username, password) VALUES (:username, :password)';
