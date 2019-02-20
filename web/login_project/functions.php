@@ -28,11 +28,12 @@ function signUpUser($username, $hashedPassword){
     // Create the prepared statement using the acme connection
     $statement = $db->prepare($query);
 
-    // The next four lines replace the placeholders in the SQL
+    // The next two lines replace the placeholders in the SQL
     // statement with the actual values in the variables
     // and tells the database the type of data it is
     $statement->bindValue(':username', $username, PDO::PARAM_STR);
     $statement->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+    
     // Insert the data
     $statement->execute();
 
