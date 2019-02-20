@@ -39,7 +39,24 @@ switch ($action){
         // Double check the validation of the email input
         $username = valUsername($username);
         
-        $matchPasswords = matchPasswords($password,$password_repeat);
+        $matchPasswords = matchPasswords($password, $password_repeat);
+
+        if ($matchPasswords === false){
+            $message = "<p style='color:red;'>Please try again. Make sure your passwords match.</p>";
+            echo "$message<br>
+            <form action='index.php' method='post'>
+                    <p>Chose your username:</p>
+                    <input type='text' name='username' pattern='[A-Za-z\s]{1,60}' required>
+                    <p>Choose your password:</p>
+                    <span style='color:red;'>*</span><input type='password' name='password' pattern='(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required><br>
+                    <p>Please repeat your password below:</p>
+                    <span style='color:red;'>*</span><input type='password' name='password_repeat' pattern='(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required><br>
+                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br>
+                    <input type='hidden' name='action' value='sign_up'>
+                    <input type='submit' value='Submit'>
+                </form>";
+                break;
+        }
         
         // Double check the validation of the password input
         $checkPassword = checkPassword($password);

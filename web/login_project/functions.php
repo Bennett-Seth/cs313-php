@@ -14,24 +14,11 @@ function checkPassword($password){
     return preg_match($pattern, $password);
     }
 
-function matchPasswords($password,$password_repeat){
+function matchPasswords($password, $password_repeat){
     if ($password === $password_repeat){
         return true;
     } else {
         return false;
-        $message = "<p style='color:red;'>Please try again. Make sure your passwords match.</p>";
-        echo "$message<br>
-            <form action='index.php' method='post'>
-                    <p>Chose your username:</p>
-                    <input type='text' name='username' pattern='[A-Za-z\s]{1,60}' required>
-                    <p>Choose your password:</p>
-                    <span style='color:red;'>*</span><input type='password' name='password' pattern='(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required><br>
-                    <p>Please repeat your password below:</p>
-                    <span style='color:red;'>*</span><input type='password' name='password_repeat' pattern='(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required><br>
-                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br>
-                    <input type='hidden' name='action' value='sign_up'>
-                    <input type='submit' value='Submit'>
-                </form>";
     }
 }
 
