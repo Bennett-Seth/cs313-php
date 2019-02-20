@@ -57,9 +57,9 @@
                     <input type='password' name='password' id='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeypress='doPasswordsMatch()' required><br>
                     <p>Please repeat your password below:</p>
                     <input type='password' name='password_repeat' id='password_repeat' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeypress='doPasswordsMatch()' required><br>
-                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br> 
-                    <span id='noMatch' style='visibility: hidden'>Your passwords don't match</span>
+                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br>
                     <span id='yesMatch' style='visibility: hidden' >Your passwords match!</span>
+                    <span id='noMatch' style='visibility: hidden'>Your passwords don't match</span><br>
                     <input type="hidden" name="action" value="sign_up">
                     <input type='submit' value='Submit'>
                 </form>
