@@ -23,6 +23,8 @@ function signUpUser($username, $hashedPassword){
     $query = 'INSERT INTO users (username, password) VALUES (:username, :password)';
     
     echo "This is my query statement: $query";
+    print_r($db);
+    echo '<br>';
     
     // Create the prepared statement using the db connection
     $statement = $db->prepare($query);
@@ -35,6 +37,8 @@ function signUpUser($username, $hashedPassword){
     
     // Insert the data
     $statement->execute();
+     
+    echo "Insert Successful, we hope.<br>";     
 /*
     // Ask how many rows changed as a result of our insert
     $rowsChanged = $statement->rowCount();
