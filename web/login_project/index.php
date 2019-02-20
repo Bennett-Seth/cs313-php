@@ -42,10 +42,10 @@ switch ($action){
         $matchPasswords = matchPasswords($password, $password_repeat);
 
         if ($matchPasswords === false){
-            $message = "<p style='color:red;'>Please try again. Make sure your passwords match.</p>";
+            $errorMessage = "<p style='color:red;'>Please try again. Make sure your passwords match.</p>";
             echo "<h2> Sign-Up Below for experimental gama radiation treatments. </h2>
                 <h2> Become an Avenger (or a pile of ooze) today! </h2>
-                $message<br>
+                $errorMessage
             <form action='index.php' method='post'>
                     <p>Chose your username:</p>
                     <input type='text' name='username' pattern='[A-Za-z\s]{1,60}' required>
