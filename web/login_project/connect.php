@@ -14,7 +14,7 @@ try
 
           $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     
-          echo "This is my new PDO: $db";
+          print_r($db);
 
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
