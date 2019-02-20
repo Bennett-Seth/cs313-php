@@ -1,9 +1,6 @@
 <?php 
 session_start();
 
-// Get the database connection file
-require 'connect.php';
-
 function valUsername($username){
     $valUsername = filter_var($username, FILTER_SANITIZE_STRING);
     return $valUsername;
