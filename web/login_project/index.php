@@ -49,14 +49,10 @@ switch ($action){
        
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
- 
-        echo "Your username is: $username <br>";
-        echo "Your password is: $hashedPassword <br>";
          
         // Send the data to the model
         $signUpOutcome = signUpUser($username, $hashedPassword,$db);
     
-      
         // Check and report the result
         if($signUpOutcome === 1){
             // Check and report the result
@@ -71,7 +67,7 @@ switch ($action){
                 }
 
     break;
-/*
+
     case 'sign_in':
         
         // Filter and store the data
@@ -91,18 +87,21 @@ switch ($action){
             exit; }
         
         // A valid password exists, proceed with the login process
-        // Query the client data based on the email address
-        $clientData = getUser($username);
+        // Query the client data based on the username
+        $clientData = getUser($username,$db);
+        
+        // Hash the checked password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         
         // Compare the password just submitted against
         // the hashed password for the matching client
-        $hashCheck = password_verify($password, $clientData['clientPassword']);
+        $hashCheck = password_verify($password, $hashedPassword);
         
         // If the hashes don't match create an error
         // and return to the login view
         if (!$hashCheck) {
             $message = '<p class="notice">Please check your password and try again.</p>';
-            include '../view/login.php';
+            include 'sign_in.php';
             exit;
             }
         
@@ -127,7 +126,6 @@ switch ($action){
     default:
          
         include 'sign_up.php';        
-
-*/       
-}
+       
+    }
 ?>

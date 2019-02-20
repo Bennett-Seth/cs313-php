@@ -44,7 +44,7 @@ function signUpUser($username, $hashedPassword, $db){
     }
 
 // Get client data based on an username
-function getUser($username){
+function getUser($username, $db){
       $sql = 'SELECT username, password FROM users WHERE username = :username';
       $stmt = $db->prepare($sql);
       $stmt->bindValue(':username', $username, PDO::PARAM_STR);
