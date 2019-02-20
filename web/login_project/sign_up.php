@@ -37,9 +37,11 @@
                 <form action='index.php' method='post'>
                     <p>Chose your username:</p>
                     <input type='text' name='username' pattern="[A-Za-z\s]{1,60}" required>
-                    <p>Choose your password</p>
+                    <p>Choose your password:</p>
                     <input type='password' name='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
-                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span> 
+                    <p>Please repeat your password below:</p>
+                    <input type='password' name='password_repeat' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
+                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br> 
                     <input type="hidden" name="action" value="sign_up">
                     <input type='submit' value='Submit'>
                 </form>

@@ -34,10 +34,13 @@ switch ($action){
         // Filter and store the data
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $password_repeat = filter_input(INPUT_POST, 'password_repeat', FILTER_SANITIZE_STRING);
 
         // Double check the validation of the email input
         $username = valUsername($username);
-            
+        
+        $matchPasswords = matchPasswords($password,$password_repeat);
+        
         // Double check the validation of the password input
         $checkPassword = checkPassword($password);
         
