@@ -25,7 +25,7 @@ function signUpUser($username, $hashedPassword){
     echo "Your username is: $username <br>";
     echo "Your password is: $hashedPassword <br>";
     
-    // Create the prepared statement using the acme connection
+    // Create the prepared statement using the db connection
     $statement = $db->prepare($query);
 
     // The next two lines replace the placeholders in the SQL
@@ -36,7 +36,7 @@ function signUpUser($username, $hashedPassword){
     
     // Insert the data
     $statement->execute();
-
+/*
     // Ask how many rows changed as a result of our insert
     $rowsChanged = $statement->rowCount();
 
@@ -45,6 +45,7 @@ function signUpUser($username, $hashedPassword){
 
     // Return the indication of success (rows changed)
     return $rowsChanged;
+*/
     }
 
 // Get client data based on an username
