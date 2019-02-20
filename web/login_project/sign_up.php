@@ -11,8 +11,22 @@
 		<head>
 			<meta charset="utf-8">
 			<title>Sign Up Page</title>
-
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+            <script>
+                function doPasswordsMatch(){
+                    var pw1 = document.getElementById('password').value;
+                    var pw2 = document.getElementById('password_repeat').value;
+                    if (pw1 != pw2){
+                        document.getElementById('password').style.color = 'red';
+                        document.getElementById('password_repeat').style.color = 'red';
+                    } else {
+                        document.getElementById('password').style.color = 'green';
+                        document.getElementById('password_repeat').style.color = 'green';
+                    }
+                }
+            
+            </script>
             
 		</head>
 		<body> 
@@ -38,9 +52,9 @@
                     <p>Chose your username:</p>
                     <input type='text' name='username' pattern="[A-Za-z\s]{1,60}" required>
                     <p>Choose your password:</p>
-                    <input type='password' name='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
+                    <input type='password' name='password' id='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                     <p>Please repeat your password below:</p>
-                    <input type='password' name='password_repeat' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
+                    <input type='password' name='password_repeat' id='password_repeat' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                     <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br> 
                     <input type="hidden" name="action" value="sign_up">
                     <input type='submit' value='Submit'>
