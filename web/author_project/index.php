@@ -4,13 +4,11 @@
     session_start();
     //De-Bugging? "heroku logs"
 
-/*
     // Get the database connection file
     require 'library/connect.php';
    
     // Get php functions file
-    require 'library/functions.php';
-*/    
+    require 'library/functions.php';    
 
     $action = filter_input(INPUT_POST, 'action');
         if ($action == NULL){
