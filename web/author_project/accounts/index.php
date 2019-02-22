@@ -3,7 +3,7 @@
     //De-Bugging? "heroku logs"
 
     // Get the database connection file
-    require 'library/connect.php';
+    require '../library/connect.php';
 /*   
     // Get php functions file
     require 'library/functions.php';
