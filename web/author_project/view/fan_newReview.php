@@ -19,24 +19,16 @@
 	<html lang="en-us">
 		<head>
 			<meta charset="utf-8">
-			<title>Fan Reference Page</title>
-
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Reviews Page</title>
+            
+            <?php include '../common/head.php'; ?> 
             
 		</head>
-		<body> 
+		<body>
+            <?php include '../common/header.php'; ?>
             
-            <header>
-           
-                <h1> Fan Resources </h1>    
-    
-            </header>
+            <?php include '../common/nav.php'; ?>
             
-            <nav>
-            
-                <!-- A full menu for each search option could be useful here... -->
-            
-            </nav>
             
             <main>
                 
@@ -70,11 +62,7 @@
                 
             </main>
             
-            <footer>
-
-                <p> &copy; 2017 - Golden Bullet Publishing - Location: Washington State </p>
-    
-            </footer>
+            <?php include '../common/footer.php'; ?>
             
 		</body>	
 	</html>

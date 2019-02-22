@@ -1,22 +1,17 @@
 <?php
-    // This is my main controller file
-
     session_start();
     //De-Bugging? "heroku logs"
 
     // Get the database connection file
-    require 'library/connect.php';
-   
+    require '../library/connect.php';
+
     // Get php functions file
-    require 'library/functions.php';
+    require '../model/promos_model.php';
     
     $action = filter_input(INPUT_POST, 'action');
-        if ($action == NULL){
-         $action = filter_input(INPUT_GET, 'action');
-         if ($action == NULL) {
-             $action = 'home';
-            }
-        }
+    if ($action == NULL){
+    $action = filter_input(INPUT_GET, 'action');
+    }
 
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
@@ -27,13 +22,29 @@
         }
 
 switch ($action){
-    case 'home':
-        include 'view/fan_reg.php';    
-        break;
+        
+    case '':
+        
+        
+        
+        include '';
+        exit;
+        
+    break;
+        
+    case '':
+        
+        
+    
+        include '';
+        exit;
+        
+    break;
+
     
     default:
          
-        include 'view/fan_reg.php';     break;   
+        include '';    
        
     }
 ?>
