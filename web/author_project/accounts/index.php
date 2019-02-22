@@ -4,16 +4,16 @@
 
     // Get the database connection file
     require '../library/connect.php';
-/*   
-    // Get php functions file
-    require 'library/functions.php';
 
     // Get php functions file
-    require 'model/accounts_model.php';
+    require '../library/functions.php';
 
     // Get php functions file
-    require 'model/promos_model.php';
-*/    
+    require '../model/accounts_model.php';
+
+    // Get php functions file
+    require '../model/promos_model.php';
+    
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
