@@ -62,9 +62,8 @@ switch ($action){
         $matchPasswords = matchPasswords($fanPassword, $fanPasswordRepeat);
         if ($matchPasswords === false){
             $errorMessage = "<p style='color:red;'>Please try again. Make sure your passwords match.</p>";
-            echo "<header><h1>Become an Avenger!</h1></header>
-            <h2> Sign-Up Below for experimental gama radiation treatments.</h2>
-            <h2> Become an Avenger (or a pile of ooze) today! </h2>
+            echo "<header><h1>Become a Super Fan!</h1></header>
+            <h2> Sign up below for swag, free stories and more! </h2>
             $errorMessage
             <form action='index.php' method='post'>
                     <p>Chose your username:</p>
@@ -96,7 +95,7 @@ switch ($action){
         echo "Ready to Send:$fanPassword<br>";
         echo "Ready to Send:$fanPasswordRepeat<br>";
         echo "Ready to Send:$regDate<br>";
- /*         
+        
         // Send the data to the model
         $regOutcome = regFan($fanFirstName, $fanLastName, $fanEmail, $hashedPassword, $regDate, $db);
     
@@ -108,11 +107,10 @@ switch ($action){
             include 'fan_login.php';
                 exit;
             } else {
-                $message = "<p>Sorry, $username, but the registration failed. Please try again.</p>";
+                $message = "<p>Sorry, $fanFirstName $fanLastName, but the registration failed. Please try again.</p>";
                 include 'view/fan_reg.php';
                 exit;
                 }
-*/
     break;
 /*
     case 'login':

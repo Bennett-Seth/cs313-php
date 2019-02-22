@@ -2,7 +2,7 @@
 session_start();
 
 
-function regFan($fanFirstname, $fanLastname, $fanEmail, $hashedPassword, $regDate, $db){ 
+function regFan($fanFirstName, $fanLastName, $fanEmail, $hashedPassword, $regDate, $db){ 
 // The SQL statement
 $sql = 'INSERT INTO fans (first_name, last_name, email, password, fans_reg_date) VALUES (:first_name, last_name, :email, :password, :date)';
     
@@ -12,8 +12,8 @@ $stmt = $db->prepare($sql);
 // The next four lines replace the placeholders in the SQL
 // statement with the actual values in the variables
 // and tells the database the type of data it is
-$stmt->bindValue(':clientFirstname', $fanFirstname, PDO::PARAM_STR);
-$stmt->bindValue(':clientLastname', $fanLastname, PDO::PARAM_STR);
+$stmt->bindValue(':clientFirstname', $fanFirstName, PDO::PARAM_STR);
+$stmt->bindValue(':clientLastname', $fanLastName, PDO::PARAM_STR);
 $stmt->bindValue(':clientEmail', $fanEmail, PDO::PARAM_STR);
 $stmt->bindValue(':clientPassword', $hashedPassword, PDO::PARAM_STR);
 $stmt->bindValue(':date', $regDate, PDO::PARAM_STR);
