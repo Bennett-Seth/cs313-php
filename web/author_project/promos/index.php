@@ -3,10 +3,10 @@
     //De-Bugging? "heroku logs"
 
     // Get the database connection file
-    require 'library/connect.php';
+    require '../library/connect.php';
 
     // Get php functions file
-    require 'model/promos_model.php';
+    require '../model/promos_model.php';
     
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL){
@@ -21,6 +21,7 @@
             // empty value and old timestamp
         }
 
+/*
 switch ($action){
         
     case '':
@@ -47,4 +48,6 @@ switch ($action){
         include '';    
        
     }
+*/  
+
 ?>
