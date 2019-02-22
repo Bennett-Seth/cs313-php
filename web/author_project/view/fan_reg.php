@@ -41,7 +41,7 @@
                     <input type='submit' value='Submit'>
                 </form>
                 
-                <h2>Already a Super Fan? Login <a href="../view/fan_login.php">Here</a></h2>
+                <h2>Already a Super Fan? Login <a href="fan_login.php">Here</a></h2>
                        
             </main>
             
