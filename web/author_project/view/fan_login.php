@@ -20,7 +20,13 @@
             
             <main>
                 
-                <h1> Sign in below if you're already an Avenger.</h1>
+                <?php
+    
+                    echo $message;
+
+                ?>
+                
+                <h1> Sign in below if you're already an Super Fan.</h1>
                 
                 <form action="accounts/index.php" method="post">
                     <form action='index.php' method='post'>
