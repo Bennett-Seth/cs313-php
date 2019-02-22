@@ -21,4 +21,3 @@ try
           echo 'Error!: ' . $ex->getMessage();
           die();
         }
-?>
