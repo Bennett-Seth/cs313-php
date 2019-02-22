@@ -104,11 +104,11 @@ switch ($action){
             // Check and report the result
             setcookie('email', $fanEmail, strtotime('+1 year'), '/');
             $message = "<p>Thanks for registering, $fanFirstName $fanLastName. Please use your username and password to sign in.</p>";
-            include 'view/fan_login.php';
+            include '../view/fan_login.php';
                 exit;
             } else {
                 $message = "<p>Sorry, $fanFirstName $fanLastName, but the registration failed. Please try again.</p>";
-                include 'view/fan_reg.php';
+                include '../view/fan_reg.php';
                 exit;
                 }
     break;
