@@ -23,7 +23,7 @@
                 <h2> Ready to become a Super Fan? </h2>
                 <h2> Sign up below for swag, free stories and more! </h2>
                 
-                <form action='../accounts/index.php' method='post'>
+                <form action='accounts/index.php' method='post'>
                     <p>Chose your first name:</p>
                     <input type='text' name='firstName' pattern="[A-Za-z\s]{1,60}" required>
                     <p>Chose your last name:</p>
