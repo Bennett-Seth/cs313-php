@@ -28,12 +28,19 @@
                 
                 <h1> Sign in below if you're already an Super Fan.</h1>
                 
+                <!-- 
+pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+onkeypress='doPasswordsMatch()' 
+<span id='yesMatch' style='visibility: hidden' >Your passwords match!</span>
+<span id='noMatch' style='visibility: hidden'>Your passwords don't match</span><br>
+            -->
+                
                 <form action="accounts/index.php" method="post">
                     <form action='index.php' method='post'>
                     <p>What is your email?</p>
                     <input type="email" name="clientEmail" placeholder="johnny@gmail.com" required>
                     <p>What is your password?</p>
-                    <input type='password' name='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                    <input type='password' name='password' required>
                     <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span> 
                     <input type="hidden" name="action" value="login">
                     <input type='submit' value='Submit'>
@@ -43,7 +50,7 @@
                 
                 <h2> Not a member yet?</h2>
                 
-                <a href="sign_up.php"> Sign me up!</a>
+                <a href="fan_reg.php"> Sign me up!</a>
                 
                 
             </main>
