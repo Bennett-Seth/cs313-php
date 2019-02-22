@@ -234,7 +234,8 @@ VALUES (02
 ,'Cowlitz'
 );
 
-
+ALTER TABLE fans
+ADD COLUMN passwords VARCHAR(255);
 
 
 

@@ -48,7 +48,7 @@ onkeypress='doPasswordsMatch()'
                     <input type='submit' value='Submit'>
                 </form>
                 
-                <h2>Already a Super Fan? Login <a href="fan_login.php">Here</a></h2>
+                <h2>Already a Super Fan? Login <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_login.php">Here</a></h2>
                        
             </main>
             
