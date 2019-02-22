@@ -38,13 +38,13 @@ switch ($action){
         $fanPasswordRepeat = filter_input(INPUT_POST, 'password_repeat', FILTER_SANITIZE_STRING);
         $regDate = date("m/d/Y");
         
-        echo "Import:$fanFirstName<br>";
-        echo "Import:$fanLastName<br>";
-        echo "Import:$fanEmail<br>";
-        echo "Import:$fanPassword<br>";
-        echo "Import:$fanPasswordRepeat<br>";
-        echo "Import:$regDate<br>";
-/*        
+//        echo "Import:$fanFirstName<br>";
+//        echo "Import:$fanLastName<br>";
+//        echo "Import:$fanEmail<br>";
+//        echo "Import:$fanPassword<br>";
+//        echo "Import:$fanPasswordRepeat<br>";
+//        echo "Import:$regDate<br>";
+      
         // Double check the validation of the email input
         $fanEmail = valEmail($fanEmail);
         
@@ -96,7 +96,7 @@ switch ($action){
         echo "Ready to Send:$fanPassword<br>";
         echo "Ready to Send:$fanPasswordRepeat<br>";
         echo "Ready to Send:$regDate<br>";
-        
+ /*         
         // Send the data to the model
         $regOutcome = regFan($fanFirstName, $fanLastName, $fanEmail, $hashedPassword, $regDate, $db);
     
