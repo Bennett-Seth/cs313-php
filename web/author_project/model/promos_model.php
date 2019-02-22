@@ -42,6 +42,7 @@ function callArcReader($fanId, $db){
         }
     */    
     }
+}
 
 
 function callWinner($fanId, $db){
@@ -61,11 +62,8 @@ function callPromos ($db){
                                  
         $promoTitle = $row['promos_title'];
 
-        return "$promoTitle<br>";
-                            
+        return "$promoTitle<br>";              
         }   
     }
-
-
 
 ?>
