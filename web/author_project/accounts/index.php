@@ -78,7 +78,7 @@ switch ($action){
                     <input type='submit' value='Submit'>
                 </form>";
                 break;
-        }
+                }
 
         
         // Check for missing data
@@ -112,6 +112,7 @@ switch ($action){
                 include 'view/fan_reg.php';
                 exit;
                 }
+}
 
     break;
 
