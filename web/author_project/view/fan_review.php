@@ -15,14 +15,14 @@
 			<meta charset="utf-8">
 			<title>Reviews Page</title>
             
-            <?php include '../common/head.php'; ?> 
+            <?php include 'common/head.php'; ?> 
             
 		</head>
 		<body> 
             
-            <?php include '../common/header.php'; ?>
+            <?php include 'common/header.php'; ?>
             
-            <?php include '../common/nav.php'; ?>
+            <?php include 'common/nav.php'; ?>
             
             
             <main>
@@ -63,7 +63,7 @@
                 
             </main>
             
-            <?php include '../common/footer.php'; ?>
+            <?php include 'common/footer.php'; ?>
             
 		</body>	
 	</html>
