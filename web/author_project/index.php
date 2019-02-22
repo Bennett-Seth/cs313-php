@@ -20,9 +20,9 @@
 
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
-            $cookieUsername = filter_input(INPUT_COOKIE, 'username', FILTER_SANITIZE_STRING);
+            $cookieUsername = filter_input(INPUT_COOKIE, 'email', FILTER_SANITIZE_STRING);
         } else {
-            setcookie('username', '', time() - 3600, '/'); 
+            setcookie('email', '', time() - 3600, '/'); 
             // empty value and old timestamp
         }
 

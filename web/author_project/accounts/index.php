@@ -21,9 +21,9 @@
 
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
-            $cookieUsername = filter_input(INPUT_COOKIE, 'username', FILTER_SANITIZE_STRING);
+            $cookieUsername = filter_input(INPUT_COOKIE, 'email', FILTER_SANITIZE_STRING);
         } else {
-            setcookie('username', '', time() - 3600, '/'); 
+            setcookie('email', '', time() - 3600, '/'); 
             // empty value and old timestamp
         }
 
@@ -44,7 +44,7 @@ switch ($action){
         echo "Import:$fanPassword<br>";
         echo "Import:$fanPasswordRepeat<br>";
         echo "Import:$regDate<br>";
-        
+/*        
         // Double check the validation of the email input
         $fanEmail = valEmail($fanEmail);
         
@@ -54,7 +54,7 @@ switch ($action){
                 $message = "<p> That email already exists. Do you wish to login instead?</p>";
                 include '../view/login.php';
                 exit;   
-             }
+                }
         
         // Double check the validation of the password input
         $checkPassword = checkPassword($fanPassword);
@@ -103,7 +103,7 @@ switch ($action){
         // Check and report the result
         if($regOutcome === 1){
             // Check and report the result
-            setcookie('username', $cookieUsername, strtotime('+1 year'), '/');
+            setcookie('email', $fanEmail, strtotime('+1 year'), '/');
             $message = "<p>Thanks for registering, $fanFirstName $fanLastName. Please use your username and password to sign in.</p>";
             include 'fan_login.php';
                 exit;
@@ -112,10 +112,9 @@ switch ($action){
                 include 'view/fan_reg.php';
                 exit;
                 }
-}
-
+*/
     break;
-
+/*
     case 'login':
         
         // Filter and store the data
@@ -212,6 +211,7 @@ switch ($action){
     default:
          
         include '../view/fan_reg.php';    
-       
+*/       
     }
+
 ?>

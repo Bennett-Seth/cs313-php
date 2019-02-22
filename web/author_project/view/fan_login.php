@@ -22,7 +22,7 @@
                 
                 <h1> Sign in below if you're already an Avenger.</h1>
                 
-                <form action="../accounts/index.php" method="post">
+                <form action="accounts/index.php" method="post">
                     <form action='index.php' method='post'>
                     <p>What is your email?</p>
                     <input type="email" name="clientEmail" placeholder="johnny@gmail.com" required>

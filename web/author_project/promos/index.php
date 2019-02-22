@@ -3,10 +3,10 @@
     //De-Bugging? "heroku logs"
 
     // Get the database connection file
-    require '../library/connect.php';
+    require 'library/connect.php';
 
     // Get php functions file
-    require '../model/promos_model.php';
+    require 'model/promos_model.php';
     
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL){
@@ -15,9 +15,9 @@
 
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
-            $cookieUsername = filter_input(INPUT_COOKIE, 'username', FILTER_SANITIZE_STRING);
+            $cookieUsername = filter_input(INPUT_COOKIE, 'email', FILTER_SANITIZE_STRING);
         } else {
-            setcookie('username', '', time() - 3600, '/'); 
+            setcookie('email', '', time() - 3600, '/'); 
             // empty value and old timestamp
         }
 

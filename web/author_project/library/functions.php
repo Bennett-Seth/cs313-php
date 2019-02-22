@@ -35,6 +35,7 @@ function matchPasswords($fanPassword, $fanPasswordRepeat){
         return false;
     }
 }
+
 ?>
 
 
