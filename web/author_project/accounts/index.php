@@ -38,6 +38,13 @@ switch ($action){
         $fanPasswordRepeat = filter_input(INPUT_POST, 'password_repeat', FILTER_SANITIZE_STRING);
         $regDate = date("m/d/Y");
         
+        echo "Import:$fanFirstName<br>";
+        echo "Import:$fanLastName<br>";
+        echo "Import:$fanEmail<br>";
+        echo "Import:$fanPassword<br>";
+        echo "Import:$fanPasswordRepeat<br>";
+        echo "Import:$regDate<br>";
+        
         // Double check the validation of the email input
         $fanEmail = valEmail($fanEmail);
         
@@ -83,6 +90,13 @@ switch ($action){
         // Hash the checked password
         $hashedPassword = password_hash($fanPassword, PASSWORD_DEFAULT);
          
+        echo "Ready to Send:$fanFirstName<br>";
+        echo "Ready to Send:$fanLastName<br>";
+        echo "Ready to Send:$fanEmail<br>";
+        echo "Ready to Send:$fanPassword<br>";
+        echo "Ready to Send:$fanPasswordRepeat<br>";
+        echo "Ready to Send:$regDate<br>";
+        
         // Send the data to the model
         $regOutcome = regFan($fanFirstName, $fanLastName, $fanEmail, $hashedPassword, $regDate, $db);
     
@@ -90,12 +104,12 @@ switch ($action){
         if($regOutcome === 1){
             // Check and report the result
             setcookie('username', $cookieUsername, strtotime('+1 year'), '/');
-            $message = "<p>Thanks for registering, $username. Please use your username and password to sign in.</p>";
+            $message = "<p>Thanks for registering, $fanFirstName $fanLastName. Please use your username and password to sign in.</p>";
             include 'fan_login.php';
                 exit;
             } else {
                 $message = "<p>Sorry, $username, but the registration failed. Please try again.</p>";
-                include 'fan_reg.php';
+                include 'view/fan_reg.php';
                 exit;
                 }
 
