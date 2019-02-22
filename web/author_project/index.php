@@ -28,12 +28,12 @@
 
 switch ($action){
     case 'home':
-        include '../view/fan_reg.php';    
+        include '/view/fan_reg.php';    
         break;
     
     default:
          
-        include '../view/fan_reg.php';     break;   
+        include '/view/fan_reg.php';     break;   
        
     }
 ?>
