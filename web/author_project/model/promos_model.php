@@ -112,8 +112,15 @@ function displayFeedback($firstReadId, $db){
     $storyId = $row['stories_id'];
     $feedbackDetails = $row['feedback_details'];
     $feedbackDate = row['feedback_date'];
+        
+echo $feedbackId;
+echo $firstReadId;
+echo $storyId;
+echo $feedbackDetails;
+echo $feedbackDate;
 
-    $postFeedback = "<p> You provided the following feedback:<br> <b>$storyTitle</b>: $feedbackDetails  </p>";
+    $postFeedback = "<p> You provided the following feedback:<br> <b>$storyTitle</b>: $feedbackDetails  </p><br>";
+echo "This is your feedback: $postFeedback<br>";
     
     $_SESSION["postFeedback"] = $postFeedback;
 echo $_SESSION["postFeedback"]; 
@@ -141,8 +148,8 @@ function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
     foreach ($db->query("SELECT feedback_details FROM feedback WHERE feedback_id = '$feedbackId';") as $row){
 
         $printFeedback = $row['feedback_details'];
-        $feedbackMsg = "Your Current Feedback: $printFeedback<br>";  
-        $_SESSION["feedbackMsg"] = $feedbackMsg;
+        $postFeedback  = "Your Current Feedback: $printFeedback<br>";  
+        $_SESSION["postFeedback "] = $postFeedback;
         
         }    
 }
