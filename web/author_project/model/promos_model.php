@@ -17,8 +17,10 @@ function callFirstReader($fansId, $db){
         $firstReadMsg = "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
             
         $_SESSION["firstReadMsg"] = $firstReadMsg;
-            
+echo $_SESSION["firstReadMsg"];    
         $_SESSION["firstReadId"] = $firstReadId;
+echo $_SESSION["firstReadId"];
+            
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
         <form action='fan_feedback.php' method='post'>
@@ -45,10 +47,10 @@ function callArcReader($fansId, $db){
         $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
         
         $_SESSION["arcReadMsg"] = $arcReadMsg;
-//echo $_SESSION["arcReadMsg"];
+echo $_SESSION["arcReadMsg"];
          
         $_SESSION["arcReadId"] = $arcReadId;
-//echo $_SESSION["arcReadId"];
+echo $_SESSION["arcReadId"];
          
     /*                        
         echo "<p>Do you want to change your review? Do so 
@@ -81,7 +83,7 @@ function callWinner($fansId, $db){
         $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><p>Please stay tuned for additional contests and giveaways!</p>"; 
         
         $_SESSION["contestMsg"] = $contestMsg;
- //echo $_SESSION["contestMsg"];       
+ echo $_SESSION["contestMsg"];       
         }
     }
 
@@ -139,7 +141,7 @@ function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
     foreach ($db->query("SELECT feedback_details FROM feedback WHERE feedback_id = '$feedbackId';") as $row){
 
         $printFeedback = $row['feedback_details'];
-        $feedbackMsg = "YOur Current Feedback: $printFeedback<br>";  
+        $feedbackMsg = "Your Current Feedback: $printFeedback<br>";  
         $_SESSION["feedbackMsg"] = $feedbackMsg;
         
         }    

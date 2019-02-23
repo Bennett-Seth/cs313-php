@@ -29,16 +29,16 @@
                     if (isset($_SESSION["firstReadMsg"])){
                             echo $_SESSION["firstReadMsg"];
                         } else {
-                            echo "Session firstReadMgs not initializing";
+                            echo "Session firstReadMgs not initializing<br>";
                         }
         
                     if (isset($_SESSION["postFeedback"])){
                             echo $_SESSION["postFeedback"];
                         } else {
-                            echo "Session postFeedback not initializing";
+                            echo "Session postFeedback not initializing<br>";
                         }
                                 
-                        echo "Would you like to amend your feedback? Insert your new comments below:";
+                        echo "Would you like to amend your feedback? Insert your new comments below:<br>";
                         
                         echo "<form action='../promos/index.php' method='post'>
                         <textarea name='newFeedback' rows='20' cols='50'></textarea><br>
