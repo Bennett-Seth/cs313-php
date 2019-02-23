@@ -112,12 +112,15 @@ switch ($action){
                 exit;
                 }
     break;
-/*
+
     case 'login':
         
         // Filter and store the data
         $fanEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        
+        echo "Import: $fanEmail<br>";
+        echo "Import: $password<br>";
         
         // Double check the validation of the email input
         $fanEmail = valEmail($fanEmail);
@@ -139,9 +142,13 @@ switch ($action){
                 include 'sign_up.php';
             exit; }
         
+        echo "About to Login";
+        
         // A valid password exists, proceed with the login process
         // Query the client data based on the username
         $fanData = getFan($fanEmail,$db);
+        
+        echo "Check: retrieved data";
         
         // Hash the checked password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -160,6 +167,7 @@ switch ($action){
         
         // A valid user exists, log them in
         $_SESSION['loggedin'] = TRUE;
+        echo $_SESSION['loggedin'];
         
         // Store the array into the session
         $_SESSION['clientData'] = $clientData;
@@ -171,10 +179,18 @@ switch ($action){
         $fanPassword = $_SESSION['clientData']['password'];
         $fanEmail = $_SESSION['clientData']['email'];
         $fanRegDate = $_SESSION['clientData']['fans_reg_date'];
-            
+        
+        echo "Session Data:<br>";
+        echo "$fansId<br>";
+        echo "$fanFirstName<br>";
+        echo "$fanLastName<br>";
+        echo "$fanPassword<br>";
+        echo "$fanEmail<br>";
+        echo "$fanRegDate<br>";
+        
         // Set Client's Login Cookie
         setcookie('fanEmail', $fanEmail, strtotime('+1 year'), '/');
-
+/*
         //Lockout Check
         $lockDetails = lockCheck($fansId, $db);
         
@@ -202,14 +218,11 @@ switch ($action){
         include '../view/fan_welcome.php';
         exit;
         
-        
-        
     break;
-    
+*/    
     default:
          
-        include '../view/fan_reg.php';    
-*/       
+        include '../view/fan_reg.php';           
     }
 
 ?>
