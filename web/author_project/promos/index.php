@@ -32,6 +32,8 @@ switch ($action){
         $newDate = date("m/d/Y");
         echo "Today's Date is: $newDate";
         
+        $firstReadId = $_SESSION["firstReadId"];
+        
         displayFeedback($firstReadId, $db);
         
         updateFeedback($newFeedback, $feedbackId, $newDate);
