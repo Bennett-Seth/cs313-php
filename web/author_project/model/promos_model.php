@@ -118,8 +118,8 @@ echo $_SESSION["postFeedback"];
         
     $_SESSION["feedbackId"] = $feedbackId;
 echo $_SESSION["feedbackId"]; 
+    }
 }
-    
 
 function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
     
