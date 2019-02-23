@@ -10,7 +10,7 @@ function callFirstReader($fansId, $db){
         $storyId = $row['stories_id'];
         $storyTitle = $row['stories_title'];
 
-        echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
+        return "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
         <form action='fan_feedback.php' method='post'>
