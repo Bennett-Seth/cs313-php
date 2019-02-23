@@ -36,7 +36,6 @@ onkeypress='doPasswordsMatch()'
             -->
                 
                 <form action="https://floating-inlet-17130.herokuapp.com/author_project/accounts/index.php" method="post">
-                    <form action='index.php' method='post'>
                     <p>What is your email?</p>
                     <input type="email" name="email" placeholder="johnny@gmail.com" required>
                     <p>What is your password?</p>
@@ -45,8 +44,6 @@ onkeypress='doPasswordsMatch()'
                     <input type="hidden" name="action" value="login">
                     <input type='submit' value='Submit'>
                 </form>
-                </form>
-                
                 
                 <h2> Not a member yet? Sign up <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php> Sign me up!">Here</a></h2>
                 
