@@ -21,14 +21,22 @@
             // empty value and old timestamp
         }
 
-/*
 switch ($action){
         
-    case '':
+    case 'newFeedback':
         
+        $newFeedback = htmlspecialchars($_POST['newFeedback']);
+        echo "New Feedback: $newFeedback<br>";
+        $feedbackId = htmlspecialchars($_POST['feedback_id']);
+        echo "Feedback Id: $feedbackId<br>";
+        $newDate = date("m/d/Y");
+        echo "Today's Date is: $newDate";
         
+        displayFeedback($firstReadId, $db);
         
-        include '';
+        updateFeedback($newFeedback, $feedbackId, $newDate);
+        
+        include '../view/fan_feedback.php';
         exit;
         
     break;
@@ -42,12 +50,13 @@ switch ($action){
         
     break;
 
-    
+/*   
     default:
          
         include '';    
-       
-    }
 */  
+        
+    }
+ 
 
 ?>

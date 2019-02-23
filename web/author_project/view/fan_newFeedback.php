@@ -4,13 +4,6 @@
     // Get the database connection file
     require 'connect.php';
 
-    $newFeedback = htmlspecialchars($_POST['newFeedback']);
-        echo "New Feedback: $newFeedback<br>";
-    $feedbackId = htmlspecialchars($_POST['feedback_id']);
-        echo "Feedback Id: $feedbackId<br>";
-    $newDate = date("m/d/Y");
-        echo "Today's Date is: $newDate";
-
 ?>
 
 <!DOCTYPE HTML>
@@ -35,25 +28,7 @@
                
                 <?php
                 
-                    $query = 'UPDATE feedback SET feedback_details = :feedback_details, feedback_date = :feedback_date
-                    WHERE feedback_id = :feedback_id';
-
-                    $statement = $db->prepare($query);
-
-                    $statement->bindValue(':feedback_details', $newFeedback);
-                    $statement->bindValue(':feedback_date', $newDate);
-                    $statement->bindValue(':feedback_id', $feedbackId);
-
-                    $statement->execute();
-                
-                    echo "update successful<br>";
-                
-                    foreach ($db->query("SELECT feedback_details FROM feedback WHERE feedback_id = '$feedbackId';") as $row){
-
-                        $printFeedback = $row['feedback_details'];
-                                echo "New Feedback: $printFeedback<br>";
-                    
-                        }                         
+                                         
                 ?>
                 
             </main>

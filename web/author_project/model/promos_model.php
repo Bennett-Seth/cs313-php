@@ -4,7 +4,7 @@ function callFirstReader($fansId, $db){
 
         foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$fansId';") as $row){
 
-        $thisFirstReadId = $row['first_readers_id'];
+        $firstReadId = $row['first_readers_id'];
         $thisFansId = $row['fans_id'];
         $storyId = $row['stories_id'];
         $storyTitle = $row['stories_title'];
@@ -17,6 +17,8 @@ function callFirstReader($fansId, $db){
         $firstReadMsg = "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
             
         $_SESSION["firstReadMsg"] = $firstReadMsg;
+            
+        $_SESSION["firstReadId"] = $firstReadId;
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
         <form action='fan_feedback.php' method='post'>
@@ -30,7 +32,7 @@ function callFirstReader($fansId, $db){
 function callArcReader($fansId, $db){
      foreach ($db->query("SELECT arc_readers.arc_readers_id, arc_readers.fans_id, stories.stories_id, stories.stories_title FROM arc_readers RIGHT JOIN stories ON arc_readers.stories_id = stories.stories_id WHERE arc_readers.fans_id = '$fansId';") as $row){
                                      
-        $thisArcReadId = $row['arc_readers_id'];
+        $arcReadId = $row['arc_readers_id'];
         $thisFanId = $row['fans_id'];
         $storyId = $row['stories_id'];
         $arcTitle =  $row['stories_title'];
@@ -43,7 +45,11 @@ function callArcReader($fansId, $db){
         $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
         
         $_SESSION["arcReadMsg"] = $arcReadMsg;
-        echo $_SESSION["arcReadMsg"];
+//echo $_SESSION["arcReadMsg"];
+         
+        $_SESSION["arcReadId"] = $arcReadId;
+//echo $_SESSION["arcReadId"];
+         
     /*                        
         echo "<p>Do you want to change your review? Do so 
         <form action='fan_review.php' method='post'>
@@ -75,7 +81,7 @@ function callWinner($fansId, $db){
         $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><p>Please stay tuned for additional contests and giveaways!</p>"; 
         
         $_SESSION["contestMsg"] = $contestMsg;
-        
+ //echo $_SESSION["contestMsg"];       
         }
     }
 
@@ -96,7 +102,48 @@ function callPromos ($db){
 
 }
 
+function displayFeedback($firstReadId, $db){
+    foreach ($db->query("SELECT * FROM feedback WHERE first_readers_id = '$firstReadId';") as $row){
+                               
+    $feedbackId = $row['feedback_id'];
+    $firstReadId = $row['first_readers_id'];
+    $storyId = $row['stories_id'];
+    $feedbackDetails = $row['feedback_details'];
+    $feedbackDate = row['feedback_date'];
 
+    $postFeedback = "<p> You provided the following feedback:<br> <b>$storyTitle</b>: $feedbackDetails  </p>";
+    
+    $_SESSION["postFeedback"] = $postFeedback;
+echo $_SESSION["postFeedback"]; 
+        
+    $_SESSION["feedbackId"] = $feedbackId;
+echo $_SESSION["feedbackId"]; 
+}
+    
+
+function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
+    
+    $query = 'UPDATE feedback SET feedback_details = :feedback_details, feedback_date = :feedback_date
+        WHERE feedback_id = :feedback_id';
+
+    $statement = $db->prepare($query);
+
+    $statement->bindValue(':feedback_details', $newFeedback);
+    $statement->bindValue(':feedback_date', $newDate);
+    $statement->bindValue(':feedback_id', $feedbackId);
+
+    $statement->execute();
+                
+    echo "update successful<br>";
+                
+    foreach ($db->query("SELECT feedback_details FROM feedback WHERE feedback_id = '$feedbackId';") as $row){
+
+        $printFeedback = $row['feedback_details'];
+        $feedbackMsg = "YOur Current Feedback: $printFeedback<br>";  
+        $_SESSION["feedbackMsg"] = $feedbackMsg;
+        
+        }    
+}
 
 
 
