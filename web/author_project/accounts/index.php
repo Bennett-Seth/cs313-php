@@ -207,6 +207,8 @@ switch ($action){
 //THESE ARE WORKING, BUT THEIR CONTENTS MUST BE DISPLAYED GLOBALLY ON THE WELCOME PAGE...        
         callFirstReader($fansId, $db);
         
+        $firstReadId = $_SESSION["firstReadId"];
+        
         displayFeedback($firstReadId, $db);
     
         callArcReader($fansId, $db);
