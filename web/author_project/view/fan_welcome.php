@@ -41,7 +41,7 @@
                     //Post First Reader Details
                     if (isset($_SESSION["firstReadMsg"])){
                             echo $_SESSION["firstReadMsg"];
-                            echo "To leave or update your feedback, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_feedback.php'>Here</a>";
+                            echo "To leave or update your feedback, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_feedback.php'>Here</a><br>";
                         } 
                 ?>
                 
@@ -50,7 +50,7 @@
                     if (isset($_SESSION["arcReadMsg"])){
                             $_SESSION["arcReadMsg"];
                             echo "To leave or update your review, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a>";
-                            echo "To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a>";
+                            echo "To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a><br>";
                         }
                 ?>
                 
