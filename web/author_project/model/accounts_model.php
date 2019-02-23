@@ -36,13 +36,13 @@ return $rowsChanged;
 
 // Get client data based on an email address
 function getFan($fanEmail, $db){
-  $sql = 'SELECT fans_id, first_name, last_name, email, password, fans_reg_date FROM fans WHERE clientEmail = :email';
+  $sql = 'SELECT fans_id, first_name, last_name, email, password, fans_reg_date FROM fans WHERE email = :email';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':email', $fanEmail, PDO::PARAM_STR);
   $stmt->execute();
   $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
-  return $clientData;
+  return $fanData;
 }
 
 function lockCheck($fansId, $db){
