@@ -35,14 +35,15 @@ function callArcReader($fansId, $db){
         $storyId = $row['stories_id'];
         $arcTitle =  $row['stories_title'];
          
-echo "$thisArcReadId<br>";
-echo "$thisFanId<br>";
-echo "$storyId<br>";
-echo "$arcTitle<br>";
+//echo "$thisArcReadId<br>";
+//echo "$thisFanId<br>";
+//echo "$storyId<br>";
+//echo "$arcTitle<br>";
                                         
         $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
         
         $_SESSION["arcReadMsg"] = $arcReadMsg;
+        echo $_SESSION["arcReadMsg"];
     /*                        
         echo "<p>Do you want to change your review? Do so 
         <form action='fan_review.php' method='post'>
