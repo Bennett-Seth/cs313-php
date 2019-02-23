@@ -60,14 +60,6 @@
                 
                 <hr>
                 
-                <?php 
-                
-                    if (isset($promosList)){
-                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
-                    }
-                    
-                ?>
-                
                 
             </main>
             
