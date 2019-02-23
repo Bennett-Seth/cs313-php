@@ -63,9 +63,9 @@ function callWinner($fansId, $db){
         $storyId = $row['stories_id'];
         $contestReward =  $row['stories_title']; 
         
-echo "$thisFanId<br>";
-echo "$storyId<br>";
-echo "$contestReward<br>";
+//echo "$thisFanId<br>";
+//echo "$storyId<br>";
+//echo "$contestReward<br>";
                                      
         $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><br><p>Please stay tuned for additional contests and giveaways!</p><hr>"; 
                                      

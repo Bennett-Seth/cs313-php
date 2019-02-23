@@ -30,7 +30,7 @@
                 
                 <?php 
                     //Lockout Notice
-                    if (isset(echo $lockMsg)){
+                    if (isset($lockMsg)){
                             echo $lockMsg;
                         }
                 ?>
@@ -39,23 +39,33 @@
                 
                 <?php 
                     //Post First Reader Details
-                    if (isset(echo $firstReadMsg)){
+                    if (isset($firstReadMsg)){
                             echo $firstReadMsg;
                         }
                 ?>
                 
                 <?php 
                     //Post First Reader Details
-                    if (isset(echo $arcReadMsg)){
+                    if (isset($arcReadMsg)){
                             echo $arcReadMsg;
                         }
                 ?>
                 
                 <?php 
                     //Post First Reader Details
-                    if (isset(echo $contestMsg)){
+                    if (isset($contestMsg)){
                             echo $contestMsg;
                         }
+                ?>
+                
+                <hr>
+                
+                <?php 
+                
+                    if (isset($promosList)){
+                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
+                    }
+                    
                 ?>
                 
                 

@@ -208,10 +208,9 @@ switch ($action){
     
         callArcReader($fansId, $db);
         
-        echo "Calling Contest Winner, now...";
         callWinner($fansId, $db);
         
-   /*       
+        echo "Calling Promos List, now...";
         $promosList = callPromos ($db);
         
         
@@ -219,7 +218,7 @@ switch ($action){
         exit;
         
     break;
-    
+/*   
     default:
          
         include '../view/fan_reg.php';           
