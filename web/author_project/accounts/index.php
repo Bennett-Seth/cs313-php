@@ -204,6 +204,7 @@ switch ($action){
             $lockMsg = "I'm sorry,$fanFirstName, but as of $lockDate, your Super Fan priviledges have been locked away.<br> This is why: $lockReason";
             }
         
+        echo "Calling first reader, now...";
         callFirstReader($fanId, $db);
 
     /*    
