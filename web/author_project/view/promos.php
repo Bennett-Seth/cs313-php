@@ -2,7 +2,7 @@
     session_start();
     
     if (!$_SESSION['loggedin']){
-        header('Location: fan_reg.php');
+        header('Location: https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php');
         exit;
     }
 
@@ -14,14 +14,14 @@
 			<meta charset="utf-8">
 			<title>Superfan Welcome Page</title>
             
-            <?php include 'common/head.php'; ?> 
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/head.php'; ?> 
             
 		</head>
 		<body> 
             
-            <?php include 'common/header.php'; ?>
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/header.php'; ?>
             
-            <?php include 'common/nav.php'; ?>
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/nav.php'; ?>
             
             
             <main>
@@ -37,16 +37,18 @@
                 
                 <h2>Here are our current promotions:<br></h2>
                 
-                <?php
+                <?php 
+                
+                    if (isset($promosList)){
+                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
+                    }
                     
-                    echo $promosList;        
-                                                        
                 ?>
                 
                 
             </main>
             
-            <?php include 'common/footer.php'; ?>
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/footer.php'; ?>
             
 		</body>	
 	</html>

@@ -25,14 +25,14 @@
 			<meta charset="utf-8">
 			<title>Contacts Page</title>
             
-            <?php include 'common/head.php'; ?> 
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/head.php'; ?> 
             
 		</head>
 		<body> 
             
-            <?php include 'common/header.php'; ?>
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/header.php'; ?>
             
-            <?php include 'common/nav.php'; ?>
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/nav.php'; ?>
             
             <main>
                 
@@ -89,7 +89,7 @@
                 
             </main>
             
-            <?php include 'common/footer.php'; ?>
+            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/footer.php'; ?>
             
 		</body>	
 	</html>

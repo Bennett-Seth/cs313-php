@@ -47,7 +47,7 @@
                 <?php 
                     //Post First Reader Details
                     if (isset($_SESSION["arcReadMsg"])){
-                            $_SESSION["arcReadMsg"];
+                           echo $_SESSION["arcReadMsg"];
                         }
                 ?>
                 
@@ -57,17 +57,7 @@
                             echo $_SESSION["contestMsg"];
                         }
                 ?>
-                
-                <hr>
-                
-                <?php 
-                
-                    if (isset($promosList)){
-                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
-                    }
-                    
-                ?>
-                
+
                 
             </main>
             
