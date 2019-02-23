@@ -21,13 +21,13 @@
 			<meta charset="utf-8">
 			<title>Reviews Page</title>
             
-            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/head.php.php'; ?> 
+            <?php include 'common/head.php'; ?> 
             
 		</head>
 		<body>
-            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/header.php'; ?>
+            <?php include 'common/header.php'; ?>
             
-            <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/nav.php'; ?>
+            <?php include 'common/nav.php'; ?>
             
             
             <main>
@@ -62,7 +62,7 @@
                 
             </main>
             
-           <?php include 'https://floating-inlet-17130.herokuapp.com/author_project/common/footer.php'; ?>
+            <?php include 'common/footer.php'; ?>
             
 		</body>	
 	</html>

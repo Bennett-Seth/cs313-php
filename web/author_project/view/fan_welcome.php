@@ -14,14 +14,14 @@
 			<meta charset="utf-8">
 			<title>Superfan Welcome Page</title>
             
-            <?php include 'floating-inlet-17130.herokuapp.com/author_project/common/head.php'; ?> 
+            <?php include 'common/head.php'; ?> 
             
 		</head>
 		<body> 
             
-            <?php include 'floating-inlet-17130.herokuapp.com/author_project/common/header.php'; ?>
+            <?php include 'common/header.php'; ?>
             
-            <?php include 'floating-inlet-17130.herokuapp.com/author_project/common/nav.php'; ?>
+            <?php include 'common/nav.php'; ?>
             
             
             <main>
@@ -47,7 +47,7 @@
                 <?php 
                     //Post First Reader Details
                     if (isset($_SESSION["arcReadMsg"])){
-                           echo $_SESSION["arcReadMsg"];
+                            $_SESSION["arcReadMsg"];
                         }
                 ?>
                 
@@ -57,11 +57,21 @@
                             echo $_SESSION["contestMsg"];
                         }
                 ?>
-
+                
+                <hr>
+                
+                <?php 
+                
+                    if (isset($promosList)){
+                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
+                    }
+                    
+                ?>
+                
                 
             </main>
             
-            <?php include 'floating-inlet-17130.herokuapp.com/author_project/common/footer.php'; ?>
+             <?php include 'common/footer.php'; ?>
             
 		</body>	
 	</html>
