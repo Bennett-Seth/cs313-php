@@ -202,7 +202,7 @@ switch ($action){
             $lockMsg = "I'm sorry,$fanFirstName, but as of $lockDate, your Super Fan priviledges have been locked away.<br> This is why: $lockReason";
             }
         
-        $firstReadMsg = callFirstReader($fanId, $db);
+        callFirstReader($fanId, $db);
 
     /*    
         $arcReadMsg = callArcReader($fanId, $db);
