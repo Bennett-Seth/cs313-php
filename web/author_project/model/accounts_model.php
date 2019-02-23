@@ -47,7 +47,7 @@ function getFan($fanEmail, $db){
 
 function lockCheck($fansId, $db){
     
-    foreach ($db->query("SELECT * FROM lockout WHERE fans_id = '$fanId';") as $row){
+    foreach ($db->query("SELECT * FROM lockout WHERE fans_id = '$fansId';") as $row){
                                 
         $lockId = $row['lockout_id'];
         $lock_fan_id = $row['fans_id'];
