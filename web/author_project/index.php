@@ -10,6 +10,14 @@
     // Get php functions file
     require 'library/functions.php';    
 
+    $path = parse_url('https://floating-inlet-17130.herokuapp.com/author_project/index.php', PHP_URL_PATH);
+    
+    echo $path;
+
+    //To get the dir, use: dirname($path)
+
+    echo $_SERVER['DOCUMENT_ROOT'] . $path;
+
     $action = filter_input(INPUT_POST, 'action');
         if ($action == NULL){
          $action = filter_input(INPUT_GET, 'action');

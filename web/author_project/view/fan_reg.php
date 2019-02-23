@@ -19,12 +19,11 @@
             <?php include 'common/nav.php'; ?>
             
             <main>
-                
-                <h2> Ready to become a Super Fan? </h2>
+
                 <h2> Sign up below for swag, free stories and more! </h2>
                 
-                <h1>NOTE: special password restrictions are disabled </h1>
-            <!-- 
+                
+            <!-- <h1>NOTE: special password restrictions are disabled </h1>
 pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
 onkeypress='doPasswordsMatch()' 
 <span id='yesMatch' style='visibility: hidden' >Your passwords match!</span>
