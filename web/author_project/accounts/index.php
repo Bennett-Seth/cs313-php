@@ -206,11 +206,12 @@ switch ($action){
         
         callFirstReader($fansId, $db);
     
-        echo "Calling arc reader, now...";
         callArcReader($fansId, $db);
-  /*          
-        $contestMsg = callWinner($fanId, $db);
         
+        echo "Calling Contest Winner, now...";
+        callWinner($fansId, $db);
+        
+   /*       
         $promosList = callPromos ($db);
         
         

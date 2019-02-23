@@ -33,10 +33,10 @@ function callArcReader($fansId, $db){
         $storyId = $row['stories_id'];
         $arcTitle =  $row['stories_title'];
          
-echo "$thisArcReadId<br>";
-echo "$thisFanId<br>";
-echo "$storyId<br>";
-echo "$arcTitle<br>";
+//echo "$thisArcReadId<br>";
+//echo "$thisFanId<br>";
+//echo "$storyId<br>";
+//echo "$arcTitle<br>";
                                         
         $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";  
     /*                        
@@ -62,8 +62,12 @@ function callWinner($fansId, $db){
         $thisFanId = $row['fans_id'];
         $storyId = $row['stories_id'];
         $contestReward =  $row['stories_title']; 
+        
+echo "$thisFanId<br>";
+echo "$storyId<br>";
+echo "$contestReward<br>";
                                      
-        return "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><br>       <p>Please stay tuned for additional contests and giveaways!</p><hr>"; 
+        $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><br><p>Please stay tuned for additional contests and giveaways!</p><hr>"; 
                                      
         }
     }
