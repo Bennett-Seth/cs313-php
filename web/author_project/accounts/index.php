@@ -208,7 +208,7 @@ switch ($action){
         callFirstReader($fansId, $db);
         
         $firstReadId = $_SESSION["firstReadId"];
-        $storyTitle = $_SESSION["storyTitle"]
+        $storyTitle = $_SESSION["storyTitle"];
         
         displayFeedback($firstReadId, $db);
     
