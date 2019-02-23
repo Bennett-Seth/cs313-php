@@ -45,7 +45,7 @@ onkeypress='doPasswordsMatch()'
                     <input type='submit' value='Submit'>
                 </form>
                 
-                <h2> Not a member yet? Sign up <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php> Sign me up!">Here</a></h2>
+                <h2> Not a member yet? Sign up <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php"> Here</a></h2>
                 
                 
             </main>

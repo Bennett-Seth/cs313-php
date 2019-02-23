@@ -117,29 +117,33 @@ switch ($action){
         
         // Filter and store the data
         $fanEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $fanPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         
         echo "Import: $fanEmail<br>";
-        echo "Import: $password<br>";
+        echo "Import: $fanPassword<br>";
         
         // Double check the validation of the email input
         $fanEmail = valEmail($fanEmail);
+        
+        echo "email validated";
         
         // Make sure this email isn't already included in the Database
         $existingEmail = checkExistingEmail($fanEmail, $db);
             if ($existingEmail){
                 $message = "<p> That email already exists. Do you wish to login instead?</p>";
-                include '../view/login.php';
+                include 'https://floating-inlet-17130.herokuapp.com/author_project/view/fan_login.php';
                 exit;   
              }
+        
+        echo "email exist checked";
             
         // Double check the validation of the password input
-        $checkPassword = checkPassword($password);
+        $checkPassword = checkPassword($fanPassword);
         
         // Check for missing data
             if(empty($fanEmail) || empty($checkPassword)){
                 $message = "<p>Please provide information for all empty form fields.</p>";
-                include 'sign_up.php';
+                include 'https://floating-inlet-17130.herokuapp.com/author_project/view/fan_login.php';
             exit; }
         
         echo "About to Login";
@@ -161,7 +165,7 @@ switch ($action){
         // and return to the login view
         if (!$hashCheck) {
             $message = '<p class="notice">Please check your password and try again.</p>';
-            include 'sign_in.php';
+            include 'https://floating-inlet-17130.herokuapp.com/author_project/view/fan_login.php';
             exit;
             }
         
