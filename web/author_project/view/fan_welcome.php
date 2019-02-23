@@ -41,7 +41,7 @@
                     //Post First Reader Details
                     if (isset($firstReadMsg)){
                             echo $firstReadMsg;
-                        }
+                        } 
                 ?>
                 
                 <?php 
@@ -59,14 +59,6 @@
                 ?>
                 
                 <hr>
-                
-                <?php 
-                
-                    if (isset($promosList)){
-                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
-                    }
-                    
-                ?>
                 
                 
             </main>

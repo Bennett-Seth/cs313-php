@@ -38,6 +38,7 @@
                 <h2>Here are our current promotions:<br></h2>
                 
                 <?php
+                    
                     echo $promosList;        
                                                         
                 ?>

@@ -73,11 +73,15 @@ function callWinner($fansId, $db){
     }
 
 function callPromos ($db){
+    $promosList = "";
+    
     foreach ($db->query("SELECT promos_title FROM promos;") as $row){
                                  
         $promoTitle = $row['promos_title'];
 
-        return "$promoTitle<br>";              
+        $promosList += "$promoTitle<br>"; 
+        
+        return $promosList;
         }   
     }
 

@@ -204,13 +204,15 @@ switch ($action){
             $lockMsg = "I'm sorry,$fanFirstName, but as of $lockDate, your Super Fan priviledges have been locked away.<br> This is why: $lockReason";
             }
         
+//THESE ARE WORKING, BUT THEIR CONTENTS MUST BE DISPLAYED GLOBALLY ON THE WELCOME PAGE...        
+        
         callFirstReader($fansId, $db);
     
         callArcReader($fansId, $db);
         
         callWinner($fansId, $db);
         
-        echo "Calling Promos List, now...";
+//BUILDING THIS COMPLETE LIST COULD BE TRICKY TOO...
         $promosList = callPromos ($db);
         
         
