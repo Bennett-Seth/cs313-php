@@ -21,9 +21,9 @@
 
     //check to see if the user is already logged in
     if (isset($_SESSION['loggedin'])){
-            $cookieUsername = filter_input(INPUT_COOKIE, 'email', FILTER_SANITIZE_STRING);
+            $cookieUsername = filter_input(INPUT_COOKIE, 'fanEmail', FILTER_SANITIZE_STRING);
         } else {
-            setcookie('email', '', time() - 3600, '/'); 
+            setcookie('fanEmail', '', time() - 3600, '/'); 
             // empty value and old timestamp
         }
 
@@ -102,7 +102,7 @@ switch ($action){
         // Check and report the result
         if($regOutcome === 1){
             // Check and report the result
-            setcookie('email', $fanEmail, strtotime('+1 year'), '/');
+            setcookie('fanEmail', $fanEmail, strtotime('+1 year'), '/');
             $message = "<p>Thanks for registering, $fanFirstName $fanLastName. Please use your username and password to sign in.</p>";
             include '../view/fan_login.php';
                 exit;
@@ -166,15 +166,15 @@ switch ($action){
         echo $_SESSION['loggedin'];
         
         // Store the array into the session
-        $_SESSION['clientData'] = $clientData;
+        $_SESSION['fanData'] = $fanData;
             
         // Break down current user's information into useable variables
-        $fansId = $_SESSION['clientData']['fans_id'];
-        $fanFirstName = $_SESSION['clientData']['first_name'];
-        $fanLastName = $_SESSION['clientData']['last_name'];
-        $fanPassword = $_SESSION['clientData']['password'];
-        $fanEmail = $_SESSION['clientData']['email'];
-        $fanRegDate = $_SESSION['clientData']['fans_reg_date'];
+        $fansId = $_SESSION['fanData']['fans_id'];
+        $fanFirstName = $_SESSION['fanData']['first_name'];
+        $fanLastName = $_SESSION['fanData']['last_name'];
+        $fanPassword = $_SESSION['fanData']['password'];
+        $fanEmail = $_SESSION['fanData']['email'];
+        $fanRegDate = $_SESSION['fanData']['fans_reg_date'];
         
         echo "Session Data:<br>";
         echo "$fansId<br>";
