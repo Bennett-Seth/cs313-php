@@ -127,14 +127,15 @@ switch ($action){
         
         echo "email validated";
 
+                                    
+        // Double check the validation of the password input
+        $checkPassword = checkPassword($fanPassword);
+        
         // Check for missing data
             if(empty($fanEmail) || empty($checkPassword)){
                 $message = "<p>Please provide information for all empty form fields.</p>";
                 include '../view/fan_login.php';
             exit; }
-                            
-        // Double check the validation of the password input
-        $checkPassword = checkPassword($fanPassword);
         
         echo "About to Login";
         
