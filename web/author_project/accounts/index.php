@@ -186,7 +186,7 @@ switch ($action){
         
         // Set Client's Login Cookie
         setcookie('fanEmail', $fanEmail, strtotime('+1 year'), '/');
-/*
+
         //Lockout Check
         $lockDetails = lockCheck($fansId, $db);
         
@@ -201,7 +201,7 @@ switch ($action){
             
             $lockMsg = "I'm sorry,$fanFirstName, but as of $lockDate, your Super Fan priviledges have been locked away.<br> This is why: $lockReason";
             }
-        
+   /*     
         $firstReadMsg = callFirstReader($fanId, $db);
         
         $arcReadMsg = callArcReader($fanId, $db);
@@ -215,10 +215,11 @@ switch ($action){
         exit;
         
     break;
-*/    
+    
     default:
          
         include '../view/fan_reg.php';           
-    }
+*/
+}
 
 ?>
