@@ -28,11 +28,15 @@
                     //Post First Reader Details
                     if (isset($_SESSION["firstReadMsg"])){
                             echo $_SESSION["firstReadMsg"];
-                        } 
+                        } else {
+                            echo "Session firstReadMgs not initializing";
+                        }
         
                     if (isset($_SESSION["postFeedback"])){
                             echo $_SESSION["postFeedback"];
-                        } 
+                        } else {
+                            echo "Session postFeedback not initializing";
+                        }
                                 
                         echo "Would you like to amend your feedback? Insert your new comments below:";
                         
