@@ -205,7 +205,7 @@ switch ($action){
             }
         
         echo "Calling first reader, now...";
-        callFirstReader($fanId, $db);
+        callFirstReader($fansId, $db);
 
     /*    
         $arcReadMsg = callArcReader($fanId, $db);
