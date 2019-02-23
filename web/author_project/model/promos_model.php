@@ -17,9 +17,10 @@ function callFirstReader($fansId, $db){
         $firstReadMsg = "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
             
         $_SESSION["firstReadMsg"] = $firstReadMsg;
-echo $_SESSION["firstReadMsg"];    
+//echo $_SESSION["firstReadMsg"];    
         $_SESSION["firstReadId"] = $firstReadId;
-echo $_SESSION["firstReadId"];
+//echo $_SESSION["firstReadId"];
+        $_SESSION["storyTitle"] = $storyTitle;
             
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
@@ -47,10 +48,10 @@ function callArcReader($fansId, $db){
         $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
         
         $_SESSION["arcReadMsg"] = $arcReadMsg;
-echo $_SESSION["arcReadMsg"];
+//echo $_SESSION["arcReadMsg"];
          
         $_SESSION["arcReadId"] = $arcReadId;
-echo $_SESSION["arcReadId"];
+//echo $_SESSION["arcReadId"];
          
     /*                        
         echo "<p>Do you want to change your review? Do so 
@@ -83,7 +84,7 @@ function callWinner($fansId, $db){
         $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><p>Please stay tuned for additional contests and giveaways!</p>"; 
         
         $_SESSION["contestMsg"] = $contestMsg;
- echo $_SESSION["contestMsg"];       
+ //echo $_SESSION["contestMsg"];       
         }
     }
 
@@ -113,20 +114,20 @@ function displayFeedback($firstReadId, $db){
     $feedbackDetails = $row['feedback_details'];
     $feedbackDate = row['feedback_date'];
         
-echo $feedbackId;
-echo $firstReadId;
-echo $storyId;
-echo $feedbackDetails;
-echo $feedbackDate;
+//echo $feedbackId;
+//echo $firstReadId;
+//echo $storyId;
+//echo $feedbackDetails;
+//echo $feedbackDate;
 
     $postFeedback = "<p> You provided the following feedback:<br> <b>$storyTitle</b>: $feedbackDetails  </p><br>";
-echo "This is your feedback: $postFeedback<br>";
+//echo "This is your feedback: $postFeedback<br>";
     
     $_SESSION["postFeedback"] = $postFeedback;
-echo $_SESSION["postFeedback"]; 
+//echo $_SESSION["postFeedback"]; 
         
     $_SESSION["feedbackId"] = $feedbackId;
-echo $_SESSION["feedbackId"]; 
+//echo $_SESSION["feedbackId"]; 
     }
 }
 
