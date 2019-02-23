@@ -132,7 +132,7 @@ switch ($action){
         $checkPassword = checkPassword($fanPassword);
         
         // Check for missing data
-            if(empty($fanEmail) || empty($checkPassword)){
+            if(empty($fanEmail) || empty($fanPassword)){
                 $message = "<p>Please provide information for all empty form fields.</p>";
                 include '../view/fan_login.php';
             exit; }

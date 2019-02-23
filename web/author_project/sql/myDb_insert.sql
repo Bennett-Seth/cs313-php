@@ -234,10 +234,29 @@ VALUES (02
 ,'Cowlitz'
 );
 
+/* Polish up data points for my test fan, Sarah (registered through the site) */
+
 ALTER TABLE fans
 ADD COLUMN passwords VARCHAR(255);
 
-
+INSERT INTO first_readers (fans_id, stories_id, promos_id)
+VALUES (38
+       ,03
+       ,03
+       );
+       
+       
+INSERT INTO arc_readers (fans_id, stories_id, promos_id)
+VALUES (38
+       ,04
+       ,04
+       );
+       
+INSERT INTO contest_winner (fans_id, stories_id, promos_id)
+VALUES (38
+       ,02
+       ,02
+       );
 
 
 
