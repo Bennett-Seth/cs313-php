@@ -213,8 +213,7 @@ switch ($action){
         callWinner($fansId, $db);
         
 //BUILDING THIS COMPLETE LIST COULD BE TRICKY TOO...
-        $promosList = callPromos ($db);
-        
+        $promosList = callPromos($db);
         
         include '../view/fan_welcome.php';
         exit;

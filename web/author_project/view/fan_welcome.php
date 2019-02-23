@@ -39,22 +39,22 @@
                 
                 <?php 
                     //Post First Reader Details
-                    if (isset($firstReadMsg)){
-                            echo $firstReadMsg;
+                    if (isset($_SESSION["firstReadMsg"])){
+                            echo $_SESSION["firstReadMsg"];
                         } 
                 ?>
                 
                 <?php 
                     //Post First Reader Details
-                    if (isset($arcReadMsg)){
-                            echo $arcReadMsg;
+                    if (isset($_SESSION["arcReadMsg"])){
+                            $_SESSION["arcReadMsg"];
                         }
                 ?>
                 
                 <?php 
                     //Post First Reader Details
-                    if (isset($contestMsg)){
-                            echo $contestMsg;
+                    if (isset($_SESSION["contestMsg"])){
+                            echo $_SESSION["contestMsg"];
                         }
                 ?>
                 

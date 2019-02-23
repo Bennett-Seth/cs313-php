@@ -15,6 +15,8 @@ function callFirstReader($fansId, $db){
 //echo "$storyTitle<br>";
 
         $firstReadMsg = "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
+            
+        $_SESSION["firstReadMsg"] = $firstReadMsg;
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
         <form action='fan_feedback.php' method='post'>
@@ -38,7 +40,9 @@ function callArcReader($fansId, $db){
 //echo "$storyId<br>";
 //echo "$arcTitle<br>";
                                         
-        $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";  
+        $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
+        
+        $_SESSION["arcReadMsg"] = $arcReadMsg;
     /*                        
         echo "<p>Do you want to change your review? Do so 
         <form action='fan_review.php' method='post'>
@@ -68,22 +72,35 @@ function callWinner($fansId, $db){
 //echo "$contestReward<br>";
                                      
         $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><br><p>Please stay tuned for additional contests and giveaways!</p><hr>"; 
-                                     
+        
+        $_SESSION["contestMsg"] = $contestMsg;
+        
         }
     }
 
 function callPromos ($db){
-    
+    $promosList = "";
     foreach ($db->query("SELECT promos_title FROM promos;") as $row){
-                                 
         $promoTitle = $row['promos_title'];
-
-        $promosList += "$promoTitle<br>"; 
-    
-        }   
-     
+        $promosList .= "$promoTitle<br>";   
+        }       
     return $promosList;
     
-    }
+// $sql = 'SELECT promos_title FROM promos;';
+// $stmt = $db->prepare($sql);
+// $stmt->execute();
+// $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $stmt->closeCursor();
+// return $promosList;    
+
+}
+
+
+
+
+
+
+
+
 
 ?>
