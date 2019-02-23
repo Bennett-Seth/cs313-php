@@ -36,7 +36,7 @@ function callArcReader($fansId, $db){
 echo "$thisArcReadId<br>";
 echo "$thisFanId<br>";
 echo "$storyId<br>";
-echo "$storyTitle<br>";
+echo "$arcTitle<br>";
                                         
         $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";  
     /*                        
