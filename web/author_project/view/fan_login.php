@@ -38,7 +38,7 @@ onkeypress='doPasswordsMatch()'
                 <form action="https://floating-inlet-17130.herokuapp.com/author_project/accounts/index.php" method="post">
                     <form action='index.php' method='post'>
                     <p>What is your email?</p>
-                    <input type="email" name="clientEmail" placeholder="johnny@gmail.com" required>
+                    <input type="email" name="email" placeholder="johnny@gmail.com" required>
                     <p>What is your password?</p>
                     <input type='password' name='password' required>
                     <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span> 
@@ -48,7 +48,7 @@ onkeypress='doPasswordsMatch()'
                 </form>
                 
                 
-                <h2> Not a member yet? Sign up </h2><a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php> Sign me up!">Here</a>
+                <h2> Not a member yet? Sign up <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php> Sign me up!">Here</a></h2>
                 
                 
             </main>
