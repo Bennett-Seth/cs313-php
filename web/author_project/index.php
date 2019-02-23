@@ -12,7 +12,7 @@
 
     $path = parse_url('https://floating-inlet-17130.herokuapp.com/author_project/index.php', PHP_URL_PATH);
     
-    echo $path;
+    echo "$path<br>";
 
     //To get the dir, use: dirname($path)
 
