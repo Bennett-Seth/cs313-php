@@ -31,7 +31,7 @@ onkeypress='doPasswordsMatch()'
 <span id='noMatch' style='visibility: hidden'>Your passwords don't match</span><br>
             -->
                 
-                <form action='accounts/index.php' method='post'>
+                <form action='https://floating-inlet-17130.herokuapp.com/author_project/accounts/index.php' method='post'>
                     <p>Chose your first name:</p>
                     <input type='text' name='firstName' pattern="[A-Za-z\s]{1,60}" required>
                     <p>Chose your last name:</p>

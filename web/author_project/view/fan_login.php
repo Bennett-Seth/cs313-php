@@ -35,7 +35,7 @@ onkeypress='doPasswordsMatch()'
 <span id='noMatch' style='visibility: hidden'>Your passwords don't match</span><br>
             -->
                 
-                <form action="../accounts/index.php" method="post">
+                <form action="https://floating-inlet-17130.herokuapp.com/author_project/accounts/index.php" method="post">
                     <form action='index.php' method='post'>
                     <p>What is your email?</p>
                     <input type="email" name="clientEmail" placeholder="johnny@gmail.com" required>
@@ -48,9 +48,7 @@ onkeypress='doPasswordsMatch()'
                 </form>
                 
                 
-                <h2> Not a member yet?</h2>
-                
-                <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php> Sign me up!</a>
+                <h2> Not a member yet? Sign up </h2><a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php> Sign me up!">Here</a>
                 
                 
             </main>
