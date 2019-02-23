@@ -119,13 +119,13 @@ switch ($action){
         $fanEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $fanPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         
-        echo "Import: $fanEmail<br>";
-        echo "Import: $fanPassword<br>";
+//echo "Import: $fanEmail<br>";
+//echo "Import: $fanPassword<br>";
         
         // Double check the validation of the email input
         $fanEmail = valEmail($fanEmail);
         
-        echo "email validated";
+//echo "email validated";
 
                                     
         // Double check the validation of the password input
@@ -139,13 +139,13 @@ switch ($action){
             exit; }
 */
 
-        echo "About to Login";
+//echo "About to Login";
         
         // A valid password exists, proceed with the login process
         // Query the client data based on the username
         $fanData = getFan($fanEmail,$db);
         
-        echo "Check: retrieved data";
+//echo "Check: retrieved data";
         
         // Hash the checked password
         $hashedPassword = password_hash($fanPassword, PASSWORD_DEFAULT);
@@ -165,7 +165,7 @@ switch ($action){
         // A valid user exists, log them in
         $_SESSION['loggedin'] = TRUE;
         
-        echo $_SESSION['loggedin'];
+//echo $_SESSION['loggedin'];
         
         // Store the array into the session
         $_SESSION['fanData'] = $fanData;
@@ -178,13 +178,13 @@ switch ($action){
         $fanEmail = $_SESSION['fanData']['email'];
         $fanRegDate = $_SESSION['fanData']['fans_reg_date'];
         
-        echo "Session Data:<br>";
-        echo "$fansId<br>";
-        echo "$fanFirstName<br>";
-        echo "$fanLastName<br>";
-        echo "$fanPassword<br>";
-        echo "$fanEmail<br>";
-        echo "$fanRegDate<br>";
+//echo "Session Data:<br>";
+//echo "$fansId<br>";
+//echo "$fanFirstName<br>";
+//echo "$fanLastName<br>";
+//echo "$fanPassword<br>";
+//echo "$fanEmail<br>";
+//echo "$fanRegDate<br>";
         
         // Set Client's Login Cookie
         setcookie('fanEmail', $fanEmail, strtotime('+1 year'), '/');
@@ -204,12 +204,11 @@ switch ($action){
             $lockMsg = "I'm sorry,$fanFirstName, but as of $lockDate, your Super Fan priviledges have been locked away.<br> This is why: $lockReason";
             }
         
-        echo "Calling first reader, now...";
         callFirstReader($fansId, $db);
-
-    /*    
-        $arcReadMsg = callArcReader($fanId, $db);
-            
+    
+        echo "Calling arc reader, now...";
+        callArcReader($fansId, $db);
+  /*          
         $contestMsg = callWinner($fanId, $db);
         
         $promosList = callPromos ($db);
