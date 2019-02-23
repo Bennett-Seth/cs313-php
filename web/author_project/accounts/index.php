@@ -137,13 +137,13 @@ switch ($action){
                 include '../view/fan_login.php';
             exit; }
         
-        echo "About to Login";
+//        echo "About to Login";
         
         // A valid password exists, proceed with the login process
         // Query the client data based on the username
         $fanData = getFan($fanEmail,$db);
         
-        echo "Check: retrieved data";
+//        echo "Check: retrieved data";
         
         // Hash the checked password
         $hashedPassword = password_hash($fanPassword, PASSWORD_DEFAULT);
@@ -163,7 +163,7 @@ switch ($action){
         // A valid user exists, log them in
         $_SESSION['loggedin'] = TRUE;
         
-        echo $_SESSION['loggedin'];
+//        echo $_SESSION['loggedin'];
         
         // Store the array into the session
         $_SESSION['fanData'] = $fanData;
@@ -176,13 +176,13 @@ switch ($action){
         $fanEmail = $_SESSION['fanData']['email'];
         $fanRegDate = $_SESSION['fanData']['fans_reg_date'];
         
-        echo "Session Data:<br>";
-        echo "$fansId<br>";
-        echo "$fanFirstName<br>";
-        echo "$fanLastName<br>";
-        echo "$fanPassword<br>";
-        echo "$fanEmail<br>";
-        echo "$fanRegDate<br>";
+//        echo "Session Data:<br>";
+//        echo "$fansId<br>";
+//        echo "$fanFirstName<br>";
+//        echo "$fanLastName<br>";
+//        echo "$fanPassword<br>";
+//        echo "$fanEmail<br>";
+//        echo "$fanRegDate<br>";
         
         // Set Client's Login Cookie
         setcookie('fanEmail', $fanEmail, strtotime('+1 year'), '/');
