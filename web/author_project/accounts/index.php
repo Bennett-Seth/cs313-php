@@ -203,8 +203,7 @@ switch ($action){
             }
         
         $firstReadMsg = callFirstReader($fanId, $db);
-        
-        echo $firstReadMsg;
+
     /*    
         $arcReadMsg = callArcReader($fanId, $db);
             

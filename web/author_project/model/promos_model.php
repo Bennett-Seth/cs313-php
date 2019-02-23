@@ -3,14 +3,21 @@
 function callFirstReader($fansId, $db){
         $intFansId = (int)$fansId;
     
+        echo "$intFansId"<br>;
+    
         foreach ($db->query("SELECT first_readers.first_readers_id, first_readers.fans_id, stories.stories_id, stories.stories_title FROM first_readers RIGHT JOIN stories ON first_readers.stories_id = stories.stories_id WHERE first_readers.fans_id = '$intFansId';") as $row){
 
         $thisFirstReadId = $row['first_readers_id'];
         $thisFansId = $row['fans_id'];
         $storyId = $row['stories_id'];
         $storyTitle = $row['stories_title'];
+            
+        echo "$thisFirstReadId<br>";
+        echo "$thisFansId<br>";
+        echo "$storyId<br>";
+        echo "$storyTitle<br>";
 
-        return "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
+        echo "<p> You are a first reader for: <b>'$storyTitle'</b>. </p>";
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
         <form action='fan_feedback.php' method='post'>
