@@ -73,7 +73,7 @@ switch ($action){
         
         callArcReader($fansId, $db);
         
-        updateReview($newReview, $reviewsId, $newVendor, $newDate, $db);
+        updateReview($newReview, $reviewsId, $reviewsVendor, $newDate, $db);
         
         displayReview($arcReadId, $db);
         

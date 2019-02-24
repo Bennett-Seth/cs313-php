@@ -182,7 +182,7 @@ echo $reviewsDetails;
     }
 }
 
-function updateReview($newReview, $reviewsId, $newVendor, $newDate, $db){
+function updateReview($newReview, $reviewsId, $reviewsVendor, $newDate, $db){
     
     $query = 'UPDATE reviews SET reviews_details = :reviews_details, reviews_date = :reviews_date, reviews_vendor = :reviews_vendor WHERE reviews_id = :reviews_id';
 
@@ -191,7 +191,7 @@ function updateReview($newReview, $reviewsId, $newVendor, $newDate, $db){
     $statement->bindValue(':reviews_details', $newReview);
     $statement->bindValue(':reviews_date', $newDate);
     $statement->bindValue(':reviews_id', $reviewsId);
-    $statement->bindValue(':reviews_vendor', $newVendor);
+    $statement->bindValue(':reviews_vendor', $reviewsVendor);
 
     $statement->execute();
                 
@@ -200,7 +200,7 @@ function updateReview($newReview, $reviewsId, $newVendor, $newDate, $db){
     foreach ($db->query("SELECT reviews_details FROM reviews WHERE reviews_id = '$reviewsId';") as $row){
 
         $printReview = $row['reviews_details'];
-        $postReview  = "<p>Vendor: $newVendor </p><p>Your Current Review: $printReview</p>";
+        $postReview  = "<p>Vendor: $reviewsVendor </p><p>Your Current Review: $printReview</p>";
         
         $_SESSION["postReview "] = $postReview;
         
