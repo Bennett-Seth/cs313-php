@@ -6,7 +6,7 @@
     $reviewsId = $_SESSION["reviewsId"];
         echo "Current reviews id is: $reviewsId<br>";
     $reviewsDetails = $_SESSION["reviewsDetails"];
-        echo $_SESSION["reviewsVendor"]; 
+        echo $_SESSION["reviewsDetails"]; 
     $reviewsVendor = $_SESSION["reviewsVendor"];
         echo $_SESSION["reviewsVendor"];  
 
