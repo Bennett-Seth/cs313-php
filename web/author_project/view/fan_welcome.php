@@ -46,7 +46,7 @@
                 ?>
                 
                 <?php 
-                    //Post First Reader Details
+                    //Post Arc Reader Details
                     if (isset($_SESSION["arcReadMsg"])){
                             echo $_SESSION["arcReadMsg"];
                             echo "To leave or update your review, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a>";
@@ -55,7 +55,7 @@
                 ?>
                 
                 <?php 
-                    //Post First Reader Details
+                    //Post Contest Details
                     if (isset($_SESSION["contestMsg"])){
                             echo $_SESSION["contestMsg"];
                         }

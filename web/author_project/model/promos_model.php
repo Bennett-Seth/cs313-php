@@ -9,17 +9,17 @@ function callFirstReader($fansId, $db){
         $storyId = $row['stories_id'];
         $storyTitle = $row['stories_title'];
             
-echo "$thisFirstReadId<br>";
-echo "$thisFansId<br>";
-echo "$storyId<br>";
-echo "$storyTitle<br>";
+//echo "$thisFirstReadId<br>";
+//echo "$thisFansId<br>";
+//echo "$storyId<br>";
+//echo "$storyTitle<br>";
 
         $firstReadMsg = "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
             
         $_SESSION["firstReadMsg"] = $firstReadMsg;
-echo $_SESSION["firstReadMsg"];    
+//echo $_SESSION["firstReadMsg"];    
         $_SESSION["firstReadId"] = $firstReadId;
-echo $_SESSION["firstReadId"];
+//echo $_SESSION["firstReadId"];
         $_SESSION["feedbackTitle"] = $storyTitle;
             
     /*                        
@@ -52,6 +52,10 @@ function callArcReader($fansId, $db){
          
         $_SESSION["arcReadId"] = $arcReadId;
 //echo $_SESSION["arcReadId"];
+         
+        $_SESSION["arcTitle"] = $arcTitle;
+//echo $_SESSION["arcTitle"] ;
+         
          
     /*                        
         echo "<p>Do you want to change your review? Do so 
@@ -146,7 +150,7 @@ function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
 
     $statement->execute();
                 
-    echo "update successful<br>";
+//echo "update successful<br>";
                 
     foreach ($db->query("SELECT feedback_details FROM feedback WHERE feedback_id = '$feedbackId';") as $row){
 
@@ -157,7 +161,57 @@ function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
         }    
 }
 
+function displayReview($arcReadId, $db){
+    $arcTitle = $_SESSION["arcTitle"]; 
+    
+    foreach ($db->query("SELECT * FROM review WHERE arc_readers_id = '$arcReadId';") as $row){
+                               
+    $reviewsId = $row['reviews_id'];
+    $arcReadId = $row['arc_readers_id'];
+    $storyId = $row['stories_id'];
+    $reviewsVendor =  $row['reviews_vendor']; 
+    $reviewsDetails =  $row['reviews_details']; 
+        
+//echo $reviewsId;
+//echo $arcReadId;
+//echo $storyId;
+//echo $reviewsVendor;
+//echo $reviewsDetails;   
+        
+    $postReview = "<p> You provided the following review:<br> <b>$arcTitle</b>: $reviewsDetails  </p><br>";
+//echo "This is your review: $postReview<br>";
+    
+    $_SESSION["postReview"] = $postReview;
+//echo $_SESSION["postFeedback"]; 
+        
+    $_SESSION["reviewsId"] = $reviewsId;
+//echo $_SESSION["feedbackId"]; 
+    }
+}
 
+function updateReview($newReview, $reviewsId, $newVendor, $newDate, $db){
+    
+    $query = 'UPDATE reviews SET reviews_details = :reviews_details, reviews_date = :reviews_date, reviews_vendor = :reviews_vendor WHERE reviews_id = :reviews_id';
+
+    $statement = $db->prepare($query);
+
+    $statement->bindValue(':reviews_details', $newReview);
+    $statement->bindValue(':reviews_date', $newDate);
+    $statement->bindValue(':reviews_id', $reviewsId);
+    $statement->bindValue(':reviews_vendor', $newVendor);
+
+    $statement->execute();
+                
+//echo "update successful<br>";
+                
+    foreach ($db->query("SELECT review_details FROM reviews WHERE reviews_id = '$reviewsId';") as $row){
+
+        $printReview = $row['review_details'];
+        $postReview  = "Your Current Review: $printReview<br>";  
+        $_SESSION["postReview "] = $postReview;
+        
+        }    
+}
 
 
 
