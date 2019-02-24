@@ -41,7 +41,7 @@ onkeypress='doPasswordsMatch()'
                     <p>What is your password?</p>
                     <input type='password' name='password' required><br>
                     <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span> 
-                    <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="action" value="login"><br>
                     <input type='submit' value='Submit'>
                 </form>
                 

@@ -32,12 +32,16 @@ switch ($action){
         $newDate = date("m/d/Y");
         echo "Today's Date is: $newDate";
         
-        $storyTitle = $_SESSION["storyTitle"];
+        $feedbackTitle = $_SESSION["feedbackTitle"];
+        echo "The novel is: $feedbackTitle";
         $firstReadId = $_SESSION["firstReadId"];
+        echo "The first read ID is: $firstReadId";
+        
+        callFirstReader($fansId, $db);
+        
+        updateFeedback($newFeedback, $feedbackId, $newDate, $db);
         
         displayFeedback($firstReadId, $db);
-        
-        updateFeedback($newFeedback, $feedbackId, $newDate);
         
         include '../view/fan_feedback.php';
         exit;
