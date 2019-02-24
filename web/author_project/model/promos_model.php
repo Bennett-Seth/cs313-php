@@ -164,7 +164,7 @@ function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
 function displayReview($arcReadId, $db){
     $arcTitle = $_SESSION["arcTitle"]; 
     
-    foreach ($db->query("SELECT * FROM review WHERE arc_readers_id = '$arcReadId';") as $row){
+    foreach ($db->query("SELECT * FROM reviews WHERE arc_readers_id = '$arcReadId';") as $row){
                                
     $reviewsId = $row['reviews_id'];
     $arcReadId = $row['arc_readers_id'];
