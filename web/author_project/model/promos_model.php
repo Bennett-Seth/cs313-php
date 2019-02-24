@@ -172,11 +172,11 @@ function displayReview($arcReadId, $db){
     $reviewsVendor =  $row['reviews_vendor']; 
     $reviewsDetails =  $row['reviews_details']; 
         
-//echo $reviewsId;
-//echo $arcReadId;
-//echo $storyId;
-//echo $reviewsVendor;
-//echo $reviewsDetails;   
+echo $reviewsId;
+echo $arcReadId;
+echo $storyId;
+echo $reviewsVendor;
+echo $reviewsDetails;   
         
     $postReview = "<p> You provided the following review:<br> <b>$arcTitle</b>: $reviewsDetails  </p><br>";
 //echo "This is your review: $postReview<br>";

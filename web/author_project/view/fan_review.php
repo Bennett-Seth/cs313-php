@@ -3,7 +3,6 @@
     
     $arcReadId = $_SESSION["arcReadId"];
         echo "My Arc Reader Id Is: $arcReadId<br>"; 
-
     $reviewsId = $_SESSION["reviewsId"];
         echo "Current reviews id is: $reviewsId<br>";
 
@@ -30,8 +29,8 @@
                 <?php 
                      
                     //Post First Reader Details
-                    if (isset($_SESSION["arcMsg"])){
-                            echo $_SESSION["arcMsg"];
+                    if (isset($_SESSION["arcReadMsg"])){
+                            echo $_SESSION["arcReadMsg"];
                         } else {
                             echo "Session arcMgs not initializing<br>";
                         }
@@ -45,9 +44,9 @@
                         echo "Would you like to amend your Review? Insert your new comments below.";
                         
                         echo "<form action='../promos/index.php' method='post'>
-                        <textarea name='newFeedback' rows='20' cols='50'></textarea><br>
+                        <textarea name='newFeedback' rows='20' cols='50' required></textarea><br>
                         <p>What vendor is this review for?</p>
-                        <input type='text' name='reviews_vendor'>
+                        <input type='text' name='reviews_vendor' required>
                         <input type='hidden' name='reviews_id' value='$reviewsId'>
                         <input type='hidden' name='action' value='newReview'>
                         <input type='submit' value='Submit'>
