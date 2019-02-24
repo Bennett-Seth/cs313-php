@@ -245,7 +245,6 @@ VALUES (38
        ,03
        );
        
-       
 INSERT INTO arc_readers (fans_id, stories_id, promos_id)
 VALUES (38
        ,04
@@ -257,7 +256,32 @@ VALUES (38
        ,02
        ,02
        );
+	   
+INSERT INTO feedback (first_readers_id,stories_id,feedback_details,feedback_date ) 
+VALUES (34
+,03
+,'Great book. I loved the action scenes and the way Patches and Michael grew to rely upon eachother.'
+,'11/11/2014'
+);
 
+INSERT INTO reviews (arc_readers_id,stories_id,reviews_vendor,reviews_details,reviews_date)
+VALUES (34
+,04
+,'Amazon'
+, 'This was an exciting glimpse into a fasinating post-apocalyptic world.'
+,'10/12/2015'
+);
+
+INSERT INTO arc_addresses (arc_readers_id, arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country)
+VALUES (34
+,'1203 NE Kalama Kove'
+,'Kelso'
+,'WA'
+,'98626'
+,'Cowlitz'
+);
+
+ INSERT INTO reviews (reviews_vendor, reviews_details) VALUES ('Kobo', 'This book was amazing!');
 
 
 

@@ -164,11 +164,9 @@ function updateFeedback($newFeedback, $feedbackId, $newDate, $db){
 function displayReview($arcReadId, $db){
     $arcTitle = $_SESSION["arcTitle"]; 
     
-    foreach ($db->query("SELECT * FROM reviews WHERE arc_readers_id = '$arcReadId';") as $row){
+    foreach ($db->query("SELECT reviews_id, reviews_vendor, reviews_details FROM reviews WHERE arc_readers_id = '$arcReadId';") as $row){
                                
     $reviewsId = $row['reviews_id'];
-    $arcReadId = $row['arc_readers_id'];
-    $storyId = $row['stories_id'];
     $reviewsVendor =  $row['reviews_vendor']; 
     $reviewsDetails =  $row['reviews_details']; 
         
@@ -178,7 +176,7 @@ echo $storyId;
 echo $reviewsVendor;
 echo $reviewsDetails;   
         
-    $postReview = "<p> You provided the following review:<br> <b>$arcTitle</b>: $reviewsDetails  </p><br>";
+    $postReview = "<p> You provided the following review:<br> <p> Vendor: $reviewsVendor.<br><p>Titls:<b>$arcTitle</b><br> $reviewsDetails  </p><br>";
 //echo "This is your review: $postReview<br>";
     
     $_SESSION["postReview"] = $postReview;
