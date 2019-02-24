@@ -20,7 +20,7 @@ function callFirstReader($fansId, $db){
 //echo $_SESSION["firstReadMsg"];    
         $_SESSION["firstReadId"] = $firstReadId;
 //echo $_SESSION["firstReadId"];
-        $_SESSION["storyTitle"] = $storyTitle;
+        $_SESSION["feedbackTitle"] = $storyTitle;
             
     /*                        
         echo "<p>Do you want to view or change your feedback? Do so 
@@ -106,6 +106,8 @@ function callPromos ($db){
 }
 
 function displayFeedback($firstReadId, $db){
+    $feedbackTitle = $_SESSION["feedbackTitle"]; 
+    
     foreach ($db->query("SELECT * FROM feedback WHERE first_readers_id = '$firstReadId';") as $row){
                                
     $feedbackId = $row['feedback_id'];
@@ -118,10 +120,9 @@ function displayFeedback($firstReadId, $db){
 //echo $firstReadId;
 //echo $storyId;
 //echo $feedbackDetails;
-//echo $feedbackDate;
-    $storyTitle = $_SESSION["storyTitle"];    
+//echo $feedbackDate;   
         
-    $postFeedback = "<p> You provided the following feedback:<br> <b>$storyTitle</b>: $feedbackDetails  </p><br>";
+    $postFeedback = "<p> You provided the following feedback:<br> <b>$feedbackTitle</b>: $feedbackDetails  </p><br>";
 //echo "This is your feedback: $postFeedback<br>";
     
     $_SESSION["postFeedback"] = $postFeedback;
