@@ -214,6 +214,9 @@ switch ($action){
     
         callArcReader($fansId, $db);
         
+        $arcReadId = $_SESSION["arcReadId"];
+        displayReview($arcReadId, $db);
+        
         callWinner($fansId, $db);
         
 //BUILDING THIS COMPLETE LIST COULD BE TRICKY TOO...

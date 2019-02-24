@@ -2,10 +2,10 @@
     session_start();
     
     $arcReadId = $_SESSION["arcReadId"];
-        echo "My Arc Reader Id Is: $arcReadId"; 
+        echo "My Arc Reader Id Is: $arcReadId<br>"; 
 
     $reviewsId = $_SESSION["reviewsId"];
-        echo "Current reviews id is: $reviewsId";
+        echo "Current reviews id is: $reviewsId<br>";
 
 ?>
 
@@ -33,13 +33,13 @@
                     if (isset($_SESSION["arcMsg"])){
                             echo $_SESSION["arcMsg"];
                         } else {
-                            echo "Session firstReadMgs not initializing<br>";
+                            echo "Session arcMgs not initializing<br>";
                         }
         
                     if (isset($_SESSION["postReview"])){
                             echo $_SESSION["postReview"];
                         } else {
-                            echo "Session postFeedback not initializing<br>";
+                            echo "Session postReview not initializing<br>";
                         }
                                 
                         echo "Would you like to amend your Review? Insert your new comments below:<br>";
