@@ -21,14 +21,7 @@ function callFirstReader($fansId, $db){
         $_SESSION["firstReadId"] = $firstReadId;
 //echo $_SESSION["firstReadId"];
         $_SESSION["feedbackTitle"] = $storyTitle;
-            
-    /*                        
-        echo "<p>Do you want to view or change your feedback? Do so 
-        <form action='fan_feedback.php' method='post'>
-        <input type='hidden' name='firstReadId' value='$thisFirstReadId'>
-        <input type='submit' value='Here'>
-        </form></p>"; 
-    */        
+      
         }
     }   
 
@@ -58,11 +51,6 @@ function callArcReader($fansId, $db){
          
          
     /*                        
-        echo "<p>Do you want to change your review? Do so 
-        <form action='fan_review.php' method='post'>
-        <input type='hidden' name='arcReadId' value='$thisArcReadId'>
-        <input type='submit' value='Here'>
-        </form></p>"; 
                             
         echo "<p>Do you want to update your mailing address? Do so <form action='fan_address.php' method='post'>
         <input type='hidden' name='arcReadId' value='$thisArcReadId'>
@@ -176,9 +164,18 @@ echo $storyId;
 echo $reviewsVendor;
 echo $reviewsDetails;   
         
-    $postReview = "<p> You provided the following review:<br> <p> Vendor: $reviewsVendor.<br><p>Titls:<b>$arcTitle</b><br> $reviewsDetails  </p><br>";
+    $postReview = "<p> You provided the following review:<br> 
+    <p> Vendor: $reviewsVendor.</p><br>
+    <p>Title:<b>$arcTitle</b></p><br> 
+    <p> $reviewsDetails  </p><br>";
 //echo "This is your review: $postReview<br>";
     
+    $_SESSION["reviewsDetails"] = $reviewsDetails;
+//echo $_SESSION["reviewsVendor"]; 
+
+    $_SESSION["reviewsVendor"] = $reviewsVendor;
+//echo $_SESSION["reviewsVendor"];     
+        
     $_SESSION["postReview"] = $postReview;
 //echo $_SESSION["postFeedback"]; 
         

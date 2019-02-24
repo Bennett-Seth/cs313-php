@@ -2,7 +2,7 @@
     session_start();
     
     if (!$_SESSION['loggedin']){
-        header('Location: fan_reg.php');
+        header('Location: ../view/fan_reg.php');
         exit;
     }
 

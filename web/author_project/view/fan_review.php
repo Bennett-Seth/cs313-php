@@ -5,6 +5,10 @@
         echo "My Arc Reader Id Is: $arcReadId<br>"; 
     $reviewsId = $_SESSION["reviewsId"];
         echo "Current reviews id is: $reviewsId<br>";
+    $reviewsDetails = $_SESSION["reviewsDetails"];
+        echo $_SESSION["reviewsVendor"]; 
+    $reviewsVendor = $_SESSION["reviewsVendor"];
+        echo $_SESSION["reviewsVendor"];  
 
 ?>
 
@@ -32,7 +36,7 @@
                     if (isset($_SESSION["arcReadMsg"])){
                             echo $_SESSION["arcReadMsg"];
                         } else {
-                            echo "Session arcMgs not initializing<br>";
+                            echo "Session arcReadMsg not initializing<br>";
                         }
         
                     if (isset($_SESSION["postReview"])){
