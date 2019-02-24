@@ -76,7 +76,37 @@ function displayContact($fansId, $db){
         <p> Do you wish to change your contact info? Do so below.</p>";
             
         $_SESSION['displayMsg'] = $displayMsg;
-}
+    }
 
+function updateContact($fansId, $db){
+    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id';
+
+    $statement = $db->prepare($query);
+
+    $statement->bindValue(':first_name', $newFirst);
+    $statement->bindValue(':last_name', $newLast);
+    $statement->bindValue(':email', $newEmail);
+    $statement->bindValue(':fans_id', $fanId);
+
+    $statement->execute();
+                
+    echo "update successful<br>";
+                
+    foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
+
+        $newFirst = $row['first_name'];
+            //echo "New First Name: $newFirst <br>";
+        $newLast = $row['last_name'];
+            //echo "New Last Name: $newLast <br>";
+        $newEmail = $row['email'];
+            //echo "New Email: $newEmail <br>";  
+        }
+    
+    $displayMsg = "<p>You are: '$firstName' '$lastName' </p>
+        <p>Your email address is: '$email' </p>
+        <p> Do you wish to change your contact info? Do so below.</p>";
+            
+        $_SESSION['displayMsg'] = $displayMsg;   
+    }
 
 ?>

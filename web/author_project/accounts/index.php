@@ -228,6 +228,47 @@ switch ($action){
         exit;
         
     break;
+        
+            
+    case 'updateContact':
+        
+        $fanFirstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING);
+        $fanLastName = filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING);
+        $fanEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  
+//        echo "Import:$fanFirstName<br>";
+//        echo "Import:$fanLastName<br>";
+//        echo "Import:$fanEmail<br>";
+  
+        $fansId = $_SESSION['fanData']['fans_id'];
+        
+        // Double check the validation of the email input
+        $fanEmail = valEmail($fanEmail);
+        
+        // Make sure this email isn't already included in the Database
+        $existingEmail = checkExistingEmail($fanEmail, $db);
+            if ($existingEmail){
+                $message = "<p> That email already exists. Do you wish to login instead?</p>";
+                include '../view/fan_login.php';
+                exit;   
+                }
+        
+            // Check for missing data
+            if(empty($fanFirstName) ||empty($fanLastName) ||empty($fanEmail)){
+                $message = "<p>Please provide information for all empty form fields.</p>";
+                include '../view/fan_contact.php';
+                exit; }
+        
+//echo "Ready to Send:$fanFirstName<br>";
+//echo "Ready to Send:$fanLastName<br>";
+//echo "Ready to Send:$fanEmail<br>";      
+        
+            updateContact($fansId, $db);
+        
+            include '../view/fan_contact.php';
+            exit;  
+           
+    break;
 /*   
     default:
          
