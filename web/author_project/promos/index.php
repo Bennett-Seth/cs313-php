@@ -24,18 +24,23 @@
 switch ($action){
         
     case 'newFeedback':
-        
+        //Imported Data
+        $fansId = $_SESSION['fanData']['fans_id'];
+        echo "Current Fan Id: $fansId";
         $newFeedback = htmlspecialchars($_POST['newFeedback']);
         echo "New Feedback: $newFeedback<br>";
         $feedbackId = htmlspecialchars($_POST['feedback_id']);
         echo "Feedback Id: $feedbackId<br>";
         $newDate = date("m/d/Y");
-        echo "Today's Date is: $newDate";
+        echo "Today's Date is: $newDate<br>";
         
+        //Session Related Data
+        $fansId = $_SESSION['fanData']['fans_id'];
+        echo "Current Fan Id: $fansId";
         $feedbackTitle = $_SESSION["feedbackTitle"];
-        echo "The novel is: $feedbackTitle";
+        echo "The novel is: $feedbackTitle<br>";
         $firstReadId = $_SESSION["firstReadId"];
-        echo "The first read ID is: $firstReadId";
+        echo "The first read ID is: $firstReadId<br>";
         
         callFirstReader($fansId, $db);
         

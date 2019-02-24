@@ -9,17 +9,17 @@ function callFirstReader($fansId, $db){
         $storyId = $row['stories_id'];
         $storyTitle = $row['stories_title'];
             
-//echo "$thisFirstReadId<br>";
-//echo "$thisFansId<br>";
-//echo "$storyId<br>";
-//echo "$storyTitle<br>";
+echo "$thisFirstReadId<br>";
+echo "$thisFansId<br>";
+echo "$storyId<br>";
+echo "$storyTitle<br>";
 
         $firstReadMsg = "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
             
         $_SESSION["firstReadMsg"] = $firstReadMsg;
-//echo $_SESSION["firstReadMsg"];    
+echo $_SESSION["firstReadMsg"];    
         $_SESSION["firstReadId"] = $firstReadId;
-//echo $_SESSION["firstReadId"];
+echo $_SESSION["firstReadId"];
         $_SESSION["feedbackTitle"] = $storyTitle;
             
     /*                        
