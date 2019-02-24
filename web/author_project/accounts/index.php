@@ -214,8 +214,6 @@ switch ($action){
     
         callArcReader($fansId, $db);
         
-        displayReview($arcReadId, $db);
-        
         callWinner($fansId, $db);
         
 //BUILDING THIS COMPLETE LIST COULD BE TRICKY TOO...
