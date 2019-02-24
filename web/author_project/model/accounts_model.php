@@ -71,8 +71,8 @@ function displayContact($fansId, $db){
 
             }
                 
-        $displayMsg = "<p>You are: '$firstName' '$lastName' </p>
-        <p>Your email address is: '$email' </p>
+        $displayMsg = "<p>You are: $firstName $lastName </p>
+        <p>Your email address is: $email </p>
         <p> Do you wish to change your contact info? Do so below.</p>";
             
         $_SESSION['displayMsg'] = $displayMsg;
@@ -102,8 +102,8 @@ function updateContact($fansId, $db){
             //echo "New Email: $newEmail <br>";  
         }
     
-    $displayMsg = "<p>You are: '$firstName' '$lastName' </p>
-        <p>Your email address is: '$email' </p>
+    $displayMsg = "<p>You are: $firstName $lastName </p>
+        <p>Your email address is: $email </p>
         <p> Do you wish to change your contact info? Do so below.</p>";
             
         $_SESSION['displayMsg'] = $displayMsg;   

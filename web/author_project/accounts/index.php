@@ -246,13 +246,14 @@ switch ($action){
         $fanEmail = valEmail($fanEmail);
         
         // Make sure this email isn't already included in the Database
+/*
         $existingEmail = checkExistingEmail($fanEmail, $db);
             if ($existingEmail){
                 $message = "<p> That email already exists. Do you wish to login instead?</p>";
                 include '../view/fan_login.php';
                 exit;   
                 }
-        
+*/        
             // Check for missing data
             if(empty($fanFirstName) ||empty($fanLastName) ||empty($fanEmail)){
                 $message = "<p>Please provide information for all empty form fields.</p>";
