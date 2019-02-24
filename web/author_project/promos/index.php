@@ -68,7 +68,7 @@ switch ($action){
     //echo "Current Fan Id: $fansId";
         $arcTitle = $_SESSION["arcTitle"];
     //echo "The novel is: $feedbackTitle<br>";
-        $arcId = $_SESSION["firstReadId"];
+        $arcReadId = $_SESSION["arcReadId"];
     //echo "The first read ID is: $firstReadId<br>";
         
         callArcReader($fansId, $db);
