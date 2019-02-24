@@ -86,7 +86,7 @@ function updateContact($fansId, $db){
     $statement->bindValue(':first_name', $newFirst);
     $statement->bindValue(':last_name', $newLast);
     $statement->bindValue(':email', $newEmail);
-    $statement->bindValue(':fans_id', $fanId);
+    $statement->bindValue(':fans_id', $fansId);
 
     $statement->execute();
                 
