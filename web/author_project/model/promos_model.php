@@ -119,7 +119,8 @@ function displayFeedback($firstReadId, $db){
 //echo $storyId;
 //echo $feedbackDetails;
 //echo $feedbackDate;
-
+    $storyTitle = $_SESSION["storyTitle"];    
+        
     $postFeedback = "<p> You provided the following feedback:<br> <b>$storyTitle</b>: $feedbackDetails  </p><br>";
 //echo "This is your feedback: $postFeedback<br>";
     
