@@ -204,9 +204,9 @@ function updateReview($newReview, $reviewsId, $newVendor, $newDate, $db){
                 
 //echo "update successful<br>";
                 
-    foreach ($db->query("SELECT review_details FROM reviews WHERE reviews_id = '$reviewsId';") as $row){
+    foreach ($db->query("SELECT reviews_details FROM reviews WHERE reviews_id = '$reviewsId';") as $row){
 
-        $printReview = $row['review_details'];
+        $printReview = $row['reviews_details'];
         $postReview  = "Your Current Review: $printReview<br>";  
         $_SESSION["postReview "] = $postReview;
         
