@@ -79,31 +79,30 @@ function displayContact($fansId, $db){
     }
 
 function updateContact($fansId, $db){
-    $query = 'UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = :fans_id';
+    $query = "UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fansId'";
 
     $statement = $db->prepare($query);
 
     $statement->bindValue(':first_name', $newFirst);
     $statement->bindValue(':last_name', $newLast);
     $statement->bindValue(':email', $newEmail);
-    $statement->bindValue(':fans_id', $fansId);
 
     $statement->execute();
                 
     echo "update successful<br>";
                 
-    foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
+    foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fansId';") as $row){
 
-        $newFirst = $row['first_name'];
+        $newFirstName = $row['first_name'];
             //echo "New First Name: $newFirst <br>";
-        $newLast = $row['last_name'];
+        $newLastName = $row['last_name'];
             //echo "New Last Name: $newLast <br>";
         $newEmail = $row['email'];
             //echo "New Email: $newEmail <br>";  
         }
     
-    $displayMsg = "<p>You are: $firstName $lastName </p>
-        <p>Your email address is: $email </p>
+    $displayMsg = "<p>You are: $newFirstName $newLastName </p>
+        <p>Your email address is: $newEmail </p>
         <p> Do you wish to change your contact info? Do so below.</p>";
             
         $_SESSION['displayMsg'] = $displayMsg;   
