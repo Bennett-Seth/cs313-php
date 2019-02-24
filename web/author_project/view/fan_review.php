@@ -1,9 +1,6 @@
 <?php
     session_start();
     
-    // Get the database connection file
-    require 'connect.php';
-    
     $arcReadId = $_SESSION["arcReadId"];
         echo "My Arc Reader Id Is: $arcReadId"; 
 
