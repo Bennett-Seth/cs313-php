@@ -48,7 +48,7 @@
                         echo "Would you like to amend your Review? Insert your new comments below.";
                         
                         echo "<form action='../promos/index.php' method='post'>
-                        <textarea name='newFeedback' rows='20' cols='50' required></textarea><br>
+                        <textarea name='newReview' rows='20' cols='50' required></textarea><br>
                         <p>What vendor is this review for?</p>
                         <input type='text' name='reviews_vendor' required>
                         <input type='hidden' name='reviews_id' value='$reviewsId'>

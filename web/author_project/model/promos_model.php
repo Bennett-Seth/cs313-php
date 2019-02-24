@@ -159,15 +159,13 @@ function displayReview($arcReadId, $db){
     $reviewsDetails =  $row['reviews_details']; 
         
 echo $reviewsId;
-echo $arcReadId;
-echo $storyId;
 echo $reviewsVendor;
 echo $reviewsDetails;   
         
     $postReview = "<p> You provided the following review:<br> 
-    <p> Vendor: $reviewsVendor.</p><br>
-    <p>Title:<b>$arcTitle</b></p><br> 
-    <p> $reviewsDetails  </p><br>";
+    <p> Vendor: $reviewsVendor.</p>
+    <p>Title:<b>$arcTitle</b></p> 
+    <p> $reviewsDetails  </p>";
 //echo "This is your review: $postReview<br>";
     
     $_SESSION["reviewsDetails"] = $reviewsDetails;
@@ -202,7 +200,8 @@ function updateReview($newReview, $reviewsId, $newVendor, $newDate, $db){
     foreach ($db->query("SELECT reviews_details FROM reviews WHERE reviews_id = '$reviewsId';") as $row){
 
         $printReview = $row['reviews_details'];
-        $postReview  = "Your Current Review: $printReview<br>";  
+        $postReview  = "<p>Vendor: $newVendor </p><p>Your Current Review: $printReview</p>";
+        
         $_SESSION["postReview "] = $postReview;
         
         }    
