@@ -1,26 +1,5 @@
 <?php
     session_start();
-    
-    // Get the database connection file
-    require 'connect.php';
-
-    $myFan = htmlspecialchars($_POST['fanId']);
-
-    if (isset($_SESSION['superFan']) == null){
-        $_SESSION['superFan'] = $db->query("SELECT * FROM fans WHERE fans_id = '$myFan';");
-
-    } else {
-        echo "Superfan session already set.";
-    }
-
-    foreach (($_SESSION['superFan']) as $row){
-		$fanId = $row['fans_id'];
-            echo "$fanId <br>";
-		$fanFirstName = $row['first_name'];
-            echo "$fanFirstName <br>";
-		$fanLastName = $row['last_name'];
-            echo "$fanLastName <br>";
-        }
 
 ?>
 
@@ -43,22 +22,12 @@
             <main>
                 
                 <?php 
-                
-                foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fanId';") as $row){
 
-                            $firstName = $row['first_name'];
-                                echo $firstName;
-                            $lastName = $row['last_name'];
-                                echo $lastName;
-                            $email = $row['email'];
-                                echo $email;
-
-                            echo "<p>You are: '$firstName' '$lastName' </p>";
-                            echo "<p>Your email address is: '$email' </p>";
-                    }
+                  //Post Fan's Contact Details
+                    if (isset($_SESSION['displayMsg'])){
+                            echo $_SESSION['displayMsg'];
+                    } 
                 
-                echo "<p> Do you wish to change your contact info? Do so below.</p>"
-                    
                 ?>
                 
                 <form action="fan_newContact.php" method='post'>

@@ -219,6 +219,8 @@ switch ($action){
         
         callWinner($fansId, $db);
         
+        displayContact($fansId, $db);
+        
 //BUILDING THIS COMPLETE LIST COULD BE TRICKY TOO...
         $promosList = callPromos($db);
         

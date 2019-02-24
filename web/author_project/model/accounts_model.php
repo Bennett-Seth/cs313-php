@@ -59,7 +59,24 @@ function lockCheck($fansId, $db){
         }
     }
 
+function displayContact($fansId, $db){
+    foreach ($db->query("SELECT first_name, last_name, email FROM fans WHERE fans_id = '$fansId';") as $row){
 
+            $firstName = $row['first_name'];
+                //echo $firstName;
+            $lastName = $row['last_name'];
+                //echo $lastName;
+            $email = $row['email'];
+                //echo $email;
+
+            }
+                
+        $displayMsg = "<p>You are: '$firstName' '$lastName' </p>
+        <p>Your email address is: '$email' </p>
+        <p> Do you wish to change your contact info? Do so below.</p>";
+            
+        $_SESSION['displayMsg'] = $displayMsg;
+}
 
 
 ?>
