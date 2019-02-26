@@ -313,12 +313,11 @@ echo "Ready to Send:$fanEmail<br>";
             exit;  
            
     break;   
-        
-/*   
+           
     default:
-         
-        include '../view/fan_reg.php';           
-*/
+
+        include '../view/fan_login.php';     
+    break;           
 }
 
 ?>

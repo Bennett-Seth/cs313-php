@@ -81,23 +81,13 @@ switch ($action){
         exit;
         
     break;    
-        
-    case '':
-        
-        
-    
-        include '';
-        exit;
-        
-    break;
-
-/*   
+          
     default:
-         
-        include '';    
-*/  
+
+        include '../view/fan_login.php';     
+    break;   
         
-    }
+}
  
 
 ?>
