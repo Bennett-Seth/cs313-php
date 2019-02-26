@@ -45,7 +45,7 @@
                         <p>Country: </p>
                         <input type='text' name='country'> 
                         <input type='hidden' name='action' value='updateAddress'>
-                        <br>
+                        <br><br>
                         <input class='submit' type='submit' value='Submit'>
                         </form>
                 

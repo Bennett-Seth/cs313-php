@@ -52,7 +52,7 @@
                         <input type='text' name='reviews_vendor' required>
                         <input type='hidden' name='reviews_id' value='$reviewsId'>
                         <input type='hidden' name='action' value='newReview'>
-                        <br>
+                        <br><br>
                         <input class='submit' type='submit' value='Submit'>
                         </form>";
                                
