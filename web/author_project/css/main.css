@@ -50,10 +50,18 @@ p a {
     color:skyblue;
 }
 
+p a:hover{
+    color: yellow;
+}
+
 h2 a {
     text-decoration: none;
     font-weight: bold;
     color:skyblue;  
+}
+
+h2 a:hover{
+    color: yellow;
 }
 
 submit {
@@ -83,7 +91,7 @@ nav {
     padding-top: 1em;
     padding-bottom:1em;
     
-    background-color: green;
+    background-color: dimgray;
     color:darkblue;
     text-decoration: none;
     
@@ -107,7 +115,6 @@ nav {
 
         text-decoration: none;
         font-size: 1em;
-        background-color: darkgrey;
         font-family: "Comic Sans MS", cursive, sans-serif;
     }
 /*    
@@ -118,13 +125,11 @@ nav {
     li a {
         color:skyblue;
         text-decoration: none;
-        background-color:darkgrey;
         padding:0.75em 0.25em 0.9em 0.25em;
     }
     
     li a:hover {
         color:lawngreen;
-        background-color:#ffffff;
     }
     
     li a:active{

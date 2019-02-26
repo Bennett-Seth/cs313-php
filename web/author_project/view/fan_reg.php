@@ -40,8 +40,8 @@ onkeypress='doPasswordsMatch()'
                     <p>Please repeat your password below:</p>
                     <input type='password' name='password_repeat' id='password_repeat'  required><br>
                     <span id='yesMatch' style='visibility: hidden' >Your passwords match!</span>
-                    <span id='noMatch' style='visibility: hidden'>Your passwords don't match</span><br>
-                    <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span><br>
+                    <p id='noMatch' style='visibility: hidden'>Your passwords don't match</p><br>
+                    <p>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</p><br>
                     
                     <input type="hidden" name="action" value="register">
                     <input type='submit' value='Submit'>

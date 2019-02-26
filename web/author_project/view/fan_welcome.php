@@ -25,7 +25,7 @@
             
             <main>
                 
-                <h2>Welcome <?php echo "<p>$fanFirstName $fanLastName!</p><br>"?></h2>
+                <h2>Welcome <?php echo "$fanFirstName $fanLastName!"?></h2>
                 
                 <?php 
                     //Lockout Notice
@@ -34,13 +34,13 @@
                         }
                 ?>
                 
-                <h2>You are involved in the following promotions</h2>
+                <h2>You are involved in the following promotions:</h2>
                 
                 <?php 
                     //Post First Reader Details
                     if (isset($_SESSION["firstReadMsg"])){
                             echo $_SESSION["firstReadMsg"];
-                            echo "<p>To leave or update your feedback, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_feedback.php'>Here</a></p><br>";
+                            echo "<p>To leave or update your feedback, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_feedback.php'>Here</a></p>";
                         } 
                 ?>
                 
@@ -49,7 +49,7 @@
                     if (isset($_SESSION["arcReadMsg"])){
                             echo $_SESSION["arcReadMsg"];
                             echo "<p>To leave or update your review, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a></p><br>";
-                            echo "<p>To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_address.php'>Here</a></p><br>";
+                            echo "<p>To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_address.php'>Here</a></p>";
                         }
                 ?>
                 
@@ -60,7 +60,7 @@
                         }
                 ?>
                 
-                <h2>Click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/promos.php'>Here</a>to see our full list of promotions.</h2>
+                <h2>Click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/promos.php'>Here </a>to see our full list of promotions.</h2>
                 
                 
             </main>
