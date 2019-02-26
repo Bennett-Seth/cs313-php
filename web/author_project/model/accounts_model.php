@@ -118,10 +118,13 @@ function arcAddress($arcReadId, $db){
         $zip = $row['arc_address_zip'];
         $country = $row['arc_address_country'];
         }                    
+
+    $fanFirstName = $_SESSION['fanData']['first_name'];
+    $fanLastName = $_SESSION['fanData']['last_name'];
     
-    $arcAddress = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
+    $arcAddressMsg = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
         
-    $_SESSION['arcAddress'] = $arcAddress;
+    $_SESSION['arcAddressMsg'] = $arcAddress;
        
     }
 
