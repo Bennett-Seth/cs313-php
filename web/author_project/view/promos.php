@@ -52,6 +52,10 @@
                     
                 ?>
                 
+                <hr>
+                
+                <h2>Join a Promotion</h2>
+                <p>You can join any of these promotions by emailing S. B. Sebrick at <a href='seth@sbsebrick.com'>seth@sbsebrick.com</a>. Get your free swag today!</p>
                 
             </main>
             
