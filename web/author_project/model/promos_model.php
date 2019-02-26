@@ -86,7 +86,9 @@ function callPromos ($db){
         $promoTitle = $row['promos_title'];
         $promosList .= "$promoTitle<br>";   
         }       
-    return $promosList;
+    
+    $_SESSION["promosList"] = $promosList;
+//echo $_SESSION["promosList"];  $promosList;
     
 // $sql = 'SELECT promos_title FROM promos;';
 // $stmt = $db->prepare($sql);

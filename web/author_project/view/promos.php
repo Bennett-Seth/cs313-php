@@ -6,6 +6,13 @@
         exit;
     }
 
+    $fanFirstName = $_SESSION['fanData']['first_name'];
+        echo "Ready to send:$fanFirstName<br>";
+    $fanLastName = $_SESSION['fanData']['last_name'];
+        echo "Ready to send:$fanLastName<br>";
+    $promosList = $_SESSION["promosList"];
+        echo "Ready to send:$promosList<br>";
+
 ?>
 
 <!DOCTYPE HTML>
