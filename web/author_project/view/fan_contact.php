@@ -16,9 +16,6 @@
             
             <?php include 'common/header.php'; ?>
             
-            <?php include 'common/nav.php'; ?>
-            
-            
             <main>
                 
                 <?php 
@@ -47,7 +44,7 @@
                 
                 
             </main>
-            
+            <hr>
             <?php include 'common/footer.php'; ?>
             
 		</body>	

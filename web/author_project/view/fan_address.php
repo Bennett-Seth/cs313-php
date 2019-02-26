@@ -16,9 +16,6 @@
             
             <?php include 'common/header.php'; ?>
             
-            <?php include 'common/nav.php'; ?>
-            
-            
             <main>
                 
                 <h2> Arc Readers get their very own paperback copies!</h2>
@@ -50,7 +47,7 @@
                         </form>
                 
             </main>
-            
+            <hr>
             <?php include 'common/footer.php'; ?>
             
 		</body>	

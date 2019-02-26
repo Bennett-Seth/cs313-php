@@ -14,15 +14,14 @@
 			<meta charset="utf-8">
 			<title>Superfan Welcome Page</title>
             
-            <?php include '../common/head.php'; ?> 
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/common/head.php"); ?> 
+            <?php //include '../common/head.php'; ?> 
             
 		</head>
 		<body> 
             
-            <?php include '../common/header.php'; ?>
-            
-            <?php include '../common/nav.php'; ?>
-            
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/common/header.php"); ?> 
+            <?php //include '../common/header.php'; ?>
             
             <main>
                 
@@ -61,12 +60,13 @@
                         }
                 ?>
                 
-                <hr>
+                <h2>Click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/promos.php'>Here</a>to see our full list of promotions.</h2>
                 
                 
             </main>
-            
-             <?php include '../common/footer.php'; ?>
+            <hr>
+                <?php include($_SERVER["DOCUMENT_ROOT"] . "/common/footer.php"); ?> 
+                <?php //include '../common/footer.php'; ?>
             
 		</body>	
 	</html>

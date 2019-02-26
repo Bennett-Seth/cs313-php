@@ -15,9 +15,7 @@
 		<body> 
             
             <?php include '/app/web/author_project//common/header.php'; ?>
-            
-            <?php include '/app/web/author_project//common/nav.php'; ?>
-            
+
             <main>
                 
                 <?php
@@ -39,7 +37,7 @@ onkeypress='doPasswordsMatch()'
                     <p>What is your email?</p>
                     <input type="email" name="email" placeholder="johnny@gmail.com" required><br>
                     <p>What is your password?</p>
-                    <input type='password' name='password' required><br>
+                    <input type='password' name='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                     <span>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</span> 
                     <input type="hidden" name="action" value="login"><br>
                     <input type='submit' value='Submit'>
@@ -49,7 +47,7 @@ onkeypress='doPasswordsMatch()'
                 
                 
             </main>
-            
+            <hr>
             <?php include '/app/web/author_project/common/footer.php'; ?>
             
 		</body>	
