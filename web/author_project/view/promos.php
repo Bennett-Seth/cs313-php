@@ -30,7 +30,7 @@
                 
                 <?php 
                     //Lockout Notice
-                    if (isset(echo $lockMsg)){
+                    if (isset($lockMsg)){
                             echo $lockMsg;
                         }
                 ?>
