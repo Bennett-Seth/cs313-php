@@ -43,7 +43,7 @@
                         <textarea name='newFeedback' rows='20' cols='50'></textarea><br>
                         <input type='hidden' name='feedback_id' value='$feedbackId'>
                         <input type='hidden' name='action' value='newFeedback'>
-                        <input type='submit' value='Submit'>
+                        <input class='submit' type='submit' value='Submit'>
                         </form>";
                                
                 ?>

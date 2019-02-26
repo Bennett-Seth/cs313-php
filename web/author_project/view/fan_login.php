@@ -24,7 +24,7 @@
 
                 ?>
                 
-                <h1> Sign in below if you're already an Super Fan.</h1>
+                <h2> Sign in below.</h2>
                 
                 <!-- 
 pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
@@ -40,7 +40,7 @@ onkeypress='doPasswordsMatch()'
                     <input type='password' name='password' pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                     <p>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</p> 
                     <input type="hidden" name="action" value="login"><br>
-                    <input type='submit' value='Submit'>
+                    <input class='submit' type='submit' value='Submit'>
                 </form>
                 
                 <h2> Not a member yet? Sign up <a href="https://floating-inlet-17130.herokuapp.com/author_project/view/fan_reg.php"> Here</a></h2>

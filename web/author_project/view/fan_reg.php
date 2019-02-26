@@ -44,7 +44,7 @@ onkeypress='doPasswordsMatch()'
                     <p>Note:Passwords must be at least 8 characters, with at least one number, one capital letter and one special character.</p><br>
                     
                     <input type="hidden" name="action" value="register">
-                    <input type='submit' value='Submit'>
+                    <input class='submit' type='submit' value='Submit'>
                 </form>
                 
                 <h2>Already a Super Fan? </h2> 
