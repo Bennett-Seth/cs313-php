@@ -64,7 +64,7 @@ h2 a:hover{
     color: yellow;
 }
 
-submit {
+.submit {
     background-color: green;
     color: black;
 }
