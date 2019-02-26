@@ -307,6 +307,8 @@ echo "Ready to Send:$fanEmail<br>";
         
             updateArcAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, $state, $zip, $country, $db);
         
+            displayArcAddress($arcReadId, $fanFirstName, $fanLastName, $db);
+        
             include '../view/fan_contact.php';
             exit;  
            
