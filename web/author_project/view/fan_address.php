@@ -21,6 +21,8 @@
             
             <main>
                 
+                <h2> Arc Readers get their very own paperback copies!</h2>
+                
                 <?php 
                     
                     //Post Arc Reader Details
@@ -30,8 +32,8 @@
                             echo "Session arcAddress not initializing<br>";
                         }
                  ?>
-                
-                    <p>Update your address below:</p>
+                    <hr>
+                    <p>If you wish to change your shipping address, update your address below:</p>
                     <form action='../accounts/index.php' method='post'>
                         <p>Street: </p>
                         <input type='text' name='street'>
