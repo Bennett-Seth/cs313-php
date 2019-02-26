@@ -139,7 +139,10 @@ function updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db){
     $statement->execute();
                 
     echo "update successful<br>";
-                
+    
+    $fanFirstName = $_SESSION['fanData']['first_name'];
+    $fanLastName = $_SESSION['fanData']['last_name'];
+    
     foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country FROM arc_addresses WHERE arc_readers_id = '$arcReadId';") as $row){
                                      
         $street = $row['arc_address_street'];
