@@ -14,7 +14,7 @@ function callFirstReader($fansId, $db){
 //echo "$storyId<br>";
 //echo "$storyTitle<br>";
 
-        $firstReadMsg = "<p> You are a first reader for: <b>$storyTitle</b>. </p>";
+        $firstReadMsg = "<h3> You are a first reader for: <b>$storyTitle</b>. </h3>";
             
         $_SESSION["firstReadMsg"] = $firstReadMsg;
 //echo $_SESSION["firstReadMsg"];    
@@ -38,7 +38,7 @@ function callArcReader($fansId, $db){
 //echo "$storyId<br>";
 //echo "$arcTitle<br>";
                                         
-        $arcReadMsg = "<p>You are a ARC reader for:<b> $arcTitle</b></p>";
+        $arcReadMsg = "<h3>You are a ARC reader for:<b> $arcTitle</b></h3>";
         
         $_SESSION["arcReadMsg"] = $arcReadMsg;
 //echo $_SESSION["arcReadMsg"];
@@ -73,7 +73,7 @@ function callWinner($fansId, $db){
 //echo "$storyId<br>";
 //echo "$contestReward<br>";
                                      
-        $contestMsg = "<p>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><p>Please stay tuned for additional contests and giveaways!</p>"; 
+        $contestMsg = "<h3>You have won an exclusive copy of: <b> $contestReward</b>. Congratulations!</p><p>Please stay tuned for additional contests and giveaways!</h3>"; 
         
         $_SESSION["contestMsg"] = $contestMsg;
  //echo $_SESSION["contestMsg"];       
