@@ -300,6 +300,11 @@ echo "Ready to Send:$fanEmail<br>";
             echo "Ready to send:$zip<br>";
             echo "Ready to send:$country<br>";     
         
+        $fanFirstName = $_SESSION['fanData']['first_name'];
+            echo "Ready to send:$fanFirstName<br>";
+        $fanLastName = $_SESSION['fanData']['last_name'];
+            echo "Ready to send:$fanLastName<br>";
+        
             updateArcAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, $state, $zip, $country, $db);
         
             include '../view/fan_contact.php';

@@ -148,7 +148,7 @@ function updateAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, 
             $zip = $row['arc_address_zip'];
             $country = $row['arc_address_country'];
                                 
-            $arcAddressMsg = "<p>$fanFirstName $fanLastName, your current mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
+            $arcAddressMsg = "<p>$fanFirstName $fanLastName, your current mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
 
             $_SESSION['arcAddressMsg'] = $arcAddressMsg;
     
