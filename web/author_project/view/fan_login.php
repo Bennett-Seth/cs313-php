@@ -9,12 +9,12 @@
 			<meta charset="utf-8">
 			<title>Login Page</title>
             
-            <?php include '/app/web/author_project/common/head.php'; ?> 
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/head.php"); ?> 
             
 		</head>
 		<body> 
             
-            <?php include '/app/web/author_project//common/header.php'; ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/header.php"); ?> 
 
             <main>
                 
@@ -48,7 +48,7 @@ onkeypress='doPasswordsMatch()'
                 
             </main>
             <hr>
-            <?php include '/app/web/author_project/common/footer.php'; ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/footer.php"); ?>
             
 		</body>	
 	</html>

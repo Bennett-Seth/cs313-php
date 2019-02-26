@@ -9,12 +9,14 @@
 			<meta charset="utf-8">
 			<title>Contact Page</title>
             
-            <?php include 'common/head.php'; ?> 
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/head.php"); ?>  
             
 		</head>
 		<body> 
             
-            <?php include 'common/header.php'; ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/header.php"); ?> 
+            
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/nav.php"); ?> 
             
             <main>
                 
@@ -45,7 +47,7 @@
                 
             </main>
             <hr>
-            <?php include 'common/footer.php'; ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/footer.php"); ?>
             
 		</body>	
 	</html>

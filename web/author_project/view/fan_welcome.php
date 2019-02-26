@@ -14,14 +14,14 @@
 			<meta charset="utf-8">
 			<title>Superfan Welcome Page</title>
             
-            <?php include($_SERVER["DOCUMENT_ROOT"] . "/common/head.php"); ?> 
-            <?php //include '../common/head.php'; ?> 
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/head.php"); ?> 
             
 		</head>
 		<body> 
             
-            <?php include($_SERVER["DOCUMENT_ROOT"] . "/common/header.php"); ?> 
-            <?php //include '../common/header.php'; ?>
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/header.php"); ?> 
+            
+            <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/nav.php"); ?> 
             
             <main>
                 
@@ -65,8 +65,7 @@
                 
             </main>
             <hr>
-                <?php include($_SERVER["DOCUMENT_ROOT"] . "/common/footer.php"); ?> 
-                <?php //include '../common/footer.php'; ?>
+                <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/footer.php"); ?>
             
 		</body>	
 	</html>

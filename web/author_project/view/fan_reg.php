@@ -10,13 +10,11 @@
 			<title>Registration Page</title>
             
             <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/head.php"); ?> 
-            <?php //include '/app/web/author_project/common/head.php'; ?> 
             
 		</head>
 		<body> 
             
             <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/header.php"); ?> 
-            <?php //include '/app/web/author_project/common/header.php'; ?>
             
             <main>
 
@@ -54,7 +52,6 @@ onkeypress='doPasswordsMatch()'
             </main>
                 <hr>
                 <?php include($_SERVER["DOCUMENT_ROOT"] . "/author_project/common/footer.php"); ?>
-                <?php //include '/app/web/author_project/common/footer.php'; ?>
             
 		</body>	
 	</html>

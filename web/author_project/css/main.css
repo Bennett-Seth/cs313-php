@@ -1,6 +1,63 @@
-/* Make sure to style this website for mobile devices first, then scale upwards to tablets and desktops */
+/* Color Scheme is as follows
+black: #000000;
+blue: #0000ee;
+gray: #808080;
+red: #de2226;
+orange: 3de2226;
+white: #ffffff;
+*/
 
+/* Main CSS */
 
+html {
+    
+}
+
+body{
+    background-color: black;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: crimson;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h1 {
+   font-size: 2em; 
+}
+
+h2 {
+   font-size: 1.5em; 
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p {
+    color: blue;
+    font-size: 1em;
+}
+
+p a {
+    text-decoration: none;
+    font-weight: bold;
+    color:skyblue;
+}
+
+/* Special Classes */
+
+.notify {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 16px;
+    color:grey;
+    margin-left: 12px;
+}
 
 /* Navigation */
 
@@ -48,7 +105,7 @@ nav {
     }
 */    
     li a {
-        color:#ffffff;
+        color:skyblue;
         text-decoration: none;
         background-color:darkgrey;
         padding:0.75em 0.25em 0.9em 0.25em;
