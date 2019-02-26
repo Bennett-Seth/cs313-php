@@ -10,9 +10,6 @@
     // Get php functions file
     require 'library/functions.php';
 
-    // Get JS file
-    require 'scripts/script.js';
-
     $basepath = '/app/web/author_project/';
 
     $action = filter_input(INPUT_POST, 'action');
