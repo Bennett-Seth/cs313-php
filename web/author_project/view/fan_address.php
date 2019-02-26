@@ -43,6 +43,7 @@
                         <input type='text' name='zip'>
                         <p>Country: </p>
                         <input type='text' name='country'> 
+                        <input type='hidden' name='action' value='updateAddress'>
                         <input type='submit' value='Submit'>
                         </form>
                 
