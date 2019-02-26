@@ -24,8 +24,8 @@
                 <?php 
                     
                     //Post Arc Reader Details
-                    if (isset($_SESSION["arcAddress"])){
-                            echo $_SESSION["arcAddress"];
+                    if (isset($_SESSION["arcAddressMsg"])){
+                            echo $_SESSION["arcAddressMsg"];
                         } else {
                             echo "Session arcAddress not initializing<br>";
                         }
@@ -44,11 +44,7 @@
                         <p>Country: </p>
                         <input type='text' name='country'> 
                         <input type='submit' value='Submit'>
-                        </form>";
-                    }
-               
-                
-                
+                        </form>"; 
                 
             </main>
             

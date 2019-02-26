@@ -214,7 +214,7 @@ switch ($action){
         callArcReader($fansId, $db);
             $arcReadId = $_SESSION["arcReadId"];
             displayReview($arcReadId, $db);
-            arcAddress($arcReadId, $db);
+            displayArcAddress($arcReadId, $fanFirstName, $fanLastName, $db)
         
         callWinner($fansId, $db);
         
@@ -300,7 +300,7 @@ echo "Ready to Send:$fanEmail<br>";
             echo "Ready to send:$zip<br>";
             echo "Ready to send:$country<br>";     
         
-            updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db);
+            updateAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, $state, $zip, $country, $db);
         
             include '../view/fan_contact.php';
             exit;  

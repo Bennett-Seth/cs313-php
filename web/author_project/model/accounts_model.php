@@ -108,7 +108,7 @@ function updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db){
         $_SESSION['displayMsg'] = $displayMsg;   
     }
 
-function arcAddress($arcReadId, $db){
+function displayArcAddress($arcReadId, $fanFirstName, $fanLastName, $db){
 
     foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country FROM arc_addresses WHERE arc_readers_id = '$arcReadId';") as $row){
                                      
@@ -118,9 +118,6 @@ function arcAddress($arcReadId, $db){
         $zip = $row['arc_address_zip'];
         $country = $row['arc_address_country'];
         }                    
-
-    $fanFirstName = $_SESSION['fanData']['first_name'];
-    $fanLastName = $_SESSION['fanData']['last_name'];
     
     $arcAddressMsg = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
         
@@ -128,7 +125,7 @@ function arcAddress($arcReadId, $db){
        
     }
 
-function updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db){
+function updateAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, $state, $zip, $country, $db){
     $query = "UPDATE arc_addresses SET arc_address_street = :arc_address_street, arc_address_city = :arc_address_city, arc_address_state = :arc_address_state, arc_address_zip = :arc_address_zip, arc_address_country = :arc_address_country WHERE fans_id = '$arcReadId'";
 
     $statement = $db->prepare($query);
@@ -143,9 +140,6 @@ function updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db){
                 
     echo "update successful<br>";
     
-    $fanFirstName = $_SESSION['fanData']['first_name'];
-    $fanLastName = $_SESSION['fanData']['last_name'];
-    
     foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country FROM arc_addresses WHERE arc_readers_id = '$arcReadId';") as $row){
                                      
         $street = $row['arc_address_street'];
@@ -155,9 +149,9 @@ function updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db){
         $country = $row['arc_address_country'];
         }                    
     
-    $arcAddress = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
+    $arcAddressMsg = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
         
-    $_SESSION['arcAddress'] = $arcAddress;
+    $_SESSION['arcAddressMsg'] = $arcAddressMsg;
     
     }
 
