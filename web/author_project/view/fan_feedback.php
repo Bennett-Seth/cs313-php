@@ -37,7 +37,7 @@
                             echo "Session postFeedback not initializing<br>";
                         }
                                 
-                        echo "Would you like to amend your feedback? Insert your new comments below:<br>";
+                        echo "<p>Would you like to amend your feedback? Insert your new comments below:</p>";
                         
                         echo "<form action='../promos/index.php' method='post'>
                         <textarea name='newFeedback' rows='20' cols='50'></textarea><br>

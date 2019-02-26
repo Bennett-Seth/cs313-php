@@ -72,8 +72,7 @@ h2 a:hover{
 /* Special Classes */
 
 .notify {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     color:grey;
     margin-left: 12px;
 }
