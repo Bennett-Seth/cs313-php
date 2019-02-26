@@ -39,7 +39,7 @@
                     <input name="email" type="text"><br>
                     <input type='hidden' name='action' value='updateContact'>
                 <?php
-                   echo "<input type='hidden' name='fanId' value='$fanId'>"
+                   echo "<input type='hidden' name='fanId' value='$fanId'>";
                 ?>    
                     <input type="submit" value="Submit">
                     

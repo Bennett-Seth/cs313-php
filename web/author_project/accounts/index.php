@@ -204,7 +204,7 @@ switch ($action){
             $lockMsg = "I'm sorry,$fanFirstName, but as of $lockDate, your Super Fan priviledges have been locked away.<br> This is why: $lockReason";
             }
         
-//THESE ARE WORKING, BUT THEIR CONTENTS MUST BE DISPLAYED GLOBALLY ON THE WELCOME PAGE...        
+//Must import a large amount of reader data in order to populate all the corresponding pages.        
         callFirstReader($fansId, $db);
         
         $firstReadId = $_SESSION["firstReadId"];
@@ -216,6 +216,7 @@ switch ($action){
         
         $arcReadId = $_SESSION["arcReadId"];
         displayReview($arcReadId, $db);
+        arcAddress();
         
         callWinner($fansId, $db);
         
@@ -264,13 +265,50 @@ echo "Ready to Send:$fanFirstName<br>";
 echo "Ready to Send:$fanLastName<br>";
 echo "Ready to Send:$fanEmail<br>";      
         
-            updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db);
+            updateContact($fansId, $fanFirstName, $fanLastName, $fanEmail, $db);
         
-            header('Location: ../view/fan_contact.php');
-            //include '../view/fan_contact.php';
+            include '../view/fan_contact.php';
             exit;  
            
     break;
+        
+    case 'updateAddress':
+        
+        $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
+        $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
+        $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
+        $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
+        $country = filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING);
+  
+            echo "Import:$street<br>";
+            echo "Import:$city<br>";
+            echo "Import:$state<br>";
+            echo "Import:$zip<br>";
+            echo "Import:$country<br>";
+  
+        
+        $arcReadId = $_SESSION["arcReadId"];
+            echo "My Arc Reader Id Is: $arcReadId";
+
+        // Check for missing data
+        if(empty($street) ||empty($city) ||empty($state) ||empty($zip) ||empty($country)){
+            $message = "<p>Please provide information for all empty form fields.</p>";
+            include '../view/fan_contact.php';
+            exit; }
+        
+            echo "Ready to send:$street<br>";
+            echo "Ready to send:$city<br>";
+            echo "Ready to send:$state<br>";
+            echo "Ready to send:$zip<br>";
+            echo "Ready to send:$country<br>";     
+        
+            updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db);
+        
+            include '../view/fan_contact.php';
+            exit;  
+           
+    break;   
+        
 /*   
     default:
          

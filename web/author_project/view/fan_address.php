@@ -1,11 +1,6 @@
 <?php
     session_start();
-    
-    // Get the database connection file
-    require 'connect.php';
-
-    $arcReadId = $_POST['arcReadId'];
-        echo "My Arc Reader Id Is: $arcReadId";  
+  
 ?>
 
 <!DOCTYPE HTML>
@@ -28,25 +23,16 @@
                 
                 <?php 
                     
-                    foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country 
-                    FROM arc_addresses 
-                    WHERE arc_readers_id = '$arcReadId';") as $row){
-                                     
-                        $street = $row['arc_address_street'];
-                        $city = $row['arc_address_city'];
-                        $state = $row['arc_address_state'];
-                        $zip = $row['arc_address_zip'];
-                        $country = $row['arc_address_country'];
-                            
-                        echo "<p>Your address is:<br></p>";
-                        echo "Street: $street<br>";
-                        echo "City: $city<br>";
-                        echo "State: $state<br>";
-                        echo "Zip: $zip<br>";
-                        echo "Country: $country<br>";
-                        
-                    echo "Update your address below:<br>";
-                    echo "<form action='fan_newAddress.php' method='post'>
+                    //Post Arc Reader Details
+                    if (isset($_SESSION["arcAddress"])){
+                            echo $_SESSION["arcAddress"];
+                        } else {
+                            echo "Session arcAddress not initializing<br>";
+                        }
+                 ?>
+                
+                    <p>Update your address below:</p>
+                    <form action='../accounts/index.php' method='post'>
                         <p>Street: </p>
                         <input type='text' name='street'>
                         <p>City: </p>
@@ -56,12 +42,11 @@
                         <p>Zipcode: </p>
                         <input type='text' name='zip'>
                         <p>Country: </p>
-                        <input type='text' name='country'>
-                        <input type='hidden' name='arc_readers_id' value='$arcReadId'>
+                        <input type='text' name='country'> 
                         <input type='submit' value='Submit'>
                         </form>";
                     }
-                ?>
+               
                 
                 
                 

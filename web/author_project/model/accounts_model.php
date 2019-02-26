@@ -108,4 +108,71 @@ function updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db){
         $_SESSION['displayMsg'] = $displayMsg;   
     }
 
+function arcAddress(){
+
+    foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country FROM arc_addresses WHERE arc_readers_id = '$arcReadId';") as $row){
+                                     
+        $street = $row['arc_address_street'];
+        $city = $row['arc_address_city'];
+        $state = $row['arc_address_state'];
+        $zip = $row['arc_address_zip'];
+        $country = $row['arc_address_country'];
+        }                    
+    
+    $arcAddress = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
+        
+    $_SESSION['arcAddress'] = $arcAddress;
+       
+    }
+
+function updateAddress($arcReadId, $street, $city, $state, $zip, $country, $db){
+    $query = "UPDATE arc_addresses SET arc_address_street = :arc_address_street, arc_address_city = :arc_address_city, arc_address_state = :arc_address_state, arc_address_zip = :arc_address_zip, arc_address_country = :arc_address_country WHERE fans_id = '$arcReadId'";
+
+    $statement = $db->prepare($query);
+
+    $statement->bindValue(':arc_address_street', $street);
+    $statement->bindValue(':arc_address_city', $city);
+    $statement->bindValue(':arc_address_state', $state);
+    $statement->bindValue(':arc_address_zip', $zip);
+    $statement->bindValue(':arc_address_country', $country);
+
+    $statement->execute();
+                
+    echo "update successful<br>";
+                
+    foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country FROM arc_addresses WHERE arc_readers_id = '$arcReadId';") as $row){
+                                     
+        $street = $row['arc_address_street'];
+        $city = $row['arc_address_city'];
+        $state = $row['arc_address_state'];
+        $zip = $row['arc_address_zip'];
+        $country = $row['arc_address_country'];
+        }                    
+    
+    $arcAddress = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
+        
+    $_SESSION['arcAddress'] = $arcAddress;
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

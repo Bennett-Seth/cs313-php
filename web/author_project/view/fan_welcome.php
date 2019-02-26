@@ -50,7 +50,7 @@
                     if (isset($_SESSION["arcReadMsg"])){
                             echo $_SESSION["arcReadMsg"];
                             echo "To leave or update your review, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a><br>";
-                            echo "To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a><br>";
+                            echo "To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_address.php'>Here</a><br>";
                         }
                 ?>
                 
