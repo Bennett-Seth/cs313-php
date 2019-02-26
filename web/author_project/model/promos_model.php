@@ -116,7 +116,7 @@ function displayFeedback($firstReadId, $db){
 //echo $feedbackDetails;
 //echo $feedbackDate;   
         
-    $postFeedback = "<p> You provided the following feedback:<br> <b>$feedbackTitle</b>: $feedbackDetails  </p><br>";
+    $postFeedback = "<p> You provided the following feedback:<br> <b>Title: $feedbackTitle</b><br> Feedback: $feedbackDetails  </p>";
 //echo "This is your feedback: $postFeedback<br>";
     
     $_SESSION["postFeedback"] = $postFeedback;
@@ -165,9 +165,9 @@ echo $reviewsVendor;
 echo $reviewsDetails;   
         
     $postReview = "<p> You provided the following review:<br> 
-    <p> Vendor: $reviewsVendor.</p>
-    <p>Title:<b>$arcTitle</b></p> 
-    <p> $reviewsDetails  </p>";
+    <p>Vendor: $reviewsVendor.</p>
+    <p>Title:$arcTitle</p> 
+    <p>Review: $reviewsDetails  </p>";
 //echo "This is your review: $postReview<br>";
     
     $_SESSION["reviewsDetails"] = $reviewsDetails;

@@ -40,6 +40,7 @@
                 <?php
                    echo "<input type='hidden' name='fanId' value='$fanId'>";
                 ?>    
+                    <br>
                     <input class='submit' type="submit" value="Submit">
                     
                     </form>

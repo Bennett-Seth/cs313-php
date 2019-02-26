@@ -101,9 +101,9 @@ function updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db){
             //echo "New Email: $newEmail <br>";  
         }
     
-    $displayMsg = "<p>You are: $newFirstName $newLastName </p>
+    $displayMsg = "<h2>You are: $newFirstName $newLastName </h2>
         <p>Your email address is: $newEmail </p>
-        <p> Do you wish to change your contact info? Do so below.</p>";
+        <h2> Do you wish to change your contact info? Do so below.</h2>";
             
         $_SESSION['displayMsg'] = $displayMsg;   
     }
