@@ -265,8 +265,8 @@ switch ($action){
 //echo "Ready to Send:$fanEmail<br>";      
         
             updateContact($fansId, $db);
-        
-            include '../view/fan_contact.php';
+            header('Location: ../view/fan_contact.php');
+            //include '../view/fan_contact.php';
             exit;  
            
     break;

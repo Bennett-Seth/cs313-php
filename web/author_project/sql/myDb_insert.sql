@@ -281,10 +281,6 @@ VALUES (34
 ,'Cowlitz'
 );
 
- INSERT INTO reviews (reviews_vendor, reviews_details) VALUES ('Kobo', 'This book was amazing!');
-
-
-
 
 
 
