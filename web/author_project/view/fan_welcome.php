@@ -25,7 +25,7 @@
             
             <main>
                 
-                <h2>Welcome <?php echo "$fanFirstName $fanLastName!<br>"?></h2>
+                <h2>Welcome <?php echo "<p>$fanFirstName $fanLastName!</p><br>"?></h2>
                 
                 <?php 
                     //Lockout Notice
@@ -40,7 +40,7 @@
                     //Post First Reader Details
                     if (isset($_SESSION["firstReadMsg"])){
                             echo $_SESSION["firstReadMsg"];
-                            echo "To leave or update your feedback, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_feedback.php'>Here</a><br>";
+                            echo "<p>To leave or update your feedback, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_feedback.php'>Here</a></p><br>";
                         } 
                 ?>
                 
@@ -48,8 +48,8 @@
                     //Post Arc Reader Details
                     if (isset($_SESSION["arcReadMsg"])){
                             echo $_SESSION["arcReadMsg"];
-                            echo "To leave or update your review, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a><br>";
-                            echo "To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_address.php'>Here</a><br>";
+                            echo "<p>To leave or update your review, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_review.php'>Here</a></p><br>";
+                            echo "<p>To update your mailing address, click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_address.php'>Here</a></p><br>";
                         }
                 ?>
                 

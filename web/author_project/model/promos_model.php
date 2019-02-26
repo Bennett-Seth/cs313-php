@@ -84,7 +84,7 @@ function callPromos ($db){
     $promosList = "";
     foreach ($db->query("SELECT promos_title FROM promos;") as $row){
         $promoTitle = $row['promos_title'];
-        $promosList .= "$promoTitle<br>";   
+        $promosList .= "<p> promoTitle</p><br>";   
         }       
     
     $_SESSION["promosList"] = $promosList;

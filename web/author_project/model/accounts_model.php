@@ -54,7 +54,7 @@ function lockCheck($fansId, $db){
         $lock_reason = $row['lockout_reason'];
         $lock_date = $row['lockout_date'];
                             
-        echo "Lock: $lockId, Fan: $lock_fan_id, Cause:$lock_reason, Date:$lock_date<br>";  
+        echo "<p>Lock: $lockId, Fan: $lock_fan_id, Cause:$lock_reason, Date:$lock_date</p><br>";  
                         
         }
     }

@@ -40,7 +40,7 @@ h3 {
 }
 
 p {
-    color: blue;
+    color: deepskyblue;
     font-size: 1em;
 }
 
@@ -48,6 +48,17 @@ p a {
     text-decoration: none;
     font-weight: bold;
     color:skyblue;
+}
+
+h2 a {
+    text-decoration: none;
+    font-weight: bold;
+    color:skyblue;  
+}
+
+submit {
+    background-color: green;
+    color: black;
 }
 
 /* Special Classes */
@@ -72,7 +83,7 @@ nav {
     padding-top: 1em;
     padding-bottom:1em;
     
-    background-color: darkgrey;
+    background-color: green;
     color:darkblue;
     text-decoration: none;
     
