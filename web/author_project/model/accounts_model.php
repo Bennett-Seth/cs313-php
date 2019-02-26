@@ -125,7 +125,7 @@ function displayArcAddress($arcReadId, $fanFirstName, $fanLastName, $db){
         }   
     }
 
-function updateAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, $state, $zip, $country, $db){
+function updateArcAddress($arcReadId, $fanFirstName, $fanLastName, $street, $city, $state, $zip, $country, $db){
     $query = "UPDATE arc_addresses SET arc_address_street = :arc_address_street, arc_address_city = :arc_address_city, arc_address_state = :arc_address_state, arc_address_zip = :arc_address_zip, arc_address_country = :arc_address_country WHERE arc_readers_id = '$arcReadId'";
 
     $statement = $db->prepare($query);
