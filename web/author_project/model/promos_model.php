@@ -84,7 +84,7 @@ function callPromos ($db){
     $promosList = "";
     foreach ($db->query("SELECT promos_title FROM promos;") as $row){
         $promoTitle = $row['promos_title'];
-        $promosList .= "<p> promoTitle</p><br>";   
+        $promosList .= "<p>$promoTitle</p><br>";   
         }       
     
     $_SESSION["promosList"] = $promosList;
@@ -116,7 +116,9 @@ function displayFeedback($firstReadId, $db){
 //echo $feedbackDetails;
 //echo $feedbackDate;   
         
-    $postFeedback = "<p> You provided the following feedback:<br> <b>Title: $feedbackTitle</b><br> Feedback: $feedbackDetails  </p>";
+    $postFeedback = "<p> You provided the following feedback:</p> 
+    <p><b>Title: $feedbackTitle</b></p> 
+    <p>Feedback: $feedbackDetails</p>";
 //echo "This is your feedback: $postFeedback<br>";
     
     $_SESSION["postFeedback"] = $postFeedback;

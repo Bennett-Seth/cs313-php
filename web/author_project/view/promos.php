@@ -7,11 +7,11 @@
     }
 
     $fanFirstName = $_SESSION['fanData']['first_name'];
-        echo "Ready to send:$fanFirstName<br>";
+        //echo "Ready to send:$fanFirstName<br>";
     $fanLastName = $_SESSION['fanData']['last_name'];
-        echo "Ready to send:$fanLastName<br>";
+        //echo "Ready to send:$fanLastName<br>";
     $promosList = $_SESSION["promosList"];
-        echo "Ready to send:$promosList<br>";
+        //echo "Ready to send:$promosList<br>";
 
 ?>
 
@@ -46,7 +46,7 @@
                 <?php 
                 
                     if (isset($promosList)){
-                        echo "Here is the complete list of possible promotions for you to attend! <br> $promosList<br>";
+                        echo "<p>Here is the complete list of possible promotions for you to attend! <br> $promosList</p>";
                     }
                     
                 ?>
