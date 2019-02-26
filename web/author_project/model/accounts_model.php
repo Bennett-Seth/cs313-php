@@ -121,7 +121,7 @@ function displayArcAddress($arcReadId, $fanFirstName, $fanLastName, $db){
     
     $arcAddressMsg = "<p>$fanFirstName $fanLastName, your mailing address is:</p><p>Street: $street</p><p>City: $city</p><p>State: $state</p><p>State: $state</p><p>Zip: $zip</p><p>Country: $country</p>";
         
-    $_SESSION['arcAddressMsg'] = $arcAddress;
+    $_SESSION['arcAddressMsg'] = $arcAddressMsg;
        
     }
 
