@@ -108,7 +108,7 @@ function updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db){
         $_SESSION['displayMsg'] = $displayMsg;   
     }
 
-function arcAddress(){
+function arcAddress($arcReadId, $db){
 
     foreach ($db->query("SELECT arc_address_street, arc_address_city, arc_address_state, arc_address_zip, arc_address_country FROM arc_addresses WHERE arc_readers_id = '$arcReadId';") as $row){
                                      

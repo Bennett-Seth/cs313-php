@@ -206,17 +206,15 @@ switch ($action){
         
 //Must import a large amount of reader data in order to populate all the corresponding pages.        
         callFirstReader($fansId, $db);
-        
-        $firstReadId = $_SESSION["firstReadId"];
-        $storyTitle = $_SESSION["storyTitle"];
+            $firstReadId = $_SESSION["firstReadId"];
+            $storyTitle = $_SESSION["storyTitle"];
         
         displayFeedback($firstReadId, $db);
     
         callArcReader($fansId, $db);
-        
-        $arcReadId = $_SESSION["arcReadId"];
-        displayReview($arcReadId, $db);
-        arcAddress();
+            $arcReadId = $_SESSION["arcReadId"];
+            displayReview($arcReadId, $db);
+            arcAddress($arcReadId, $db);
         
         callWinner($fansId, $db);
         
