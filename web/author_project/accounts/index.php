@@ -236,9 +236,9 @@ switch ($action){
         $fanLastName = filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING);
         $fanEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
   
-//        echo "Import:$fanFirstName<br>";
-//        echo "Import:$fanLastName<br>";
-//        echo "Import:$fanEmail<br>";
+        echo "Import:$fanFirstName<br>";
+        echo "Import:$fanLastName<br>";
+        echo "Import:$fanEmail<br>";
   
         $fansId = $_SESSION['fanData']['fans_id'];
         
@@ -260,11 +260,12 @@ switch ($action){
                 include '../view/fan_contact.php';
                 exit; }
         
-//echo "Ready to Send:$fanFirstName<br>";
-//echo "Ready to Send:$fanLastName<br>";
-//echo "Ready to Send:$fanEmail<br>";      
+echo "Ready to Send:$fanFirstName<br>";
+echo "Ready to Send:$fanLastName<br>";
+echo "Ready to Send:$fanEmail<br>";      
         
-            updateContact($fansId, $db);
+            updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db);
+        
             header('Location: ../view/fan_contact.php');
             //include '../view/fan_contact.php';
             exit;  

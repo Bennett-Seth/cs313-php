@@ -78,14 +78,14 @@ function displayContact($fansId, $db){
         $_SESSION['displayMsg'] = $displayMsg;
     }
 
-function updateContact($fansId, $newFirst, $newLast, $newEmail, $db){
+function updateContact($fansId,$fanFirstName,$fanLastName,$fanEmail, $db){
     $query = "UPDATE fans SET first_name = :first_name, last_name = :last_name, email = :email WHERE fans_id = '$fansId'";
 
     $statement = $db->prepare($query);
 
-    $statement->bindValue(':first_name', $newFirst);
-    $statement->bindValue(':last_name', $newLast);
-    $statement->bindValue(':email', $newEmail);
+    $statement->bindValue(':first_name', $fanFirstName);
+    $statement->bindValue(':last_name', $fanLastName);
+    $statement->bindValue(':email', $fanEmail);
 
     $statement->execute();
                 
