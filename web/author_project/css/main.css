@@ -78,6 +78,10 @@ submit {
     margin-left: 12px;
 }
 
+#banner {
+    width: 100%;
+}
+
 /* Navigation */
 
 nav {
