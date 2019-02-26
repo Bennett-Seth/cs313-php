@@ -56,7 +56,7 @@
                 <h2>Join a Promotion</h2>
                 <p>You can join any of these promotions by emailing S. B. Sebrick at <a href='seth@sbsebrick.com'>seth@sbsebrick.com</a>. Get your free swag today!</p>
                 
-                <h2>Click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_welcome.php'>Here</a>to go back to the welcome Page</h2>
+                <h2>Click <a href='https://floating-inlet-17130.herokuapp.com/author_project/view/fan_welcome.php'> Here </a>to go back to the welcome Page</h2>
                 
             </main>
             <hr>
