@@ -32,9 +32,9 @@
                 
                 <form action="../accounts/index.php" method='post'>
                     <p> Change my first name to: </p>
-                    <input name="first_name" type="text"><br>
+                    <input name="firstName" type="text"><br>
                     <p> Change my last name to: </p>
-                    <input name="last_name" type="text"><br>
+                    <input name="lastName" type="text"><br>
                     <p> Change my email to: </p>
                     <input name="email" type="text"><br>
                     <input type='hidden' name='action' value='updateContact'>
