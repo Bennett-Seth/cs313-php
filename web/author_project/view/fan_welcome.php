@@ -25,7 +25,7 @@
             
             <main>
                 
-                <h2>Welcome <?php echo "$fanFirstName $fanLastName!"?></h2>
+                <h2><?php echo "$fanFirstName $fanLastName"?></h2>
                 
                 <?php 
                     //Lockout Notice
