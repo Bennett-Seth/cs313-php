@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+	<html lang="en-us">
+		<head>
+			<meta charset="utf-8">
+			<title>Calc Home Page</title>
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+		</head>
+		<body> 
+            
+            <header>
+                
+                <h1> Home Page</h1>
+                <p> This is an EJS file...</p>
+    
+            </header>          
+            
+            <main>
+                <h1> Postal Rate Form </h1>
+                <form action='/calc' method='get'>
+                    <p> What's the weight (in pounds) of the item you wish to ship? </p>
+                    <input type="text" name="wieght">
+                    <p> What type of package are you shipping?</p>
+                        <select name="type">
+                          <option value="stamped"> Letters (Stamped) </option>
+                          <option value="metered"> Letters (Metered) </option>
+                          <option value="flat"> Large Envelopes (Flats) </option>
+                          <option value="first_class"> First-Class Package Service—Retail </option>
+                        </select>
+                    <input class='submit' type='submit' value='Submit'>
+                </form>
+                
+            </main>
+            
+            <footer>
+
+            </footer>
+            
+		</body>	
+	</html>

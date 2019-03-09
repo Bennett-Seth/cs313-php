@@ -4,7 +4,8 @@ session_start();
 
 function regFan($fanFirstName, $fanLastName, $fanEmail, $hashedPassword, $regDate, $db){ 
     // The SQL statement
-    $query = 'INSERT INTO fans (first_name, last_name, email, password, fans_reg_date) VALUES (:first_name, :last_name, :email, :password, :fans_reg_date)';
+    $query = 'INSERT INTO fans (first_name, last_name, email, password, fans_reg_date) 
+	VALUES (:first_name, :last_name, :email, :password, :fans_reg_date)';
 
 //make sure $db is working
 //print_r($db);
